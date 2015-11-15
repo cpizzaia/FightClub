@@ -1,6 +1,6 @@
 # FightClub
 
-[Heroku link][heroku] 
+[Heroku link][heroku]
 
 [heroku]: http://www.herokuapp.com
 
@@ -20,7 +20,6 @@ and React.js. FightClub allows users to:
 - [ ] Sort Groups based on amount of members, date created, and nearness.
 - [ ] Tag Groups with multiple tags and search Groups by tag
 - [ ] Apply styling to Groups when creating or editing them.
-- [ ] Set reminders on Fights.
 - [ ] Message other members in Groups.
 
 ## Design Docs
