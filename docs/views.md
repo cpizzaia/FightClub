@@ -1,29 +1,38 @@
 # View Wireframes
 
-## New User
-![new-user]
+## New User / Sign In
+![Sign_in_up_modal]
 
-## New Session
-![new-session]
+## Create Event
+![Create_Event_Modal]
 
-## NotesIndex / NoteIndexItem / NoteForm
-![notes]
+## Create Group
+![Create_Group_Modal]
 
-## NotebooksIndex / NotebookIndexItem
-![notebooks]
+## Group
+![Group]
 
-## NoteBookForm
-![notebook-form]
+## Event
+![Event]
+
+## Profile
+![Profile]
+
+## Reviews
+![Reviews]
+
+## Root
+![Root]
 
 ## Component Heirarchy
-![component-heirarchy]
+![Component_Heirarchy]
 
-[Component Heirarchy]: ./wireframes/Component_Heirarchy.png
-[Create Event Modal]: ./wireframes/Create_Event_Modal.png
-[Create Group Modal]: ./wireframes/Create_Group_Modal.png
+[Component_Heirarchy]: ./wireframes/Component_Heirarchy.png
+[Create_Event_Modal]: ./wireframes/Create_Event_Modal.png
+[Create_Group_Modal]: ./wireframes/Create_Group_Modal.png
 [Event]: ./wireframes/Event.png
 [Group]: ./wireframes/group.png
 [Profile]: ./wireframes/Profile.png
 [Reviews]: ./wireframes/Reviews.png
 [Root]: ./wireframes/root.png
-[Sign in/up modal]:./wireframes/Sign_in_up_modal.png
+[Sign_in_up_modal]:./wireframes/Sign_in_up_modal.png
