@@ -9,6 +9,22 @@ body        | text      | not null
 organizer_id| integer   | not null, foreign key (references users), indexed
 group_id    | integer   | not null, foreign key (references group), indexed
 
+## Comments
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+body        | text      | not null
+event_id    | integer   | not null, foreign key (references event), indexed
+parent_id   | integer   | foreign key (references parent comment), indexed
+
+## Messages
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+body        | text      | not null
+author_id   | integer   | not null, foreign key (references users), indexed
+receiver_id | integer   | not null, foreign key (references users), indexed
+
 ## UsersEvents (join table)
 column name | data type | details
 ------------|-----------|-----------------------
@@ -45,3 +61,11 @@ id              | integer   | not null, primary key
 username        | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
+
+## Reviews
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+group_id    | integer   | not null, foreign key (references group), indexed
+user_id     | integer   | not null, foreign key (references group), indexed
+body        | string    | not null
