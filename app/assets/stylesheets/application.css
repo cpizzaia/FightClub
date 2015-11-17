@@ -34,6 +34,10 @@
    border: none;
   }
 
+  body {
+    background: black
+  }
+
   .container {
    width: 1000px;
    margin: auto;
@@ -52,6 +56,12 @@
    background: grey;
    text-align: center;
    margin: 12.8px 5px 12.8px 5px;
+  }
+
+  .homepage-banner{
+    height: 500px;
+    margin: auto;
+    display: block;
   }
 
   .toolbar-thumbnail {
