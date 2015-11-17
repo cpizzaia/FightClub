@@ -13,7 +13,6 @@ var Profile = React.createClass({
     UserStore.removeChangeListener(this._changed);
   },
 
-
   _changed: function(){
     this.setState({user: UserStore.currentUser()});
   },
@@ -27,5 +26,4 @@ var Profile = React.createClass({
       <h1>{html}</h1>
     );
   }
-
 });
