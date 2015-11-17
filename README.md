@@ -86,6 +86,7 @@ interactions and will create an amazing user experience.
 
 
 ### Bonus Features (TBD)
+- [ ] Group reviews
 - [ ] Reminders for events you are attending.
 - [ ] Adding interests to events and recommendations for users.
 - [ ] Facebook authentication.
