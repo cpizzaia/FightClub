@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<div id="content"></div>
+
 <%= yield %>
 <% if current_user.nil? %>
   <a href="<%= new_session_url %>">Sign In</a>

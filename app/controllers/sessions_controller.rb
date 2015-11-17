@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       render :new
     else
       login(@user)
-      redirect_to posts_url
+      redirect_to new_user_url
     end
   end
 

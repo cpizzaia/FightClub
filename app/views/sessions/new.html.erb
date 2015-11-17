@@ -1,13 +1,9 @@
-<h1> New User </h1>
+<h1> Login </h1>
 
-<form method="POST" action="<%= users_url %>">
+<form method="POST" action="<%= session_url %>">
   <%= auth %>
   <label> Email
     <input type="text" name="user[useremail]" value="">
-  </label>
-
-  <label> Name
-    <input type="text" name="user[name]" value="">
   </label>
 
   <label> Password

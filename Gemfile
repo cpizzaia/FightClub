@@ -23,7 +23,11 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'jbuilder', '~> 2.0'
 
+gem 'react-rails', '~> 1.3.0'
+
+gem 'flux-rails-assets', '~> 2.1.0'
 
 gem 'bcrypt'
 
@@ -41,7 +45,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'binding_of_caller'
-  gem 'better_errors'
+  #gem 'better_errors'
 end
 
 group :development do
