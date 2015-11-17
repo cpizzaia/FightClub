@@ -21,19 +21,19 @@
   GroupStore.dispatcherId = AppDispatcher.register(function(payload){
     switch (payload.actionType) {
       case GroupConstants.GROUPS_RECEIVED:
-        GroupStore.store(payload.user);
+        GroupStore.store(payload.groups);
         break;
     }
   });
 
-  GroupStore.store = function(group){
-    _group = group;
+  GroupStore.store = function(groups){
+    _groups = groups;
     this.changed();
   };
 
 
   GroupStore.all = function(){
-    return _group.slice()[0];
+    return _groups.slice()[0];
   };
 
   GroupStore.fetch = function(){

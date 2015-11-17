@@ -9,6 +9,10 @@ var Profile = React.createClass({
     UserStore.fetchCurrentUser();
   },
 
+  componentWillUnmount: function(){
+    UserStore.removeChangeListener(this._changed);
+  },
+
 
   _changed: function(){
     this.setState({user: UserStore.currentUser()});
