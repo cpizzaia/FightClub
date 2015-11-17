@@ -13,3 +13,73 @@
  *= require_tree .
  *= require_self
  */
+
+
+  html, body, header, nav, h1, a,
+  ul, li, strong, main, button, i,
+  section, img, div, h2, p, form,
+  fieldset, label, input, textarea,
+  span, article, footer, time, small, button {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   outline: 0;
+   font: inherit;
+   color: inherit;
+   text-align: inherit;
+   text-decoration: inherit;
+   vertical-align: inherit;
+   box-sizing: inherit;
+   background: transparent;
+   border: none;
+  }
+
+  .container {
+   width: 1000px;
+   margin: auto;
+  }
+
+  .logo {
+   float: left;
+   padding: 19.8px 0 19.8px 0;
+  }
+
+  .signout-button{
+   float: right;
+   width: 120px;
+   padding: 7px 18px 7px 18px;
+   background: grey;
+   text-align: center;
+   margin: 12.8px 5px 12.8px 5px;
+  }
+
+  .toolbar-thumbnail {
+   height: 40px;
+   width: 40px;
+   border-radius: 100px;
+   float: right;
+   margin: 9px 10px 9px 10px;
+  }
+
+
+  .profile-image {
+   float: right;
+   width: 240px;
+   height: 240px;
+  }
+
+  .header-toolbar{
+   margin-bottom: 20px;
+   background: lightgrey;
+  }
+
+  .profile-name {
+   float: left;
+   font-size: 2.375rem;
+  }
+
+  .group:after {
+    content: "";
+    display: block;
+    clear: both;
+  }

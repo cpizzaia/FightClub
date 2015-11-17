@@ -1,27 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SampleProjectProposal</title>
+  <title>FightClub</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<section class="container">
+  <section class="header-toolbar group">
+    <h1 class="logo"> FightClub </h1>
+    <% @user = current_user %>
+    <% if @user.nil? %>
+
+      <a class="signout-button" href="<%= new_user_url %>">Sign Up</a>
+      <a class="signout-button" href="<%= new_session_url %>">Sign In</a>
+
+    <% else %>
+      <a href="#/profile" title="profile">
+        <img class="toolbar-thumbnail" src="<%= @user.profile_img_url %>"/>
+      </a>
+      <form method="POST" action="<%= session_url %>">
+        <%= auth %>
+        <input type="hidden" name="_method" value="delete">
+        <button class="signout-button"> Sign Out </button>
+      </form>
+    <% end %>
+  </section>
+
+
+
+
+
+  <%= yield %>
 
 <div id="content"></div>
-
-<%= yield %>
-<% if current_user.nil? %>
-  <a href="<%= new_session_url %>">Sign In</a>
-  <a href="<%= new_user_url %>">Sign Up</a>
-<% else %>
-  <%= current_user.useremail %>
-  <form method="POST" action="<%= session_url %>">
-    <%= auth %>
-    <input type="hidden" name="_method" value="delete">
-    <button> Sign Out </button>
-  </form>
-<% end %>
+</section>
 
 </body>
 </html>

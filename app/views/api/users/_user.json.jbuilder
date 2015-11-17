@@ -1,4 +1,4 @@
 json.extract!(
   user,
-  :id, :useremail, :name
+  :id, :useremail, :name, :profile_img_url
 )

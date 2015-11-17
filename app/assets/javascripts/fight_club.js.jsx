@@ -8,7 +8,6 @@
       render: function(){
         return (
             <div>
-              <header><h1>Fight Club</h1></header>
               {this.props.children}
             </div>
         );
