@@ -3,11 +3,11 @@
 <form method="POST" action="<%= session_url %>">
   <%= auth %>
   <label> Email
-    <input type="text" name="user[useremail]" value="">
+    <input class="login-input" type="text" name="user[useremail]" value="">
   </label>
 
   <label> Password
-    <input type="password" name="user[password]" value="">
+    <input class="login-input" type="password" name="user[password]" value="">
   </label>
-  <button> Sign In </button>
+  <button class="login-form-button"> Sign In </button>
 </form>

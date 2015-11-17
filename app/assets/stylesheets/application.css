@@ -61,6 +61,16 @@
    margin: 9px 10px 9px 10px;
   }
 
+  .login-input{
+    display: block;
+    border: inset;
+  }
+
+  .login-form-button{
+    background: grey;
+    padding: 5px 10px 5px 10px;
+  }
+
 
   .profile-image {
    float: right;

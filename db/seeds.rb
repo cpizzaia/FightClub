@@ -7,4 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-User.create({useremail: "cody@cody.com", name: "cody", password: "123456", profile_img_url: "https://www.petfinder.com/wp-content/uploads/2012/11/140272627-grooming-needs-senior-cat-632x475.jpg"})
+User.create({useremail: "ryu@capcom.com", name: "Ryu", password: "123456", profile_img_url: "http://assets.vg247.com/current//2014/07/o7vij6.png"})
+
+
+Group.create({title: "Addicted to the Shoryuken", description: "Join if you like to dragon punch", organizer_id: User.first.id, image: "http://ih0.redbubble.net/image.6153527.3451/sticker,375x360.png"})

@@ -6,7 +6,12 @@ class User < ActiveRecord::Base
   attr_reader :password
   after_initialize :generate_session_token
 
-  has_many :posts
+  has_many(
+    :groups_led,
+    class_name: "Group",
+    foreign_key: :organizer_id,
+    primary_key: :id
+  )
 
   def self.find_by_credentials(useremail, password)
     user = User.find_by_useremail(useremail)
