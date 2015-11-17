@@ -1,26 +1,24 @@
-# Phase 2: Flux Architecture and Note CRUD (2 days)
-
+### Phase 2: Group model, Group controller, Group API, and Group React Components
 ## Rails
 ### Models
-#### Associations
-* Users to Groups
-* Groups to Events
-* Users to Events
-* Events to Comments
-* Groups to Reviews
-* Tags to Users
-* Tags to Groups
+* Group
+
+### APIs
+* Index, Show
+
 
 ### Controllers
-* Users
-  -Create Destroy
-* Groups
-  -CRUD
-* Events
-  -CRUD
-* Reviews
-  -CRUD
-* Comments
-  -CRUD
-* Tags
-  -CRUD
+* Group
+
+### Views
+
+## Flux
+### Views (React Components)
+* Create, Edit, Show, Index, Destroy
+
+### Stores
+* Group Store
+
+
+### Actions
+* Group Actions

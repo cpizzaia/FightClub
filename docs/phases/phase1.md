@@ -1,26 +1,22 @@
-# Phase 1: Models and JSON API
+# Phase 1: User Authentication, User Model, User API, User Controller, User React Components
 
 ## Rails
 ### Models
 * User
-* Comment
-* Message
-* Group
-* Event
-* Review
-* Tag
+
+### APIs
+* Show, Index
+
+### Controllers
+* Users
+* Sessions
 
 ### Views
-* users/new.html.erb
-* session/new.html.erb
-* groups/index.json.jbuilder
-* groups/show.json.jbuilder
-* events/index.json.jbuilder
-* events/show.json.jbuilder
-* messages/index.json.jbuilder
-* messages/show.json.jbuilder
-* reviews/index.json.jbuilder
-* reviews/show.json.jbuilder
 
-## Gems/Libraries
-* BCrypt
+## Flux
+### Views (React Components)
+* new Sign up/in
+
+### Stores
+
+### Actions

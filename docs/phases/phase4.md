@@ -1,17 +1,24 @@
-# Phase 4: Allow Complex Styling in Notes (1 day)
-
+### Phase 4: Comment model, Comment controller, Comment API, and Comment React Components
 ## Rails
 ### Models
+* Comment
+
+### APIs
+* Index
 
 
 ### Controllers
+* Comment
 
 ### Views
 
 ## Flux
 ### Views (React Components)
-* User group recommendations
+* Create, Edit, Index, Destroy
 
 ### Stores
+* Comment Store
+
 
 ### Actions
+* Comment Actions

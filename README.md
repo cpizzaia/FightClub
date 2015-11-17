@@ -32,40 +32,57 @@ and React.js. FightClub allows users to:
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, all Models, and JSON API (1 day)
 
-In Phase 1, I will begin by implementing user signup and authentication (using
-BCrypt). There will be a basic landing page after signup that will contain the
-container for the application's root React component. Before building out the
-front end, I will begin by setting up a full JSON API for all the models.
+### Phase 1: User Authentication, User Model, User API, User Controller, User React Components (.5 days)
+In Phase 1, I will implement the user model and all of its supporting features
+such as the API, controller, and React components used to create and display a
+profile.
 
 [Details][phase-one]
 
-### Phase 2: Model associations and CRUD for all Models (1 day)
-
-Phase 2 is setting up all the associations for the models and then making the necessary controllers to develop actions that allows the creation, deletion, ability to update, and ability to read the models.
+### Phase 2: Group model, Group controller, Group API, and Group React Components (1 day)
+Phase 2 will implement the group modal and all the of features that support it
+such as being able to create a group and have users join it while also being
+able to display all this information through React.
 
 [Details][phase-two]
 
-### Phase 3: Flux Architecture, Reacting Routing, and Components (3 days)
-
-In Phase 3, I will setup the flux architecture and the react routing to begin working on the views and components required to create and view groups, events, comments, messages and most importantly signup for events.
+### Phase 3: Event model, Event controller, Event API, and Event React Components (1 day)
+Same as Phase 2 but will implement everything supporting the Event model.
 
 [Details][phase-three]
 
-### Phase 4: Match users to groups through tags. (1 day)
-
-Phase 4 will allow the site to provide a recommendations view filled with groups for the user after they have specified interests on their profile that will match those interests with the tags of the group.
+### Phase 4: Comment model, Comment controller, Comment API, and Comment React Components (.5 days)
+Same as Phase 2 but will implement everything supporting the Comment model.
 
 [Details][phase-four]
 
-### Phase 5: Style site and create modals to allow users to create accounts, groups, and events. (2 days)
+### Phase 5: Message model, Message controller, Message API, and Message React Components (.5 days)
+Same as Phase 2 but will implement everything supporting the Message model.
 
-Phase 5 will be used to style the site to look like a clone and make it more usable and readable, while also adding modals for easy creation of users, groups, and events.
+[Details][phase-five]
 
-### Phase 6: Transitions (2 days)
+### Phase 6: Tag model, Tag controller, Tag API, and Tag React Components (1 day)
+Same as Phase 2 but will implement everything supporting the Tags model. As an
+extra users will be able see recommendations for groups based on the tags they
+have on themselves.
 
-Phase 6 will be used to create transitions for the site for when groups and events are fetched and interfaces are alternated between (i.e. going from comments to events to groups).
+[Details][phase-six]
+
+### Phase 7: Create modals to allow users to create groups and events (.5 days)
+Phase 7 will create a better experience for users as it will allow them to
+create events and groups without having to navigate to a new page.
+
+
+### Phase 8: Style site and create searches and filters (1.5 days)
+Phase 8 will bring the site together by making everything look production ready
+through design and will also allow users to search for groups through filters
+and search boxes.
+
+
+### Phase 9: Create Transitions for all effects (2 days)
+Phase 9 will complete the site by adding transitions to all the user
+interactions and will create an amazing user experience.
 
 
 ### Bonus Features (TBD)
@@ -78,3 +95,7 @@ Phase 6 will be used to create transitions for the site for when groups and even
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md
 [phase-five]: ./docs/phases/phase5.md
+[phase-six]: ./docs/phases/phase6.md
+[phase-seven]: ./docs/phases/phase7.md
+[phase-eight]: ./docs/phases/phase8.md
+[phase-nine]: ./docs/phases/phase9.md
