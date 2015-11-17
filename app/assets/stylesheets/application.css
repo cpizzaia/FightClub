@@ -39,9 +39,10 @@
    margin: auto;
   }
 
-  .logo {
+  .logo > img {
    float: left;
-   padding: 19.8px 0 19.8px 0;
+   height: 30px;
+   padding: 14px 10px 14px 10px;
   }
 
   .signout-button{

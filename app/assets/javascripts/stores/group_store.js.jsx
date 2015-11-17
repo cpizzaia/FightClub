@@ -33,7 +33,7 @@
 
 
   GroupStore.all = function(){
-    return _groups.slice()[0];
+    return _groups.slice();
   };
 
   GroupStore.fetch = function(){
