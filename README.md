@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: http://fight-club-app.herokuapp.com
 
 ## Minimum Viable Product
 (note: name was chosen after proposal was finished events are now called fights.)
