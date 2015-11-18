@@ -2,19 +2,19 @@
 
 <form method="POST" action="<%= users_url %>">
   <%= auth %>
-  <label> Email
-    <input class="login-input" ype="text" name="user[useremail]" value="">
+  <label class="signup-in-label"> Email
+    <input class="login-input" type="text" name="user[useremail]" value="">
   </label>
 
-  <label> Name
+  <label class="signup-in-label"> Name
     <input class="login-input" type="text" name="user[name]" value="">
   </label>
 
-  <label> Password
+  <label class="signup-in-label"> Password
     <input class="login-input" type="password" name="user[password]" value="">
   </label>
 
-  <label> Profile Image Url
+  <label class="signup-in-label"> Profile Image Url
     <input class="login-input" type="text" name="user[profile_img_url]" value="">
   </label>
   <button class="login-form-button" > Create Account </button>

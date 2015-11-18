@@ -1,0 +1,24 @@
+.signout-button{
+  float: right;
+  width: 120px;
+  padding: 7px 18px 7px 18px;
+  background: grey;
+  text-align: center;
+  margin: 12.8px 5px 12.8px 5px;
+}
+
+.login-form-button{
+  background: grey;
+  padding: 5px 10px 5px 10px;
+}
+
+.login-input{
+  color: black;
+  display: block;
+  background: white;
+  border: inset;
+}
+
+.signup-in-label {
+  color: white;
+}

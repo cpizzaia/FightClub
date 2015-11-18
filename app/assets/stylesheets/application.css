@@ -43,44 +43,19 @@
    margin: auto;
   }
 
-  .logo > img {
-   float: left;
-   height: 30px;
-   padding: 14px 10px 14px 10px;
-  }
 
-  .signout-button{
-   float: right;
-   width: 120px;
-   padding: 7px 18px 7px 18px;
-   background: grey;
-   text-align: center;
-   margin: 12.8px 5px 12.8px 5px;
-  }
 
   .homepage-banner{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     height: 500px;
-    margin: auto;
     display: block;
+    z-index: -999;
+    top: 78px;
   }
 
-  .toolbar-thumbnail {
-   height: 40px;
-   width: 40px;
-   border-radius: 100px;
-   float: right;
-   margin: 9px 10px 9px 10px;
-  }
 
-  .login-input{
-    display: block;
-    border: inset;
-  }
-
-  .login-form-button{
-    background: grey;
-    padding: 5px 10px 5px 10px;
-  }
 
 
   .profile-image {
@@ -89,10 +64,6 @@
    height: 240px;
   }
 
-  .header-toolbar{
-   margin-bottom: 20px;
-   background: lightgrey;
-  }
 
   .profile-name {
    float: left;

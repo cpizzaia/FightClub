@@ -1,0 +1,18 @@
+.toolbar-thumbnail {
+ height: 40px;
+ width: 40px;
+ border-radius: 100px;
+ float: right;
+ margin: 9px 10px 9px 10px;
+}
+
+.logo > img {
+ float: left;
+ height: 30px;
+ padding: 14px 10px 14px 10px;
+}
+
+.header-toolbar{
+ margin-bottom: 20px;
+ background: lightgrey;
+}
