@@ -53,8 +53,8 @@
     ApiUtil.fetchAllGroups();
   };
 
-  GroupStore.fetchGroup = function(){
-    ApiUtil.fetchGroup();
+  GroupStore.fetchGroup = function(id){
+    ApiUtil.fetchGroup(id);
   };
 
 

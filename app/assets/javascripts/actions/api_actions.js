@@ -18,7 +18,7 @@ ApiActions.receiveAllGroups = function(data){
 
 ApiActions.receiveGroup = function(data){
   AppDispatcher.dispatch({
-    actionType: GroupConstants.GROUPS_RECEIVED,
+    actionType: GroupConstants.GROUP_RECEIVED,
     group:data
   });
 };
