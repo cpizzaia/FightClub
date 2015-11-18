@@ -18,13 +18,16 @@ var GroupIndex = React.createClass({
   },
 
   render: function(){
-    var html;
-    if (typeof this.state.groups !== "undefined"){
-      html = this.state.groups.length;
-    }
     return(
       <div className="group-index">
-        {html}
+        {this.state.groups.map(function(group){
+          return(
+          <div>
+            <img className="index-group-image" src={group.image}/>
+            <h2 className="index-group-title">{group.title}</h2>
+          </div>
+          );
+        })}
       </div>
     );
   }
