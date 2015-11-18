@@ -24,3 +24,7 @@
 .signup-in-label {
   color: white;
 }
+
+.login-signup-form {
+  position: absolute;
+}
