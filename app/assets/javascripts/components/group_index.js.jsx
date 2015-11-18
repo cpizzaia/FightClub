@@ -6,7 +6,7 @@ var GroupIndex = React.createClass({
 
   componentDidMount: function(){
     GroupStore.addChangeListener(this._changed);
-    GroupStore.fetch();
+    GroupStore.fetchAllGroups();
   },
 
   componentWillUnmount: function(){

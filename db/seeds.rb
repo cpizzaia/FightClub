@@ -14,6 +14,6 @@ Group.create({title: "Addicted to the Shoryuken", description: "Join if you like
 
 Group.create({title: "Test Group 2", description: "who cares", organizer_id: User.first.id, image:"http://static.zerochan.net/Street.Fighter.full.172203.jpg"})
 
-Group.create({title: "Test Group 2", description: "who cares", organizer_id: User.first.id, image:"http://static.zerochan.net/Street.Fighter.full.172203.jpg"})
+Group.create({title: "Test Group 3", description: "who cares", organizer_id: User.first.id, image:"http://static.zerochan.net/Street.Fighter.full.172203.jpg"})
 
-Group.create({title: "Test Group 2", description: "who cares", organizer_id: User.first.id, image:"http://static.zerochan.net/Street.Fighter.full.172203.jpg"})
+Group.create({title: "Test Group 4", description: "who cares", organizer_id: User.first.id, image:"http://static.zerochan.net/Street.Fighter.full.172203.jpg"})

@@ -13,13 +13,13 @@ ApiUtil.fetchCurrentUser= function(){
   });
 };
 
-ApiUtil.fetchGroups = function(){
+ApiUtil.fetchAllGroups = function(){
   $.ajax({
     url: "/api/groups",
     type: "GET",
     contentType: "application/json",
     success: function(data){
-      ApiActions.receiveGroups(data);
+      ApiActions.receiveAllGroups(data);
     }
   });
 };

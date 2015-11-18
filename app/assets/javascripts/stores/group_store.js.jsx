@@ -1,6 +1,7 @@
 (function(){
 
   var _groups = [];
+  var _group = [];
 
   var GroupStore = window.GroupStore = $.extend({}, EventEmitter.prototype);
 
@@ -36,8 +37,8 @@
     return _groups.slice();
   };
 
-  GroupStore.fetch = function(){
-    ApiUtil.fetchGroups();
+  GroupStore.fetchAllGroups = function(){
+    ApiUtil.fetchAllGroups();
   };
 
 
