@@ -5,6 +5,7 @@ var GroupShow = React.createClass({
 
   componentDidMount: function(){
     GroupStore.addChangeListener(this._changed);
+    GroupStore.fetchGroup(this.props.routeParams.id);
   },
 
   componentWillUnmount: function(){
@@ -19,7 +20,7 @@ var GroupShow = React.createClass({
     var html;
     if (typeof this.state.group !== "undefined"){
       html = (
-        <div className="group-show-container">
+        <div className="group-show-container group">
           <img className="group-show-image" src={this.state.group.image}/>
           <article className="group-show-description">{this.state.group.description}</article>
         </div>

@@ -20,7 +20,6 @@ var GroupIndex = React.createClass({
   },
 
   handleClick: function(id){
-    GroupStore.fetchGroup(id);
     this.history.pushState(null, "/groups/" + id);
   },
 

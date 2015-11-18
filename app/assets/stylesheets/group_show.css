@@ -1,0 +1,15 @@
+.group-show-image {
+  height: 180px;
+  width: 180px;
+  object-fit: contain;
+  float: left;
+}
+
+.group-show-container{
+  height: 470px;
+  background: grey;
+}
+
+.group-show-description{
+  float: right;
+}

@@ -18,3 +18,15 @@
  margin-bottom: 20px;
  background: lightgrey;
 }
+
+
+.groups-button {
+  float: left;
+  width: 120px;
+  padding: 7px 18px 7px 18px;
+  background: grey;
+  text-align: center;
+  margin: 12.8px 5px 12.8px 5px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
