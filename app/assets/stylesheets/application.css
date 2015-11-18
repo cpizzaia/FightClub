@@ -54,6 +54,10 @@
     top: 78px;
   }
 
+  .welcome-banner{
+    height: 558px;
+  }
+
 
   .group:after {
     content: "";

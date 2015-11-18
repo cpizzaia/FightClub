@@ -16,7 +16,7 @@
     });
     var routes = (
         <Route path="/" component={App}>
-          <IndexRoute component={GroupIndex} />
+          <IndexRoute component={LandingPage} />
           <Route path="/profile" component={Profile} />
           <Route path="/groups" component={GroupIndex} />
           <Route path="/groups/:id" component={GroupShow} />
