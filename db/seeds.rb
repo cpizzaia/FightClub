@@ -11,3 +11,9 @@ User.create({useremail: "ryu@capcom.com", name: "Ryu", password: "123456", profi
 
 
 Group.create({title: "Addicted to the Shoryuken", description: "Join if you like to dragon punch", organizer_id: User.first.id, image: "http://ih0.redbubble.net/image.6153527.3451/sticker,375x360.png"})
+
+Group.create({title: "Test Group 2", description: "who cares", organizer_id: User.first.id, image:"http://static.zerochan.net/Street.Fighter.full.172203.jpg"})
+
+Group.create({title: "Test Group 2", description: "who cares", organizer_id: User.first.id, image:"http://static.zerochan.net/Street.Fighter.full.172203.jpg"})
+
+Group.create({title: "Test Group 2", description: "who cares", organizer_id: User.first.id, image:"http://static.zerochan.net/Street.Fighter.full.172203.jpg"})

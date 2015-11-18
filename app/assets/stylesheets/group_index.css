@@ -1,3 +1,20 @@
 .group-index {
   color: white;
 }
+
+.group-index-image {
+  object-fit: contain;
+  width: 308px;
+  height: 180px;
+  background: lightgrey;
+}
+
+.group-index-title{
+  position: relative;
+  bottom: 50px;
+}
+
+.group-index-item{
+  float: left;
+  margin: 0 10px 0 10px;
+}

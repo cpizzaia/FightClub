@@ -19,12 +19,12 @@ var GroupIndex = React.createClass({
 
   render: function(){
     return(
-      <div className="group-index">
+      <div className="group-index group">
         {this.state.groups.map(function(group){
           return(
-          <div>
-            <img className="index-group-image" src={group.image}/>
-            <h2 className="index-group-title">{group.title}</h2>
+          <div className="group-index-item">
+            <img className="group-index-image" src={group.image}/>
+            <h2 className="group-index-title">{group.title}</h2>
           </div>
           );
         })}
