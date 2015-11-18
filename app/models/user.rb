@@ -13,6 +13,19 @@ class User < ActiveRecord::Base
     primary_key: :id
   )
 
+  has_many(
+    :users_groups,
+    class_name: "UsersGroup",
+    foreign_key: :user_id,
+    primary_key: :id
+  )
+
+  has_many(
+    :groups,
+    through: "users_groups",
+    source: :group
+  )
+
   def self.find_by_credentials(useremail, password)
     user = User.find_by_useremail(useremail)
     return nil if user.nil?

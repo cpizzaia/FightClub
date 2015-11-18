@@ -21,8 +21,11 @@ var GroupShow = React.createClass({
     if (typeof this.state.group !== "undefined"){
       html = (
         <div className="group-show-container group">
-          <img className="group-show-image" src={this.state.group.image}/>
-          <article className="group-show-description">{this.state.group.description}</article>
+          <div className="group">
+            <img className="group-show-image" src={this.state.group.image}/>
+            <article className="group-show-description">{this.state.group.description}</article>
+          </div>
+          <p className="group-show-member-count">Members: {this.state.group.members.length}</p>
         </div>
         );
     }

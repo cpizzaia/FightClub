@@ -17,3 +17,7 @@ Group.create({title: "Test Group 2", description: "who cares", organizer_id: Use
 Group.create({title: "Test Group 3", description: "who cares", organizer_id: User.first.id, image:"http://static.zerochan.net/Street.Fighter.full.172203.jpg"})
 
 Group.create({title: "Test Group 4", description: "who cares", organizer_id: User.first.id, image:"http://static.zerochan.net/Street.Fighter.full.172203.jpg"})
+
+UsersGroup.create({group_id: 1, user_id: User.first.id})
+UsersGroup.create({group_id: 2, user_id: User.first.id})
+UsersGroup.create({group_id: 3, user_id: User.first.id})
