@@ -1,5 +1,7 @@
 var GroupIndex = React.createClass({
 
+  mixins: [ReactRouter.History],
+
   getInitialState: function(){
     return({groups: GroupStore.all()});
   },
@@ -17,17 +19,21 @@ var GroupIndex = React.createClass({
     this.setState({groups: GroupStore.all()});
   },
 
+  handleClick: function(id){
+    this.history.pushState(null, "/groups/" + id);
+  },
+
   render: function(){
     return(
       <div className="group-index group">
         {this.state.groups.map(function(group){
           return(
-          <div className="group-index-item">
-            <img className="group-index-image" src={group.image}/>
-            <h2 className="group-index-title">{group.title}</h2>
+          <div onClick={this.handleClick.bind(this, group.id)} key={group.id} className="group-index-item">
+            <img key={group.image} className="group-index-image" src={group.image}/>
+            <h2 key={group.title} className="group-index-title">{group.title}</h2>
           </div>
           );
-        })}
+        }.bind(this))}
       </div>
     );
   }
