@@ -19,11 +19,22 @@ var Profile = React.createClass({
 
   render: function(){
     var html;
+    var html2;
     if (typeof this.state.user !== "undefined"){
-      html = <div><h2 className="profile-name">{this.state.user.name}</h2><img className="profile-image" src={this.state.user.profile_img_url}/></div>;
+      html = (
+          <div className="group">
+            <h2 className="profile-name">{this.state.user.name}</h2>
+            <img className="profile-image" src={this.state.user.profile_img_url}/>
+          </div>
+      );
+      html2 = (
+        <div>
+          <h2 className="profile-group-amount">Member of {this.state.user.groups.length} groups</h2>
+          <UserGroups groups={this.state.user.groups} />
+        </div>);
     }
     return (
-      <div className="profile group">{html}</div>
+      <div className="profile">{html}{html2} </div>
     );
   }
 });

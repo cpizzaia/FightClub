@@ -1,3 +1,3 @@
 json.array!(@groups) do |group|
-  json.partial!('group', group: group)
+  json.partial!('group', group: group, show_members: false)
 end
