@@ -44,7 +44,6 @@
   }
 
 
-
   .homepage-banner{
     position: absolute;
     left: 50%;
@@ -55,20 +54,6 @@
     top: 78px;
   }
 
-
-
-
-  .profile-image {
-   float: right;
-   width: 240px;
-   height: 240px;
-  }
-
-
-  .profile-name {
-   float: left;
-   font-size: 2.375rem;
-  }
 
   .group:after {
     content: "";

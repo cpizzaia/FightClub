@@ -4,6 +4,8 @@
  border-radius: 100px;
  float: right;
  margin: 9px 10px 9px 10px;
+ object-fit: contain;
+ background-color: grey;
 }
 
 .logo > img {

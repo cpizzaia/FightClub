@@ -5,6 +5,8 @@
   background: grey;
   text-align: center;
   margin: 12.8px 5px 12.8px 5px;
+  font-family: sans-serif;
+  font-weight: bold;
 }
 
 .login-form-button{

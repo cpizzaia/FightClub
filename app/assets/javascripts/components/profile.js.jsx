@@ -23,7 +23,7 @@ var Profile = React.createClass({
       html = <div><h2 className="profile-name">{this.state.user.name}</h2><img className="profile-image" src={this.state.user.profile_img_url}/></div>;
     }
     return (
-      <h1>{html}</h1>
+      <div className="profile group">{html}</div>
     );
   }
 });

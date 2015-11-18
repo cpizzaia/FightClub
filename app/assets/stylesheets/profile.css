@@ -1,0 +1,21 @@
+.profile {
+  background: rgba(192,192,192, 0.5);
+  height: 500px;
+}
+
+.profile-image {
+ float: right;
+ width: 240px;
+ height: 240px;
+ object-fit: contain;
+
+}
+
+
+.profile-name {
+ float: left;
+ font-size: 2.375rem;
+ font-family: sans-serif;;
+ font-weight: bold;
+ padding: 25px;
+}
