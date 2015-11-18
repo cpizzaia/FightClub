@@ -23,3 +23,14 @@ ApiUtil.fetchAllGroups = function(){
     }
   });
 };
+
+ApiUtil.fetchGroup = function(id){
+  $.ajax({
+      url: "api/groups/" + id,
+      type: "GET",
+      contentType: "application.json",
+      success: function(data){
+        ApiActions.receiveGroup(data);
+      }
+  });
+};

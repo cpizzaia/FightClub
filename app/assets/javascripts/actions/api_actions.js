@@ -15,3 +15,10 @@ ApiActions.receiveAllGroups = function(data){
     groups: data
   });
 };
+
+ApiActions.receiveGroup = function(data){
+  AppDispatcher.dispatch({
+    actionType: GroupConstants.GROUPS_RECEIVED,
+    group:data
+  });
+};
