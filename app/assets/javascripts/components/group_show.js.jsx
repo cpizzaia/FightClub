@@ -22,19 +22,19 @@ var GroupShow = React.createClass({
       html = (
         <div className="group-show-container group">
 
-          <div className="group-show-details group">
-            <article className="group-show-description">{this.state.group.description}</article>
-            <p className="group-show-member-count">Members: {this.state.group.members.length}</p>
-              <div className="group-event-index-container">
-                <h1 className="group-event-index-header">Events:</h1>
-                {this.state.group.events.map(function(event){
-                  return (<GroupEventIndex key={event.id} event={event}/>);
-                })}
-              </div>
-          </div>
+          <article className="group-show-description">{this.state.group.description}</article>
 
-          <div className="group-show-sidebar group">
+            <div className="group-event-index-container">
+              <h1 className="group-event-index-header">Events:</h1>
+              {this.state.group.events.map(function(event){
+                return (<GroupEventIndex key={event.id} event={event}/>);
+              })}
+            </div>
+
+
+          <div className="group-show-sidebar">
             <img className="group-show-image" src={this.state.group.image}/>
+            <p className="group-show-member-count">Members: {this.state.group.members.length}</p>
           </div>
 
         </div>

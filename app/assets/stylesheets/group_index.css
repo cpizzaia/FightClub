@@ -3,13 +3,11 @@
 }
 
 .group-index-image {
-  object-fit: contain;
   background: lightgrey;
-  position: absolute;
   width: 308px;
 
-
-  top: -9999px; /* center image fix */
+  position: absolute; /* center image fix */
+  top: -9999px;
   bottom: -9999px;
   left: -9999px;
   right: -9999px;
@@ -18,8 +16,8 @@
 
 .group-index-title{
   border-radius: inherit;
-  border-top-right-radius: 0; /*make the same as img radius */
-  border-top-left-radius: 0; /*make the same as img radius */
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
   padding-bottom: 23px;
   padding-left: 18px;
   background: rgba(0,0,0, 0.7);
@@ -35,7 +33,7 @@
   border-radius: 2px;
   cursor: pointer;
   float: left;
-  margin: 0 9.4px 20px 9.4px;
+  margin: 0 9.4px 19px 9.4px;
   background: white;
   height: 180px;
   position: relative;
