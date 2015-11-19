@@ -2,7 +2,7 @@
   height: 180px;
   width: 180px;
   object-fit: contain;
-  float: left;
+  margin: auto;
 }
 
 .group-show-container{
@@ -12,4 +12,12 @@
 
 .group-show-description{
   float: right;
+}
+
+.group-show-details{
+  float: right;
+}
+
+.group-show-sidebar{
+  width: 200px;
 }
