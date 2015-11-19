@@ -7,7 +7,7 @@
  float: right;
  width: 240px;
  height: 240px;
- object-fit: contain;
+ object-fit: cover;
 
 }
 

@@ -4,7 +4,7 @@
  border-radius: 100px;
  float: right;
  margin: 9px 10px 9px 10px;
- object-fit: contain;
+ object-fit: cover;
  background-color: grey;
 }
 

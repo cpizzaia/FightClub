@@ -20,7 +20,7 @@
       <a class="signout-button" href="<%= new_session_url %>">Sign In</a>
 
     <% else %>
-      <a href="#/profile" title="profile">
+      <a class="toolbar-thumbnail-link" href="#/profile" title="profile">
         <img class="toolbar-thumbnail" src="<%= image_path(@user.profile_img.url) %>"/>
       </a>
       <form method="POST" action="<%= session_url %>">
