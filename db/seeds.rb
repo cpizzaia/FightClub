@@ -11,16 +11,14 @@ User.create({
   useremail: "ryu@capcom.com",
   name: "Ryu",
   password: "123456",
-  profile_img:
-  File.new("#{Rails.root}/app/assets/images/ryu.png")
+  profile_img: File.new("#{Rails.root}/app/assets/images/ryu.png")
 })
 
 User.create({
   useremail: "ken@capcom.com",
   name: "Ken",
   password: "123456",
-  profile_img:
-  File.new("#{Rails.root}/app/assets/images/ken.jpg")
+  profile_img: File.new("#{Rails.root}/app/assets/images/ken.jpg")
 })
 
 

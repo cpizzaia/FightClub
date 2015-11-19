@@ -3,15 +3,24 @@
 }
 
 .group-index-image {
-  border-radius: 2px;
   object-fit: contain;
-  width: 308px;
-  height: 180px;
   background: lightgrey;
+  position: absolute;
+  width: 308px;
+
+
+  top: -9999px; /* center image fix */
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
 }
 
 .group-index-title{
-  padding-bottom: 24px;
+  border-radius: inherit;
+  border-top-right-radius: 0; /*make the same as img radius */
+  border-top-left-radius: 0; /*make the same as img radius */
+  padding-bottom: 23px;
   padding-left: 18px;
   background: rgba(0,0,0, 0.7);
   letter-spacing: -0.25px;
@@ -19,11 +28,17 @@
   font-weight: bold;
   font-family: Whitney, helvetica, arial, sans-serif;
   position: relative;
-  bottom: 50px;
+  top: 134px;
 }
 
 .group-index-item{
+  border-radius: 2px;
   cursor: pointer;
   float: left;
-  margin: 0 10px 0 10px;
+  margin: 0 10px 20px; 10px;
+  background: white;
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+  width: 308px;
 }
