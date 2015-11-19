@@ -10,3 +10,11 @@ if show_members
     end
   end
 end
+
+if show_events
+  json.events do
+    json.array!(group.events) do |event|
+      json.partial!('api/events/event', event: event, show_users: false)
+    end
+  end
+end
