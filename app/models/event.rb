@@ -21,4 +21,8 @@ class Event < ActiveRecord::Base
     source: :user
   )
 
+  def start_date
+    self.start_time.inspect
+  end
+
 end

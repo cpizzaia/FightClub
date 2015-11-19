@@ -1,6 +1,6 @@
 json.extract!(
   event,
-  :id, :start_time, :title, :description, :group_id, :address, :end_time, :lat, :lng
+  :id, :start_date, :title, :description, :group_id, :address, :end_time, :lat, :lng
 )
 
 if show_users
