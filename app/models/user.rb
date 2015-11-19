@@ -28,6 +28,19 @@ class User < ActiveRecord::Base
     source: :group
   )
 
+  has_many(
+    :users_events,
+    class_name: "UsersEvent",
+    foreign_key: :user_id,
+    primary_key: :id
+  )
+
+  has_many(
+    :events,
+    through: "users_events",
+    source: :event
+  )
+
   def self.find_by_credentials(useremail, password)
     user = User.find_by_useremail(useremail)
     return nil if user.nil?

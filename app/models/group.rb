@@ -20,4 +20,11 @@ class Group < ActiveRecord::Base
     through: "users_groups",
     source: :user
   )
+
+  has_many(
+    :events,
+    class_name: "Event",
+    foreign_key: :group_id,
+    primary_key: :id
+  )
 end

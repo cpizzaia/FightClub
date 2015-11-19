@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151119003202) do
+ActiveRecord::Schema.define(version: 20151119140721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,16 @@ ActiveRecord::Schema.define(version: 20151119003202) do
     t.integer  "profile_img_file_size"
     t.datetime "profile_img_updated_at"
   end
+
+  create_table "users_events", force: :cascade do |t|
+    t.integer  "event_id",   null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "users_events", ["event_id"], name: "index_users_events_on_event_id", using: :btree
+  add_index "users_events", ["user_id"], name: "index_users_events_on_user_id", using: :btree
 
   create_table "users_groups", force: :cascade do |t|
     t.integer  "group_id",   null: false
