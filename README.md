@@ -40,24 +40,24 @@ profile.
 
 [Details][phase-one]
 
-### Phase 2: Group model, Group controller, Group API, and Group React Components (1 day)
+### Phase 2: Group model, Group controller, Group API, and Group React Components (1.5 day)
 Phase 2 will implement the group modal and all the of features that support it
 such as being able to create a group and have users join it while also being
 able to display all this information through React.
 
 [Details][phase-two]
 
-### Phase 3: Event model, Event controller, Event API, and Event React Components (1 day)
+### Phase 3: Event model, Event controller, Event API, and Event React Components (1.5 day)
 Same as Phase 2 but will implement everything supporting the Event model.
 
 [Details][phase-three]
 
-### Phase 4: Comment model, Comment controller, Comment API, and Comment React Components (.5 days)
+### Phase 4: Comment model, Comment controller, Comment API, and Comment React Components (1 days)
 Same as Phase 2 but will implement everything supporting the Comment model.
 
 [Details][phase-four]
 
-### Phase 5: Message model, Message controller, Message API, and Message React Components (.5 days)
+### Phase 5: Message model, Message controller, Message API, and Message React Components (1 days)
 Same as Phase 2 but will implement everything supporting the Message model.
 
 [Details][phase-five]
@@ -80,7 +80,7 @@ through design and will also allow users to search for groups through filters
 and search boxes.
 
 
-### Phase 9: Create Transitions for all effects (2 days)
+### Phase 9: Create Transitions for all effects (.5 days)
 Phase 9 will complete the site by adding transitions to all the user
 interactions and will create an amazing user experience.
 
