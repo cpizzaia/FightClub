@@ -26,6 +26,11 @@ var GroupShow = React.createClass({
             <article className="group-show-description">{this.state.group.description}</article>
           </div>
           <p className="group-show-member-count">Members: {this.state.group.members.length}</p>
+          <div className="group-event-index-container">
+            {this.state.group.events.map(function(event){
+              return (<GroupEventIndex event={event}/>);
+            })}
+          </div>
         </div>
         );
     }
