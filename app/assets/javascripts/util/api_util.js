@@ -34,3 +34,25 @@ ApiUtil.fetchGroup = function(id){
       }
   });
 };
+
+ApiUtil.fetchAllGroupEvents = function(id){
+  $.ajax({
+      url: "api/groups/" + id,
+      type: "GET",
+      contentType: "application.json",
+      success: function(data){
+        ApiActions.receiveAllGroupEvents(data.events);
+      }
+  });
+};
+
+ApiUtil.fetchEvent = function(id){
+  $.ajax({
+      url: "api/events/" + id,
+      type: "GET",
+      contentType: "application.json",
+      success: function(data){
+        ApiActions.receiveEvent(data);
+      }
+  });
+};
