@@ -3,6 +3,7 @@
 }
 
 .group-index-image {
+  border-radius: 2px;
   object-fit: contain;
   width: 308px;
   height: 180px;
@@ -10,11 +11,20 @@
 }
 
 .group-index-title{
+  padding-bottom: 24px;
+  padding-left: 18px;
+  background: rgba(0,0,0, 0.7);
+  letter-spacing: -0.25px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Whitney, helvetica, arial, sans-serif;
+  text-shadow: 1px 1px #000000;
   position: relative;
   bottom: 50px;
 }
 
 .group-index-item{
+  cursor: pointer;
   float: left;
   margin: 0 10px 0 10px;
 }
