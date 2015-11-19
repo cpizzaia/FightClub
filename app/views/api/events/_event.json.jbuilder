@@ -4,7 +4,7 @@ json.extract!(
 )
 
 if show_users
-  json.members do
+  json.users do
     json.array!(event.users) do |user|
       json.partial!('api/users/user', user: user, show_groups: false)
     end

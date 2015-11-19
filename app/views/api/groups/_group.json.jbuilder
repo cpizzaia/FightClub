@@ -14,7 +14,7 @@ end
 if show_events
   json.events do
     json.array!(group.events) do |event|
-      json.partial!('api/events/event', event: event, show_users: false)
+      json.partial!('api/events/event', event: event, show_users: true)
     end
   end
 end
