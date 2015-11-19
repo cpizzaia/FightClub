@@ -21,7 +21,7 @@
 
   EventStore.dispatcherId = AppDispatcher.register(function(payload){
     switch (payload.actionType) {
-      case EventConstants.EVENTS_RECEIVED:
+      case EventConstants.GROUP_EVENTS_RECEIVED:
         EventStore.storeAllGroupEvents(payload.events);
         break;
       case EventConstants.EVENT_RECEIVED:
