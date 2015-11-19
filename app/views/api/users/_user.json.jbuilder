@@ -1,7 +1,9 @@
 json.extract!(
   user,
-  :id, :useremail, :name, :profile_img_url
+  :id, :useremail, :name
 )
+
+json.profile_img_url asset_path(user.profile_img.url)
 
 if show_groups
   json.groups do

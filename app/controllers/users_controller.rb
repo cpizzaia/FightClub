@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    byebug
     if @user.save
       login(@user)
       redirect_to "/"
@@ -16,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:useremail, :name, :password, :profile_img_url)
+    params.require(:user).permit(:useremail, :name, :password)
   end
 
 end

@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-User.create({useremail: "ryu@capcom.com", name: "Ryu", password: "123456", profile_img_url: "http://assets.vg247.com/current//2014/07/o7vij6.png"})
+User.create({useremail: "ryu@capcom.com", name: "Ryu", password: "123456", profile_img: File.new("#{Rails.root}/app/assets/images/ryu.png")})
 
 
 Group.create({title: "Addicted to the Shoryuken", description: "Join if you like to dragon punch", organizer_id: User.first.id, image: "http://ih0.redbubble.net/image.6153527.3451/sticker,375x360.png"})

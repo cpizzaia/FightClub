@@ -21,7 +21,7 @@
 
     <% else %>
       <a href="#/profile" title="profile">
-        <img class="toolbar-thumbnail" src="<%= @user.profile_img_url %>"/>
+        <img class="toolbar-thumbnail" src="<%= image_path(@user.profile_img.url) %>"/>
       </a>
       <form method="POST" action="<%= session_url %>">
         <%= auth %>
