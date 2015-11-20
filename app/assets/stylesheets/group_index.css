@@ -27,7 +27,7 @@
   font-family: Whitney, helvetica, arial, sans-serif;
   position: relative;
   top: 134px;
-  transition: opacity 0.5s;
+  transition: opacity 0.3s;
   opacity: 1;
 }
 

@@ -1,24 +1,25 @@
-### Phase 4: Comment model, Comment controller, Comment API, and Comment React Components
+### Phase 4: Tag model, Tag controller, Tag API, and Tag React Components
 ## Rails
 ### Models
-* Comment
+* Tag
+  -polymorphic association
 
 ### APIs
 * Index
 
 
 ### Controllers
-* Comment
+* Tag
 
 ### Views
 
 ## Flux
 ### Views (React Components)
-* Create, Edit, Index, Destroy
+* Create, Index, Destroy
 
 ### Stores
-* Comment Store
+* Tag Store
 
 
 ### Actions
-* Comment Actions
+* Tag Actions

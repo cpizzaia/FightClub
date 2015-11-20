@@ -52,40 +52,32 @@ Same as Phase 2 but will implement everything supporting the Event model.
 
 [Details][phase-three]
 
-### Phase 4: Comment model, Comment controller, Comment API, and Comment React Components (1 days)
-Same as Phase 2 but will implement everything supporting the Comment model.
-
-[Details][phase-four]
-
-### Phase 5: Message model, Message controller, Message API, and Message React Components (1 days)
-Same as Phase 2 but will implement everything supporting the Message model.
-
-[Details][phase-five]
-
-### Phase 6: Tag model, Tag controller, Tag API, and Tag React Components (1 day)
+### Phase 4: Tag model, Tag controller, Tag API, and Tag React Components (1 day)
 Same as Phase 2 but will implement everything supporting the Tags model. As an
 extra users will be able see recommendations for groups based on the tags they
 have on themselves.
 
-[Details][phase-six]
+[Details][phase-four]
 
-### Phase 7: Create modals to allow users to create groups and events (.5 days)
+### Phase 5: Create modals to allow users to create groups and events (.5 days)
 Phase 7 will create a better experience for users as it will allow them to
 create events and groups without having to navigate to a new page.
 
 
-### Phase 8: Style site and create searches and filters (1.5 days)
+### Phase 6: Style site and create searches and filters (1.5 days)
 Phase 8 will bring the site together by making everything look production ready
 through design and will also allow users to search for groups through filters
 and search boxes.
 
 
-### Phase 9: Create Transitions for all effects (.5 days)
+### Phase 7: Create Transitions for all effects (.5 days)
 Phase 9 will complete the site by adding transitions to all the user
 interactions and will create an amazing user experience.
 
 
 ### Bonus Features (TBD)
+- [ ] Messages
+- [ ] Comments
 - [ ] Group reviews
 - [ ] Reminders for events you are attending.
 - [ ] Adding interests to events and recommendations for users.
@@ -95,8 +87,3 @@ interactions and will create an amazing user experience.
 [phase-two]: ./docs/phases/phase2.md
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md
-[phase-five]: ./docs/phases/phase5.md
-[phase-six]: ./docs/phases/phase6.md
-[phase-seven]: ./docs/phases/phase7.md
-[phase-eight]: ./docs/phases/phase8.md
-[phase-nine]: ./docs/phases/phase9.md
