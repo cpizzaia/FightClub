@@ -10,6 +10,7 @@ var GroupShow = React.createClass({
 
   componentWillUnmount: function(){
     GroupStore.removeChangeListener(this._changed);
+    GroupStore.clearGroup();
   },
 
   _changed: function(){

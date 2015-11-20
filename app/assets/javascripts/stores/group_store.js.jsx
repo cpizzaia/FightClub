@@ -40,6 +40,10 @@
     this.changed();
   };
 
+  GroupStore.clearGroup = function(group){
+    _group = [];
+  };
+
 
   GroupStore.all = function(){
     return _groups.slice();
