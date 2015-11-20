@@ -7,5 +7,17 @@ class Api::UsersController < ApplicationController
   end
 
 
+  def update
+    current_user.update!(user_params)
+    @user = current_user
+    render :show
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:useremail, :name, :password, :profile_img)
+  end
+
+
 
 end

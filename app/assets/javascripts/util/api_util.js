@@ -13,6 +13,20 @@ ApiUtil.fetchCurrentUser= function(){
   });
 };
 
+ApiUtil.updateUser = function(id, formData){
+  $.ajax({
+    url: "api/users/" + id,
+    type: "PATCH",
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: formData,
+    success: function(data){
+      ApiActions.receiveUser(data);
+    }
+  });
+};
+
 ApiUtil.fetchAllGroups = function(){
   $.ajax({
     url: "/api/groups",

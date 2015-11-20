@@ -16,12 +16,13 @@
 
 }
 
-.profile-image-container{
+.profile-image-container {
   position: relative;
   float: right;
   height: 240px;
   width: 240px;
   overflow: hidden;
+  margin: 20px 20px 0 0;
 }
 
 
@@ -31,4 +32,35 @@
  font-family: sans-serif;;
  font-weight: bold;
  padding: 25px;
+ border-bottom: 2px solid black;
+ width: 670px;
+}
+
+.profile-form-upload {
+  background: white;
+  float: right;
+  width: 100px;
+  margin-right: 20px;
+}
+
+.profile-update-button{
+  background: red;
+  padding: 3px 19px;
+  border-radius: 3px;
+  color: white;
+  float: right;
+  transition: background 0.5s;
+  cursor: pointer;
+}
+
+.profile-update-button:hover {
+  background: darkred;
+}
+
+.profile-group-amount {
+  font-weight: bold;
+  font-size: 24pt;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid black;
 }
