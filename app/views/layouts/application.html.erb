@@ -10,26 +10,6 @@
 <img class="homepage-banner" src="<%=image_path("homepage_banner.jpg")%>"/>
 
 <section class="container">
-  <section class="header-toolbar group">
-    <h1 class="logo"> <img src="<%=image_path("logo.png")%>"/> </h1>
-    <a class="groups-button" href="#/"> Groups <a>
-    <% @user = current_user %>
-    <% if @user.nil? %>
-
-      <a class="signout-button" href="<%= new_user_url %>">Sign Up</a>
-      <a class="signout-button" href="<%= new_session_url %>">Sign In</a>
-
-    <% else %>
-      <a class="toolbar-thumbnail-link" href="#/profile" title="profile">
-        <img class="toolbar-thumbnail" src="<%= image_path(@user.profile_img.url) %>"/>
-      </a>
-      <form method="POST" action="<%= session_url %>">
-        <%= auth %>
-        <input type="hidden" name="_method" value="delete">
-        <button class="signout-button"> Sign Out </button>
-      </form>
-    <% end %>
-    </section>
 
 
 
@@ -37,7 +17,6 @@
 
   <%= yield %>
   <div id="content"></div>
-
 
 
 

@@ -1,6 +1,6 @@
 (function(){
 
-  var _user = [];
+  var _user = {};
 
   var UserStore = window.UserStore = $.extend({}, EventEmitter.prototype);
 
@@ -23,17 +23,24 @@
       case UserConstants.USER_RECEIVED:
         UserStore.store(payload.user);
         break;
+      case UserConstants.SIGN_USER_OUT:
+        UserStore.clearCurrentUser();
+        break;
     }
   });
 
   UserStore.store = function(user){
-    _user = [user];
+    _user = user;
     this.changed();
+  };
+
+  UserStore.clearCurrentUser = function(){
+    _user = {};
   };
 
 
   UserStore.currentUser = function(){
-    return _user.slice()[0];
+    return _user;
   };
 
   UserStore.fetchCurrentUser = function(){

@@ -89,7 +89,7 @@ var Profile = React.createClass({
   render: function(){
     var html;
     var html2;
-    if (typeof this.state.user !== "undefined"){
+    if (typeof this.state.user.id !== "undefined"){
       html = (
           <div className="group">
             <div className="profile-name">

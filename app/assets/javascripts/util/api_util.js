@@ -27,6 +27,18 @@ ApiUtil.updateUser = function(id, formData){
   });
 };
 
+ApiUtil.signUserOut = function(callback){
+  $.ajax({
+    url: "api/session/",
+    type: "DELETE",
+    dataType: 'json',
+    success: function(data){
+      ApiActions.receiveUser(data);
+      callback();
+    }
+  });
+};
+
 ApiUtil.fetchAllGroups = function(){
   $.ajax({
     url: "/api/groups",
