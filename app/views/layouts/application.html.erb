@@ -7,10 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<script type"text/javascript">
+
+  window.FightClub = window.FightClub || {}
+
+  window.FightClub.logoUrl = "<%= image_path('logo.png') %>"
+
+</script>
 <img class="homepage-banner" src="<%=image_path("homepage_banner.jpg")%>"/>
 
 <section class="container">
-
 
 
 
