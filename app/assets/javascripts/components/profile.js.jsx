@@ -1,10 +1,14 @@
 var Profile = React.createClass({
 
+  mixins: [React.addons.LinkedStateMixin],
+
   getInitialState: function(){
     return ({
       user: UserStore.currentUser(),
       profileImgUrl: "",
-      profileImgFile: null
+      profileImgFile: null,
+      profileNameEdit: false,
+      profileName: "",
     });
   },
 
@@ -20,7 +24,8 @@ var Profile = React.createClass({
   _changed: function(){
     this.setState({
       user: UserStore.currentUser(),
-      profileImgUrl: UserStore.currentUser().profile_img_url
+      profileImgUrl: UserStore.currentUser().profile_img_url,
+      profileName: UserStore.currentUser().name
     });
   },
 
@@ -44,14 +49,42 @@ var Profile = React.createClass({
 
   _handleSubmit: function(e){
     e.preventDefault();
-
+    var name = this.state.profileName;
     var file = this.state.profileImgFile;
 
     var formData = new FormData();
-    formData.append("user[profile_img]", file);
+    if (file !== null){
+      formData.append("user[profile_img]", file);
+    }
+    formData.append("user[name]", name);
 
     ApiUtil.updateUser(this.state.user.id, formData);
   },
+
+  _editName: function(){
+    if (this.state.profileNameEdit){
+      this.setState({profileNameEdit: false});
+    } else {
+    this.setState({profileNameEdit: true});
+    }
+  },
+
+
+  _textOrHeader: function(){
+    if (this.state.profileNameEdit){
+      return(
+        <input autoFocus onBlur={this._editName}
+          type="text" className="profile-name-input"
+          valueLink={this.linkState("profileName")}/>
+      );
+    } else {
+      return (
+        <h2 className="profile-name-header">
+          {this.state.profileName}
+        </h2>);
+    }
+  },
+
 
   render: function(){
     var html;
@@ -59,7 +92,10 @@ var Profile = React.createClass({
     if (typeof this.state.user !== "undefined"){
       html = (
           <div className="group">
-            <h2 className="profile-name">{this.state.user.name}</h2>
+            <div className="profile-name">
+              {this._textOrHeader()}
+              <button onClick={this._editName} className="profile-name-edit-button"></button>
+            </div>
             <div className="profile-image-container group">
               <img className="profile-image" src={this.state.profileImgUrl}/>
             </div>
@@ -67,10 +103,8 @@ var Profile = React.createClass({
       );
       html2 = (
         <div>
-          <form className="profile-form">
             <input className="profile-form-upload" onChange={this._changeFile} type="file"/>
             <button className="profile-update-button" onClick={this._handleSubmit}>Update Profile</button>
-          </form>
           <h2 className="profile-group-amount">{"Member of " + this.state.user.groups.length + " groups"}</h2>
           <UserGroups groups={this.state.user.groups} />
         </div>);
