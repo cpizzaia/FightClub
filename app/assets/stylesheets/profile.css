@@ -4,11 +4,24 @@
 }
 
 .profile-image {
- float: right;
- width: 240px;
- height: 240px;
- object-fit: cover;
+  height: 240px;
 
+  position: absolute; /* center image fix */
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+
+
+}
+
+.profile-image-container{
+  position: relative;
+  float: right;
+  height: 240px;
+  width: 240px;
+  overflow: hidden;
 }
 
 

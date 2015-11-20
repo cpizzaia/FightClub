@@ -1,11 +1,24 @@
 .toolbar-thumbnail {
  height: 40px;
- width: 40px;
- border-radius: 100px;
- float: right;
- margin: 9px 10px 9px 10px;
- object-fit: cover;
- background-color: grey;
+
+ position: absolute; /* center image fix */
+ top: -9999px;
+ bottom: -9999px;
+ left: -9999px;
+ right: -9999px;
+ margin: auto;
+}
+
+.toolbar-thumbnail-link{
+  float: right;
+  margin: 9px 10px 9px 10px;
+  background-color: white;
+  height: 40px;
+  width: 40px;
+  position: relative;
+  border-radius: 100px;
+  overflow: hidden;
+
 }
 
 .logo > img {

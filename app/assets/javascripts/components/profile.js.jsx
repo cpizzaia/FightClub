@@ -24,7 +24,9 @@ var Profile = React.createClass({
       html = (
           <div className="group">
             <h2 className="profile-name">{this.state.user.name}</h2>
-            <img className="profile-image" src={this.state.user.profile_img_url}/>
+            <div className="profile-image-container group">
+              <img className="profile-image" src={this.state.user.profile_img_url}/>
+            </div>
           </div>
       );
       html2 = (
