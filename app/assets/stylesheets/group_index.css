@@ -27,13 +27,20 @@
   font-family: Whitney, helvetica, arial, sans-serif;
   position: relative;
   top: 134px;
+  transition: opacity 0.5s;
+  opacity: 1;
 }
+
+.group-index-item:hover > .group-index-title{
+  opacity: 0;
+}
+
 
 .group-index-item{
   border-radius: 2px;
   cursor: pointer;
   float: left;
-  margin: 0 9.4px 19px 9.4px;
+  margin: 0 12.6px 19px 12.6px;
   background: white;
   height: 180px;
   position: relative;
