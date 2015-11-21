@@ -27,12 +27,11 @@
   font-family: Whitney, helvetica, arial, sans-serif;
   position: relative;
   top: 134px;
-  transition: opacity 0.3s;
-  opacity: 1;
+  transition: top 0.3s;
 }
 
 .group-index-item:hover > .group-index-title{
-  opacity: 0;
+  top: 160px;
 }
 
 
