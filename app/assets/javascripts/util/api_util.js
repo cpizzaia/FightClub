@@ -39,6 +39,19 @@ ApiUtil.signUserOut = function(callback){
   });
 };
 
+ApiUtil.signUserIn = function(credentials, callback){
+  $.ajax({
+    url: "api/session/",
+    type: "POST",
+    dataType: 'json',
+    data: credentials,
+    success: function(data){
+      ApiActions.receiveUser(data);
+      callback();
+    }
+  });
+};
+
 ApiUtil.fetchAllGroups = function(){
   $.ajax({
     url: "/api/groups",
