@@ -39,10 +39,14 @@
   border-radius: 2px;
   cursor: pointer;
   float: left;
-  margin: 0 12.6px 19px 12.6px;
+  margin-bottom: 38px;
   background: white;
   height: 180px;
   position: relative;
   overflow: hidden;
   width: 308px;
+}
+
+.group-index-item:nth-child(3n+2) {
+  margin: 0 38px;
 }
