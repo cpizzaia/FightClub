@@ -97,7 +97,7 @@ var Profile = React.createClass({
               <button onClick={this._editName} className="profile-name-edit-button"></button>
             </div>
             <div className="profile-image-container group">
-              <img className="profile-image" src={this.state.profileImgUrl}/>
+              <img className="profile-image center-image" src={this.state.profileImgUrl}/>
             </div>
           </div>
       );

@@ -34,8 +34,12 @@ var GroupShow = React.createClass({
 
 
           <div className="group-show-sidebar">
-            <img className="group-show-image" src={this.state.group.image}/>
-            <p className="group-show-member-count">Members: {this.state.group.members.length}</p>
+            <div className="group-show-image-container">
+              <img className="group-show-image center-image" src={this.state.group.image}/>
+            </div>
+            <div className="group-show-details">
+              <p className="group-show-member-count">{"Members: " + this.state.group.members.length}</p>
+            </div>
           </div>
 
         </div>

@@ -37,7 +37,7 @@ var HeaderToolbar = React.createClass({
           <a className="groups-button" href="#/"> Groups </a>
 
             <a className="toolbar-thumbnail-link" href="#/profile" title="profile">
-              <img className="toolbar-thumbnail" src={this.state.user.profile_img_url}/>
+              <img className="toolbar-thumbnail center-image" src={this.state.user.profile_img_url}/>
             </a>
 
 

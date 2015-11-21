@@ -3,16 +3,7 @@
 }
 
 .profile-image {
-  height: 240px;
-
-  position: absolute; /* center image fix */
-  top: -9999px;
-  bottom: -9999px;
-  left: -9999px;
-  right: -9999px;
-  margin: auto;
-
-
+  height: inherit;
 }
 
 .profile-image-container {

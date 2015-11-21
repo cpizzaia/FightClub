@@ -5,13 +5,6 @@
 .group-index-image {
   background: lightgrey;
   width: inherit;
-
-  position: absolute; /* center image fix */
-  top: -9999px;
-  bottom: -9999px;
-  left: -9999px;
-  right: -9999px;
-  margin: auto;
 }
 
 .group-index-title{

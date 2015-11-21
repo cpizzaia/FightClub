@@ -13,7 +13,7 @@ var UserGroups = React.createClass({
           return(
           <div className="profile-group-item group" onClick={this.handleClick.bind(this, group.id)}>
             <div key={group.id} className="profile-group-image-container">
-              <img key={group.image} className="profile-group-image" src={group.image}/>
+              <img key={group.image} className="profile-group-image center-image" src={group.image}/>
             </div>
             <div className="profile-group-title-container">
               <h2 key={group.title} className="profile-group-title">{group.title}</h2>

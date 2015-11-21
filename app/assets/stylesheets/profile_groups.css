@@ -11,7 +11,6 @@
   border-radius: 3px;
   cursor: pointer;
   transition: box-shadow 0.5s;
-  /*box-shadow: 10px 10px 5px #000000;*/
 }
 
 .profile-group-item:hover {
@@ -34,14 +33,6 @@
 
 .profile-group-image {
   width: inherit;
-
-
-  position: absolute; /* center image fix */
-  top: -9999px;
-  bottom: -9999px;
-  left: -9999px;
-  right: -9999px;
-  margin: auto;
 }
 
 

@@ -6,19 +6,8 @@
   z-index: -999;
 }
 
-
-
-
-
 .toolbar-thumbnail {
- height: 40px;
-
- position: absolute; /* center image fix */
- top: -9999px;
- bottom: -9999px;
- left: -9999px;
- right: -9999px;
- margin: auto;
+ height: inherit;
 }
 
 .toolbar-thumbnail-link{

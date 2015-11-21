@@ -67,3 +67,12 @@
     display: block;
     clear: both;
   }
+
+  .center-image {
+    position: absolute; /* center image fix */
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+  }
