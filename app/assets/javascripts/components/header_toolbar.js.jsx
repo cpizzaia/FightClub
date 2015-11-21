@@ -1,5 +1,7 @@
 var HeaderToolbar = React.createClass({
 
+  mixins: [ReactRouter.History],
+
   getInitialState: function(){
     return({user: UserStore.currentUser()});
   },
@@ -17,8 +19,13 @@ var HeaderToolbar = React.createClass({
     this.setState({user: UserStore.currentUser()});
   },
 
+  _clearAndRedirect: function(){
+    this.setState({user: UserStore.currentUser()});
+    this.history.pushState(null, "/");
+  },
+
   _signOut: function(){
-    ApiUtil.signUserOut(this._changed);
+    ApiUtil.signUserOut(this._clearAndRedirect);
   },
 
   render: function(){
