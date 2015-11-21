@@ -1,6 +1,5 @@
 .profile {
   background: rgba(192,192,192, 0.5);
-  height: 500px;
 }
 
 .profile-image {
@@ -80,6 +79,7 @@
 }
 
 .profile-group-amount {
+  margin: 0 280px 0 20px;
   font-weight: bold;
   font-size: 24pt;
   padding-bottom: 10px;

@@ -4,7 +4,7 @@
 
 .group-index-image {
   background: lightgrey;
-  width: 308px;
+  width: inherit;
 
   position: absolute; /* center image fix */
   top: -9999px;

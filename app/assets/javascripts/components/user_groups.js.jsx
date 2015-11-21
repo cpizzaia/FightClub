@@ -8,12 +8,16 @@ var UserGroups = React.createClass({
 
   render: function(){
     return(
-      <div className="group-index group">
+      <div className="profile-group-container group">
         {this.props.groups.map(function(group){
           return(
-          <div onClick={this.handleClick.bind(this, group.id)} key={group.id} className="group-index-item">
-            <img key={group.image} className="group-index-image" src={group.image}/>
-            <h2 key={group.title} className="group-index-title">{group.title}</h2>
+          <div className="profile-group-item group" onClick={this.handleClick.bind(this, group.id)}>
+            <div key={group.id} className="profile-group-image-container">
+              <img key={group.image} className="profile-group-image" src={group.image}/>
+            </div>
+            <div className="profile-group-title-container">
+              <h2 key={group.title} className="profile-group-title">{group.title}</h2>
+            </div>
           </div>
           );
         }.bind(this))}

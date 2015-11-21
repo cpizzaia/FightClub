@@ -1,0 +1,57 @@
+.profile-group-container {
+  width: 700px;
+  margin-left: 20px;
+}
+
+.profile-group-item {
+  background: white;
+  float: left;
+  width: 345px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: box-shadow 0.5s;
+  /*box-shadow: 10px 10px 5px #000000;*/
+}
+
+.profile-group-item:hover {
+  box-shadow: 0px 0px 10px  #ffffff;
+}
+
+.profile-group-item:nth-child(2n+1) {
+  margin-right: 10px;
+}
+
+
+.profile-group-image-container {
+  float: left;
+  position: relative;
+  width: 100px;
+  height: 50px;
+  overflow: hidden;
+
+}
+
+.profile-group-image {
+  width: inherit;
+
+
+  position: absolute; /* center image fix */
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+}
+
+
+.profile-group-title-container {
+  float: right;
+  width: 230px;
+}
+
+.profile-group-title {
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+}
