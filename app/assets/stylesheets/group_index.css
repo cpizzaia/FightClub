@@ -3,7 +3,6 @@
 }
 
 .group-index-image {
-  background: lightgrey;
   width: inherit;
 }
 
@@ -29,7 +28,7 @@
 
 
 .group-index-item{
-  border-radius: 2px;
+  border-radius: 5px;
   cursor: pointer;
   float: left;
   margin-bottom: 38px;
