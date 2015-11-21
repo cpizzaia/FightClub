@@ -5,7 +5,6 @@ class Api::SessionsController < ApplicationController
   end
 
   def create
-    byebug
     @user = User.find_by_credentials(
       params[:user][:useremail],
       params[:user][:password]
@@ -14,7 +13,7 @@ class Api::SessionsController < ApplicationController
       render :new
     else
       login(@user)
-      redirect_to "/"
+      render :show
     end
   end
 

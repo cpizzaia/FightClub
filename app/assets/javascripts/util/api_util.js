@@ -43,6 +43,8 @@ ApiUtil.signUserIn = function(credentials, callback){
   $.ajax({
     url: "api/session/",
     type: "POST",
+    processData: false,
+    contentType: false,
     dataType: 'json',
     data: credentials,
     success: function(data){

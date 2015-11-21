@@ -1,6 +1,6 @@
 var NewSession = React.createClass({
 
-  mixins: [React.addons.LinkedStateMixin],
+  mixins: [React.addons.LinkedStateMixin, ReactRouter.History],
 
   getInitialState: function(){
     return({email: "ryu@capcom.com", password: "123456"});
@@ -13,8 +13,8 @@ var NewSession = React.createClass({
 
     var formData = new FormData();
 
-    formData.append("user[useremail]");
-    formData.append("user[password]");
+    formData.append("user[useremail]", email);
+    formData.append("user[password]", password);
 
     ApiUtil.signUserIn(formData, this._redirect);
   },
