@@ -38,7 +38,7 @@
 
 
   body {
-    background: black
+    background: lightgrey;
   }
 
   .container {
@@ -53,8 +53,20 @@
     transform: translateX(-50%);
     height: 500px;
     display: block;
-    z-index: -999;
+    z-index: -998;
     top: 78px;
+  }
+
+  .homepage-banner-container {
+    position: absolute;
+    height: 578px;
+    background: black;
+    width: 100%;
+    z-index: -999;
+  }
+
+  .homepage-banner-container {
+    background: black;
   }
 
   .welcome-banner{
