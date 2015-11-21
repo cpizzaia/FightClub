@@ -54,6 +54,21 @@ ApiUtil.signUserIn = function(credentials, callback){
   });
 };
 
+ApiUtil.signUserUp = function(credentials, callback){
+  $.ajax({
+    url: "api/users/",
+    type: "POST",
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: credentials,
+    success: function(data){
+      ApiActions.receiveUser(data);
+      callback();
+    }
+  });
+};
+
 ApiUtil.fetchAllGroups = function(){
   $.ajax({
     url: "/api/groups",
