@@ -1,5 +1,7 @@
 class Group < ActiveRecord::Base
   validates :title, :organizer_id, :description, presence: :true
+  has_attached_file :group_img, default_url: "group_missing.jpg"
+  validates_attachment_content_type :group_img, content_type: /\Aimage\/.*\Z/
 
   belongs_to(
     :organizer,

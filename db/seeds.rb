@@ -26,7 +26,7 @@ Group.create({
   title: "Addicted to the Shoryuken",
   description: "Join if you like to dragon punch",
   organizer_id: User.first.id,
-  image: "http://ih0.redbubble.net/image.6153527.3451/sticker,375x360.png",
+  group_img: File.new("#{Rails.root}/app/assets/images/shoryuken.png"),
   city: "New York",
   state: "NY"
 })
@@ -35,7 +35,6 @@ Group.create({
   title: "Test Group 2",
   description: "who cares",
   organizer_id: User.first.id,
-  image:"http://static.zerochan.net/Street.Fighter.full.172203.jpg",
   city: "New York",
   state: "NY"
 })
@@ -44,7 +43,6 @@ Group.create({
   title: "Test Group 3",
   description: "who cares",
   organizer_id: User.first.id,
-  image:"http://static.zerochan.net/Street.Fighter.full.172203.jpg",
   city: "New York",
   state: "NY"
 })
@@ -53,7 +51,6 @@ Group.create({
   title: "Test Group 4",
   description: "who cares",
   organizer_id: User.first.id,
-  image:"http://static.zerochan.net/Street.Fighter.full.172203.jpg",
   city: "New York",
   state: "NY"
 })
