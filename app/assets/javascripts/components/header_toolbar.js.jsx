@@ -33,7 +33,7 @@ var HeaderToolbar = React.createClass({
       return(
         <section className="header-toolbar group">
 
-          <h1 className="logo"> <img src={FightClub.logoUrl}/> </h1>
+          <a href="#/" className="logo"> <img src={FightClub.logoUrl}/> </a>
           <a className="groups-button" href="#/"> Groups </a>
 
             <a className="toolbar-thumbnail-link" href="#/profile" title="profile">
