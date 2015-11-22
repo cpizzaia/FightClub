@@ -29,7 +29,7 @@ var GroupIndex = React.createClass({
         {this.state.groups.map(function(group){
           return(
           <div onClick={this.handleClick.bind(this, group.id)} key={group.id} className="group-index-item">
-            <img key={group.image} className="group-index-image center-image" src={group.image}/>
+            <img key={group.image} className="group-index-image center-image" src={group.group_img_url}/>
             <h2 key={group.title} className="group-index-title">{group.title}</h2>
           </div>
           );

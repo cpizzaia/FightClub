@@ -1,7 +1,9 @@
 json.extract!(
   group,
-  :id, :title, :organizer_id, :description, :image, :city, :state
+  :id, :title, :organizer_id, :description, :city, :state
 )
+
+json.group_img_url asset_path(group.group_img.url)
 
 if show_members
   json.members do

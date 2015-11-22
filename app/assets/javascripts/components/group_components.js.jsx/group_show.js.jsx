@@ -46,7 +46,7 @@ var GroupShow = React.createClass({
           <div className="group-show-sidebar group">
 
             <div className="group-show-image-container">
-              <img className="group-show-image center-image" src={this.state.group.image}/>
+              <img className="group-show-image center-image" src={this.state.group.group_img_url}/>
             </div>
 
             <section className="group-show-details">
