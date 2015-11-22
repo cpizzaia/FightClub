@@ -33,12 +33,15 @@ var GroupShow = React.createClass({
               <img className="group-show-image center-image" src={this.state.group.image}/>
             </div>
 
-            <ul className="group-show-details">
+            <section className="group-show-details">
+              <h1 className="group-show-location">{this.state.group.city + ", " + this.state.group.state}</h1>
 
+              <ul>
                 <li className="group-show-detail">{"Members: " + this.state.group.members.length}</li>
                 <li className="group-show-detail">{"Events: " + this.state.group.events.length}</li>
+              </ul>
 
-            </ul>
+            </section>
 
             <div className="group-show-organizer group">
               <h2 className="group-show-organizer-header">Organizer:</h2>
