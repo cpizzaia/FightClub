@@ -1,6 +1,6 @@
 json.extract!(
   group,
-  :id, :title, :organizer_id, :description, :image
+  :id, :title, :organizer_id, :description, :image, :city, :state
 )
 
 if show_members
