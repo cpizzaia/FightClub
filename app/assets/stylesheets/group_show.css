@@ -34,7 +34,8 @@
   border-radius: 3px;
   padding: 5px 10px;
   display: block;
-  transition: color 0.5s, background 0.5s;
+  margin: 0 1px;
+  transition: color 0.3s, background 0.3s;
 }
 .group-nav-bar-link-left:hover, .group-nav-bar-link-right:hover {
   color: white;
@@ -50,15 +51,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
 .group-show-image {
   width: inherit;
 }
@@ -71,21 +63,47 @@
   margin: auto;
 }
 
-.group-show-description{
+.group-show-description-container {
   float: right;
-  height: 200px;
-  width: 770px;
-  padding: 10px;
+  width: 790px;
   margin-bottom: 12px;
   border-radius: inherit;
   background: white;
 }
 
-.group-show-sidebar{
+
+.group-show-description {
+  color: rgba(0, 0, 0, 0.670588);
+  font-size: 16px;
+  padding: 18px;
+}
+
+.group-show-sidebar {
   float: left;
   width: 200px;
   background: white;
   border-radius: inherit;
+}
+
+.group-show-lower-description {
+  border-top: 1px solid #ddd;
+  padding: 18px;
+}
+
+.group-join {
+
+  margin-top: 5px;
+  color: white;
+  background: red;
+  border-radius: 3px;
+  padding: 5px 10px;
+  float: right;
+  font-weight: bold;
+  transition: background 0.2s
+}
+
+.group-join:hover {
+  background: darkred;
 }
 
 

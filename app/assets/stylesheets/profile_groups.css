@@ -10,7 +10,7 @@
   margin-bottom: 10px;
   border-radius: 3px;
   cursor: pointer;
-  transition: box-shadow 0.5s;
+  transition: box-shadow 0.3s;
 }
 
 .profile-group-item:hover {
