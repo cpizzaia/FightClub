@@ -18,3 +18,7 @@ if show_events
     end
   end
 end
+
+json.organizer do
+   json.partial!('api/users/user', user: group.organizer, show_groups: false)
+end

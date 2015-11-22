@@ -16,5 +16,3 @@ unless user.nil?
     end
   end
 end
-
-json.logo_url asset_path('logo.png')

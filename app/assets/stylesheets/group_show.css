@@ -15,16 +15,16 @@
   height: 200px;
   width: 770px;
   padding: 10px;
-  margin-left: 20px;
   margin-bottom: 12px;
   border-radius: 3px;
-  background: grey;
+  background: white;
 }
 
 
 .group-show-sidebar{
+  float: left;
   width: 200px;
-  background: grey;
+  background: white;
   border-radius: 3px;
 }
 
@@ -36,10 +36,9 @@
 }
 
 .group-event-index-container{
-  background: grey;
+  background: white;
   border-radius: 3px;
   padding: 10px;
-  margin-left: 20px;
   width: 770px;
   float: right;
 }
@@ -63,10 +62,30 @@
   font-size: 16px;
 }
 .group-show-details {
-  width: calc(100%-40px);
   padding: 0 20px;
 }
 
 .group-show-member-count {
   font-size: 13px;
+}
+
+.group-show-organizer {
+  border-top: 1px solid #ddd;
+  padding: 20px;
+}
+
+.group-show-oragnizer-name {
+  float: left;
+}
+
+.group-show-organizer-image-container {
+  float: right;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+}
+
+.group-show-organizer-image {
+  height: inherit;
 }
