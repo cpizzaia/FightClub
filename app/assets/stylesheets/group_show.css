@@ -20,7 +20,6 @@
   background: white;
 }
 
-
 .group-show-sidebar{
   float: left;
   width: 200px;
@@ -28,39 +27,7 @@
   border-radius: 3px;
 }
 
-.group-event-index-header{
-  font-family: Whitney, helvetica, arial, sans-serif;
-  font-size: 28px;
-  font-weight: bold;
-  letter-spacing: -0.5px;
-}
 
-.group-event-index-container{
-  background: white;
-  border-radius: 3px;
-  padding: 10px;
-  width: 770px;
-  float: right;
-}
-
-.group-event-index-item-container{
-  border-bottom: 1px solid black;
-  padding: 15px;
-}
-
-.group-event-index-item-container > *{
-  font-family: Whitney, helvetica, arial, sans-serif;
-}
-
-.group-event-index-title {
-  padding-bottom: 15px;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.group-event-index-address{
-  font-size: 16px;
-}
 .group-show-details {
   padding: 0 20px;
 }
