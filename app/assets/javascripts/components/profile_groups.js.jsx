@@ -1,4 +1,4 @@
-var UserGroups = React.createClass({
+var ProfileGroups = React.createClass({
 
   mixins: [ReactRouter.History],
 
