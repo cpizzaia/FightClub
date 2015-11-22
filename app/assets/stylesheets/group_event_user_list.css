@@ -1,0 +1,14 @@
+.group-event-user-list {
+}
+
+.group-event-user {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  float: left;
+  overflow: hidden;
+}
+
+.group-event-user-image{
+  height: inherit;
+}
