@@ -38,7 +38,7 @@ var GroupShow = React.createClass({
             </article>
             <section className="group-show-lower-description group">
               <h2 className="group-description-noun">{"We're " + this.state.group.members.length + " Members"}</h2>
-              <a href="#" className="group-join">Join Us!</a>
+              <a href="#" className="group-join">Join</a>
               <GroupMemberList members={this.state.group.members.slice(0,10)} />
             </section>
           </section>
