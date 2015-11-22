@@ -23,6 +23,14 @@ var GroupShow = React.createClass({
       html = (
         <div className="group-show-container group">
 
+          <section className="group-show-header">
+            <h1 className="group-show-title">{this.state.group.title}</h1>
+            <nav className="group-show-nav group">
+              <a className="group-nav-bar-link-left" href={"#/group" + this.state.group.id}>Home</a>
+              <a className="group-nav-bar-link-right" href={"#/group" + this.state.group.id}>Add Event</a>
+            </nav>
+          </section>
+
           <article className="group-show-description">
             {this.state.group.description}
           </article>
