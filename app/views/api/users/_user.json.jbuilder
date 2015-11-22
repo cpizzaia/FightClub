@@ -2,7 +2,7 @@
 unless user.nil?
   json.extract!(
     user,
-    :id, :useremail, :name
+    :id, :name
   )
 
   json.profile_img_url asset_path(user.profile_img.url)
