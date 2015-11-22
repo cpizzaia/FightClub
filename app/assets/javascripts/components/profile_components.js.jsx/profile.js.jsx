@@ -103,7 +103,9 @@ var Profile = React.createClass({
       );
       html2 = (
         <div>
-            <input className="profile-form-upload" onChange={this._changeFile} type="file"/>
+            <label className="profile-form-upload">Choose Picture
+              <input onChange={this._changeFile} type="file"/>
+            </label>
             <button className="profile-update-button" onClick={this._handleSubmit}>Update Profile</button>
           <h2 className="profile-group-amount">{"Member of " + this.state.user.groups.length + " groups"}</h2>
           <ProfileGroups groups={this.state.user.groups} />

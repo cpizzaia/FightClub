@@ -50,14 +50,29 @@
 
 .profile-form-upload {
   background: white;
+  color: black;
   float: right;
-  width: 100px;
   margin-right: 20px;
+  font-family: Whitney, helvetica, arial, sans-serif;
+  font-size: 16px;
+  padding: 3px 7px;
+  border-radius: 3px;
+  transition: background 0.5s;
 }
+
+.profile-form-upload:hover {
+  background: lightgrey;
+}
+
+.profile-form-upload > input {
+  display: none;
+}
+
+
 
 .profile-update-button{
   background: red;
-  padding: 3px 19px;
+  padding: 3px 7.5px;
   border-radius: 3px;
   color: white;
   float: right;
