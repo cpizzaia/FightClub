@@ -11,7 +11,7 @@ var ProfileGroups = React.createClass({
       <div className="profile-group-container group">
         {this.props.groups.map(function(group){
           return(
-          <div className="profile-group-item group" onClick={this.handleClick.bind(this, group.id)}>
+          <div key={group.id} className="profile-group-item group" onClick={this.handleClick.bind(this, group.id)}>
             <div key={group.id} className="profile-group-image-container">
               <img key={group.image} className="profile-group-image center-image" src={group.image}/>
             </div>
