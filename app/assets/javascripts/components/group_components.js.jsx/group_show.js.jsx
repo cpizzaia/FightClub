@@ -35,8 +35,8 @@ var GroupShow = React.createClass({
 
             <ul className="group-show-details">
 
-                <li className="group-show-member-count">{"Members: " + this.state.group.members.length}</li>
-                <li className="group-show-member-count">{"Events: " + this.state.group.events.length}</li>
+                <li className="group-show-detail">{"Members: " + this.state.group.members.length}</li>
+                <li className="group-show-detail">{"Events: " + this.state.group.events.length}</li>
 
             </ul>
 
