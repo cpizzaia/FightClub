@@ -10,22 +10,78 @@
 .group-create-modal {
   background: white;
   width: 500px;
-  margin: auto;
-  margin-top: 300px;
   border-radius: 3px;
   padding: 20px;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
 }
 
 .group-create-exit {
   float: right;
 }
 
-.group-create-input {
+.group-create-input, .group-create-input-zipcode {
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 6px 12px;
+  width: 434px;
+  transition: box-shadow 0.3s;
+}
+
+.group-create-input-zipcode {
+  width: 45px;
+}
+
+.group-create-input:focus, .group-create-input-zipcode:focus {
+  box-shadow: 0px 0px 10px #ccc;
 }
 
 .group-create-label {
+  padding: 20px;
+}
+
+.group-image-button > input {
+  display: none;
+}
+
+.group-image-button {
+  padding: 10px 20px;
+  background: white;
+  border-radius: 3px;
+  margin: 0 20px 0 20px;
+  text-align: center;
+  color: #999;
+  border: 2px solid #ccc;
+  transition: box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.group-image-button:hover {
+  box-shadow: 0px 0px 10px #ccc;
+}
+
+.group-form-header {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 20px 0 0 20px;
+}
+
+.group-submit-button {
+  float: right;
+  margin: 20px;
+  padding: 5px 10px;
+  background: #E0393E;
+  border-radius: 3px;
+  color: white;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.group-submit-button:hover {
+  background: darkred;
 }
