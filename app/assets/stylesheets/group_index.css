@@ -7,9 +7,6 @@
 }
 
 .group-index-title{
-  border-radius: inherit;
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
   padding-bottom: 23px;
   padding-left: 18px;
   background: rgba(0,0,0, 0.7);

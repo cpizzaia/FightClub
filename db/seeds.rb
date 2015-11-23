@@ -1,12 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-
 User.create({
   useremail: "ryu@capcom.com",
   name: "Ryu",
@@ -27,6 +18,7 @@ Group.create({
   description: "Join if you like to dragon punch",
   organizer_id: User.first.id,
   group_img: File.new("#{Rails.root}/app/assets/images/shoryuken.png"),
+  member_noun: "Shotos",
   city: "New York",
   state: "NY"
 })
