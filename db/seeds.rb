@@ -12,6 +12,13 @@ User.create({
   profile_img: File.new("#{Rails.root}/app/assets/images/ken.jpg")
 })
 
+User.create({
+  useremail: "feilong@capcom.com",
+  name: "Fei Long",
+  password: "123456",
+  profile_img: File.new("#{Rails.root}/app/assets/images/feilong.png")
+})
+
 
 Group.create({
   title: "Addicted to the Shoryuken",

@@ -17,6 +17,16 @@ var GroupShow = React.createClass({
     this.setState({group: GroupStore.group()});
   },
 
+  _joinGroup: function(e) {
+    e.preventDefault();
+
+    var formData = new FormData();
+
+    formData.append('users_groups[group_id]', this.state.group.id);
+
+    ApiUtil.joinGroup(formData);
+  },
+
   render: function(){
     var html;
     if (typeof this.state.group !== "undefined"){
@@ -38,7 +48,7 @@ var GroupShow = React.createClass({
             </article>
             <section className="group-show-lower-description group">
               <h2 className="group-description-noun">{"We're " + this.state.group.members.length + " " + this.state.group.member_noun}</h2>
-              <a href="#" className="group-join">Join</a>
+              <button onClick={this._joinGroup} className="group-join">Join</button>
               <GroupMemberList members={this.state.group.members.slice(0,10)} />
             </section>
           </section>

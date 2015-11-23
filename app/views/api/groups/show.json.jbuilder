@@ -1,1 +1,1 @@
-json.partial!('group', group: @group, show_members: true, show_events: true)
+json.partial!('api/groups/group', group: @group, show_members: true, show_events: true)

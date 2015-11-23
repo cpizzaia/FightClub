@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :users
     resources :groups
     resources :events
+    resources :users_groups
     resource :session
   end
 end

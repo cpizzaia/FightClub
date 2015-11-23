@@ -95,6 +95,20 @@ ApiUtil.createGroup = function(formData, callback){
   });
 };
 
+ApiUtil.joinGroup = function(formData){
+  $.ajax({
+    url: "api/users_groups/",
+    type: "POST",
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: formData,
+    success: function(data){
+      ApiActions.receiveGroup(data);
+    }
+  });
+};
+
 ApiUtil.fetchGroup = function(id){
   $.ajax({
       url: "api/groups/" + id,
