@@ -80,6 +80,21 @@ ApiUtil.fetchAllGroups = function(){
   });
 };
 
+ApiUtil.createGroup = function(formData, callback){
+  $.ajax({
+    url: "api/groups/",
+    type: "POST",
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: formData,
+    success: function(data){
+      ApiActions.receiveGroup(data);
+      callback(data.id);
+    }
+  });
+};
+
 ApiUtil.fetchGroup = function(id){
   $.ajax({
       url: "api/groups/" + id,

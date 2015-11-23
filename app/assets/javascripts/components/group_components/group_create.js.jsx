@@ -1,6 +1,6 @@
 var GroupCreate = React.createClass({
 
-  mixins: [React.addons.LinkedStateMixin],
+  mixins: [React.addons.LinkedStateMixin, ReactRouter.History],
 
   getInitialState: function(){
     return({
@@ -41,13 +41,21 @@ var GroupCreate = React.createClass({
 
     var formData = new FormData();
 
-    formData.append("group[name]", title);
-    formData.append("group[group_image]", file);
+    if (file !== null){
+      formData.append("group[group_img]", file);
+    }
+
+    formData.append("group[title]", title);
     formData.append("group[description]", description);
-    formData.append("group[memberNoun]", memberNoun);
+    // formData.append("group[member_noun]", memberNoun);
     formData.append("group[zipcode]", zipcode);
 
-    ApiUtil.updateUser(formData);
+
+    ApiUtil.createGroup(formData, this._redirectOnSuccess);
+  },
+
+  _redirectOnSuccess: function(id){
+    this.history.pushState(null, "/groups/" + id);
   },
 
   render: function(){
