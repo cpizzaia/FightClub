@@ -55,6 +55,7 @@ var GroupCreate = React.createClass({
   },
 
   _redirectOnSuccess: function(id){
+    this.props.stopCreateGroup();
     this.history.pushState(null, "/groups/" + id);
   },
 

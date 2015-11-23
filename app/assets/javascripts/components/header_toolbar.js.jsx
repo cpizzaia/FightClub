@@ -34,7 +34,9 @@ var HeaderToolbar = React.createClass({
   },
 
   _stopCreateGroup: function(e){
-    e.preventDefault();
+    if (typeof e !== "undefined"){
+      e.preventDefault();
+    }
     this.setState({createGroup: false});
   },
 
