@@ -6,7 +6,7 @@
   width: inherit;
 }
 
-.group-index-title{
+.group-index-title {
   padding-bottom: 23px;
   padding-left: 18px;
   background: rgba(0,0,0, 0.7);
@@ -17,6 +17,11 @@
   position: relative;
   top: 134px;
   transition: top 0.3s;
+}
+
+.group-index-members {
+  font-size: 13px;
+  font-weight: normal;
 }
 
 .group-index-item:hover > .group-index-title{

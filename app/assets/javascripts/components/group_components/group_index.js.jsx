@@ -30,7 +30,10 @@ var GroupIndex = React.createClass({
           return(
           <div onClick={this.handleClick.bind(this, group.id)} key={group.id} className="group-index-item">
             <img key={group.image} className="group-index-image center-image" src={group.group_img_url}/>
-            <h2 key={group.title} className="group-index-title">{group.title}</h2>
+            <div key={group.title} className="group-index-title">
+              <h2>{group.title}</h2>
+              <p key={group.member_noun} className="group-index-members">{"We're " + group.members.length + " " + group.member_noun}</p>
+            </div>
           </div>
           );
         }.bind(this))}
