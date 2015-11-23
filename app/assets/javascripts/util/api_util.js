@@ -109,6 +109,17 @@ ApiUtil.joinGroup = function(formData){
   });
 };
 
+ApiUtil.leaveGroup = function(group_id){
+  $.ajax({
+    url: "api/users_groups/" + group_id,
+    type: "DELETE",
+    dataType: 'json',
+    success: function(data){
+      ApiActions.receiveGroup(data);
+    }
+  });
+};
+
 ApiUtil.fetchGroup = function(id){
   $.ajax({
       url: "api/groups/" + id,
