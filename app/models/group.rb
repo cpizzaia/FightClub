@@ -1,5 +1,5 @@
 class Group < ActiveRecord::Base
-  validates :title, :organizer_id, :description, presence: :true
+  validates :title, :organizer_id, :description, :city, :state, presence: :true
   has_attached_file :group_img, default_url: "group_missing.jpg"
   validates_attachment_content_type :group_img, content_type: /\Aimage\/.*\Z/
 
@@ -29,4 +29,9 @@ class Group < ActiveRecord::Base
     foreign_key: :group_id,
     primary_key: :id
   )
+
+  def zipcode=(zipcode)
+    self.city = zipcode.to_region(:city => true)
+    self.state = zipcode.to_region(:state => true)
+  end
 end

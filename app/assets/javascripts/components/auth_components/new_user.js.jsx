@@ -22,7 +22,6 @@ var NewUser = React.createClass({
   },
 
   _redirect: function(){
-    debugger;
     this.history.pushState(null, "/profile");
   },
 
