@@ -17,6 +17,7 @@ var ProfileGroups = React.createClass({
             </div>
             <div className="profile-group-title-container">
               <h2 key={group.title} className="profile-group-title">{group.title}</h2>
+              <h3 key={group.member_noun} className="profile-group-members">{group.members.length + " " + group.member_noun}</h3>
             </div>
           </div>
           );

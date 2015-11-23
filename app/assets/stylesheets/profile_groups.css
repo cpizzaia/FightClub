@@ -45,4 +45,9 @@
   color: black;
   font-size: 16px;
   font-weight: bold;
+  padding-top: 2px;
+}
+
+.profile-group-members {
+  padding-top: 10px;
 }

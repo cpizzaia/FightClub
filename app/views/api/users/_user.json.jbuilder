@@ -11,7 +11,7 @@ unless user.nil?
   if show_groups
     json.groups do
       json.array!(user.groups) do |group|
-        json.partial!('api/groups/group', group: group, show_members: false, show_events: false)
+        json.partial!('api/groups/group', group: group, show_members: true, show_events: false)
       end
     end
   end
