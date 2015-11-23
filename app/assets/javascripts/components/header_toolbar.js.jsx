@@ -3,7 +3,7 @@ var HeaderToolbar = React.createClass({
   mixins: [ReactRouter.History],
 
   getInitialState: function(){
-    return({user: UserStore.currentUser()});
+    return({user: UserStore.currentUser(), createGroup: false});
   },
 
   componentDidMount: function(){
@@ -28,13 +28,31 @@ var HeaderToolbar = React.createClass({
     ApiUtil.signUserOut(this._clearAndRedirect);
   },
 
+  _createGroup: function(e){
+    e.preventDefault();
+    this.setState({createGroup: true});
+  },
+
+  _stopCreateGroup: function(e){
+    e.preventDefault();
+    this.setState({createGroup: false});
+  },
+
   render: function(){
+    var groupCreate;
+    if (this.state.createGroup){
+      groupCreate = <GroupCreate stopCreateGroup={this._stopCreateGroup} />;
+    }
     if (typeof this.state.user.id !== "undefined"){
       return(
         <section className="header-toolbar group">
 
+          {groupCreate}
+
           <a href="#/" className="logo"> <img src={FightClub.logoUrl}/> </a>
           <a className="groups-button" href="#/"> Groups </a>
+
+          <button onClick={this._createGroup} className="groups-button"> Create Group </button>
 
             <a className="toolbar-thumbnail-link" href="#/profile" title="profile">
               <img className="toolbar-thumbnail center-image" src={this.state.user.profile_img_url}/>

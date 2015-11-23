@@ -1,5 +1,85 @@
 var GroupCreate = React.createClass({
+
+  mixins: [React.addons.LinkedStateMixin],
+
   getInitialState: function(){
-    return({});
+    return({
+      title: "",
+      description: "",
+      memberNoun: "",
+      zipcode: "",
+      groupImgFile: null,
+      groupImgUrl: ""
+    });
+  },
+
+  _changeFile: function(e){
+    var reader = new FileReader();
+    var file = e.currentTarget.files[0];
+
+
+    reader.onloadend = function() {
+
+      this.setState({ groupImgUrl: reader.result, groupImgFile: file });
+    }.bind(this);
+
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this.setState({ groupImgUrl: "", groupImgFile: null });
+    }
+  },
+
+  _handleSubmit: function(e){
+    e.preventDefault();
+    var title = this.state.title,
+        file = this.state.groupImgFile,
+        description = this.state.description,
+        memberNoun = this.state.memberNoun,
+        zipcode = this.state.zipcode;
+
+    var formData = new FormData();
+
+    formData.append("group[name]", title);
+    formData.append("group[group_image]", file);
+    formData.append("group[description]", description);
+    formData.append("group[memberNoun]", memberNoun);
+    formData.append("group[zipcode]", zipcode);
+
+    ApiUtil.updateUser(formData);
+  },
+
+  render: function(){
+    return(
+      <div className="group-create-background">
+        <form className="group-create-modal group" onSubmit={this._handleSubmit}>
+          <button className="group-create-exit" onClick={this.props.stopCreateGroup}>X</button>
+
+          <label className="group-create-label"> What is your group's name?
+            <input className="group-create-input" type="text" valueLink={this.linkState("title")}/>
+          </label>
+
+          <label> What is your group about?
+            <textarea rows="5" cols="20" valueLink={this.linkState("description")}></textarea>
+          </label>
+
+          <label className="group-create-label"> Where is your group located? (zipcode)
+            <input className="group-create-input" type="text" valueLink={this.linkState("zipcode")}/>
+          </label>
+
+          <label className="group-create-label"> What would you like to call your group members?
+            <input className="group-create-input" type="text" valueLink={this.linkState("memberNoun")}/>
+          </label>
+
+          <label> Choose an image to represent your group
+            <input className="group-create-input" type="file" onChange={this._changeFile}/>
+          </label>
+
+          <button> Create Group </button>
+
+        </form>
+      </div>
+    );
   }
 });

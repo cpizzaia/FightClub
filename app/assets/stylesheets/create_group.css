@@ -1,0 +1,31 @@
+.group-create-background {
+  background: rgba(0,0,0, 0.7);
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  position: absolute;
+  left: 0;
+}
+
+.group-create-modal {
+  background: white;
+  width: 500px;
+  margin: auto;
+  margin-top: 300px;
+  border-radius: 3px;
+  padding: 20px;
+}
+
+.group-create-exit {
+  float: right;
+}
+
+.group-create-input {
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px 12px;
+}
+
+.group-create-label {
+}
