@@ -22,7 +22,11 @@ class Event < ActiveRecord::Base
   )
 
   def start_date
-    self.start_time.inspect
+    self.start_time.strftime('%a %b %d')
+  end
+
+  def start_hour
+    self.start_time.strftime("%l:%M %p")
   end
 
 end
