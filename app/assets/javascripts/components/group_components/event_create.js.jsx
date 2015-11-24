@@ -1,0 +1,68 @@
+var EventCreate = React.createClass({
+
+  mixins: [React.addons.LinkedStateMixin],
+
+  getInitialState: function(){
+    return({
+      title: "",
+      description: "",
+      startTime: "",
+      address: "",
+    });
+  },
+
+  _handleSubmit: function(e){
+    e.preventDefault();
+    var title = this.state.title,
+        description = this.state.description,
+        startTime = this.state.startTime,
+        address = this.state.address;
+
+    var formData = new FormData();
+
+    formData.append("event[title]", title);
+    formData.append("event[description]", description);
+    formData.append("group[address]", address);
+    formData.append("group[start_time]", startTime);
+
+
+    ApiUtil.createEvent(formData, this._redirectOnSuccess);
+  },
+
+  _redirectOnSuccess: function(id){
+    this.props.stopCreateEvent();
+  },
+
+  render: function(){
+    return(
+      <div className="modal-background">
+        <form className="modal-form group" onSubmit={this._handleSubmit}>
+
+          <button className="modal-exit" onClick={this.props.stopCreateEvent}>X</button>
+
+          <h1 className="modal-form-header"> New Event </h1>
+
+          <label className="modal-label"> Name of event
+            <input className="modal-input" type="text" valueLink={this.linkState("title")}/>
+          </label>
+
+          <label className="modal-label"> Description of event
+            <textarea className="modal-input" rows="5" valueLink={this.linkState("description")}></textarea>
+          </label>
+
+          <label className="modal-label"> Location of event
+            <input className="modal-input" type="text" valueLink={this.linkState("address")}/>
+          </label>
+
+          <label className="modal-label"> Start time of event
+            <input className="modal-input" type="text" valueLink={this.linkState("startTime")}/>
+          </label>
+
+          <button className="modal-submit-button"> Create Event </button>
+
+        </form>
+      </div>
+    );
+  }
+
+});

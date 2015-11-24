@@ -1,6 +1,6 @@
 var GroupShow = React.createClass({
   getInitialState: function(){
-    return({group: GroupStore.group()});
+    return({group: GroupStore.group(), createEvent: false});
   },
 
   componentDidMount: function(){
@@ -49,17 +49,37 @@ var GroupShow = React.createClass({
       return;
     }
     else if (this.state.group.organizer.id === currentUser.id) {
-      return <a className="group-nav-bar-link-right" href={"#/group" + this.state.group.id}>Add Event</a>;
+      return <a className="group-nav-bar-link-right" onClick={this._createEvent} href={"#/group" + this.state.group.id}>Add Event</a>;
     } else {
       return;
     }
   },
 
+  _createEvent: function(e){
+    e.preventDefault();
+    this.setState({createEvent: true});
+  },
+
+  _stopCreateEvent: function(e){
+    if (typeof e !== "undefined"){
+      e.preventDefault();
+    }
+    this.setState({createEvent: false});
+  },
+
   render: function(){
     var html;
+    var eventCreate;
+
+    if (this.state.createEvent){
+      eventCreate = <EventCreate stopCreateEvent={this._stopCreateEvent} />;
+    }
+
     if (typeof this.state.group !== "undefined"){
       html = (
         <div className="group-show-container group">
+
+          {eventCreate}
 
           <section className="group-show-header">
             <h1 className="group-show-title">{this.state.group.title}</h1>

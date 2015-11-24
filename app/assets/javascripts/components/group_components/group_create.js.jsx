@@ -47,7 +47,7 @@ var GroupCreate = React.createClass({
 
     formData.append("group[title]", title);
     formData.append("group[description]", description);
-    // formData.append("group[member_noun]", memberNoun);
+    formData.append("group[member_noun]", memberNoun);
     formData.append("group[zipcode]", zipcode);
 
 
@@ -61,32 +61,32 @@ var GroupCreate = React.createClass({
 
   render: function(){
     return(
-      <div className="group-create-background">
-        <form className="group-create-modal group" onSubmit={this._handleSubmit}>
+      <div className="modal-background">
+        <form className="modal-form group" onSubmit={this._handleSubmit}>
 
-          <button className="group-create-exit" onClick={this.props.stopCreateGroup}>X</button>
-          <h1 className="group-form-header"> New Group </h1>
-          <label className="group-create-label"> What is your group's name?
-            <input className="group-create-input" type="text" valueLink={this.linkState("title")}/>
+          <button className="modal-exit" onClick={this.props.stopCreateGroup}>X</button>
+          <h1 className="modal-form-header"> New Group </h1>
+          <label className="modal-label"> What is your group's name?
+            <input className="modal-input" type="text" valueLink={this.linkState("title")}/>
           </label>
 
-          <label className="group-create-label"> What is your group about?
-            <textarea className="group-create-input" rows="5" valueLink={this.linkState("description")}></textarea>
+          <label className="modal-label"> What is your group about?
+            <textarea className="modal-input" rows="5" valueLink={this.linkState("description")}></textarea>
           </label>
 
-          <label className="group-create-label"> Where is your group located? (zipcode)
-            <input className="group-create-input-zipcode" type="text" valueLink={this.linkState("zipcode")}/>
+          <label className="modal-label"> Where is your group located? (zipcode)
+            <input className="modal-input-zipcode" type="text" valueLink={this.linkState("zipcode")}/>
           </label>
 
-          <label className="group-create-label"> What would you like to call your group members?
-            <input className="group-create-input" type="text" valueLink={this.linkState("memberNoun")}/>
+          <label className="modal-label"> What would you like to call your group members?
+            <input className="modal-input" type="text" valueLink={this.linkState("memberNoun")}/>
           </label>
 
-          <label className="group-image-button"> Choose an image to represent your group
-            <input className="group-create-input" type="file" onChange={this._changeFile}/>
+          <label className="modal-image-button"> Choose an image to represent your group
+            <input type="file" onChange={this._changeFile}/>
           </label>
 
-          <button className="group-submit-button"> Create Group </button>
+          <button className="modal-submit-button"> Create Group </button>
 
         </form>
       </div>
