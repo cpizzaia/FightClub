@@ -71,11 +71,11 @@ var GroupShow = React.createClass({
     var html;
     var eventCreate;
 
-    if (this.state.createEvent){
-      eventCreate = <EventCreate stopCreateEvent={this._stopCreateEvent} />;
-    }
 
     if (typeof this.state.group !== "undefined"){
+      if (this.state.createEvent){
+        eventCreate = <EventCreate groupId={this.state.group.id} stopCreateEvent={this._stopCreateEvent} />;
+      }
       html = (
         <div className="group-show-container group">
 

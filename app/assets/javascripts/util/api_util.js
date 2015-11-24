@@ -95,6 +95,21 @@ ApiUtil.createGroup = function(formData, callback){
   });
 };
 
+ApiUtil.createEvent = function(formData, callback){
+  $.ajax({
+    url: "api/events/",
+    type: "POST",
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: formData,
+    success: function(data){
+      ApiActions.receiveGroupEvent(data);
+      callback();
+    }
+  });
+};
+
 ApiUtil.joinGroup = function(formData){
   $.ajax({
     url: "api/users_groups/",
@@ -137,7 +152,7 @@ ApiUtil.fetchAllGroupEvents = function(id){
       type: "GET",
       contentType: "application.json",
       success: function(data){
-        ApiActions.receiveAllGroupEvents(data.events);
+        ApiActions.receiveAllGroupEvents(events);
       }
   });
 };

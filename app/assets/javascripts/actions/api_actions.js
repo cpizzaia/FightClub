@@ -30,6 +30,13 @@ ApiActions.receiveGroupEvents = function(data){
   });
 };
 
+ApiActions.receiveGroupEvent = function(data){
+  AppDispatcher.dispatch({
+    actionType: EventConstants.GROUP_EVENT_RECEIVED,
+    event: data
+  });
+};
+
 ApiActions.receiveEvent = function(data){
   AppDispatcher.dispatch({
     actionType: EventConstants.EVENT_RECEIVED,

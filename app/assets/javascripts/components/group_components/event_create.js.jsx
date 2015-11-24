@@ -17,13 +17,15 @@ var EventCreate = React.createClass({
         description = this.state.description,
         startTime = this.state.startTime,
         address = this.state.address;
+        groupId = this.props.groupId;
 
     var formData = new FormData();
 
     formData.append("event[title]", title);
     formData.append("event[description]", description);
-    formData.append("group[address]", address);
-    formData.append("group[start_time]", startTime);
+    formData.append("event[address]", address);
+    formData.append("event[start_time]", startTime);
+    formData.append("event[group_id]", groupId);
 
 
     ApiUtil.createEvent(formData, this._redirectOnSuccess);
@@ -55,7 +57,7 @@ var EventCreate = React.createClass({
           </label>
 
           <label className="modal-label"> Start time of event
-            <input className="modal-input" type="text" valueLink={this.linkState("startTime")}/>
+            <input className="modal-input" type="datetime-local" valueLink={this.linkState("startTime")}/>
           </label>
 
           <button className="modal-submit-button"> Create Event </button>

@@ -27,8 +27,16 @@
       case GroupConstants.GROUP_RECEIVED:
         GroupStore.storeGroup(payload.group);
         break;
+      case EventConstants.GROUP_EVENT_RECEIVED:
+        GroupStore.addEvent(payload.event);
+        break;
     }
   });
+
+  GroupStore.addEvent = function(event){
+    _group[0].events.push(event);
+    this.changed();
+  };
 
   GroupStore.storeAllGroups = function(groups){
     _groups = groups;
