@@ -71,10 +71,10 @@ var HeaderToolbar = React.createClass({
         <section className="header-toolbar group">
 
           <h1 className="logo"> <img src={FightClub.logoUrl}/> </h1>
-          <a className="groups-button" href="#/"> Groups </a>
+          <a className="header-toolbar-button-left" href="#/"> Groups </a>
 
-          <a className="signout-button" href="#/users/new">Sign Up</a>
-          <a className="signout-button" href="#/session/new">Sign In</a>
+          <a className="header-toolbar-button-right" href="#/users/new">Sign Up</a>
+          <a className="header-toolbar-button-right" href="#/session/new">Sign In</a>
 
         </section>
       );

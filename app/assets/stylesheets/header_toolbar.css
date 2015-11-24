@@ -34,13 +34,27 @@
 }
 
 
-.groups-button {
-  float: left;
+.header-toolbar-button-left, .header-toolbar-button-right {
   width: 120px;
   padding: 7px 18px 7px 18px;
-  background: grey;
   text-align: center;
   margin: 12.8px 5px 12.8px 5px;
-  font-family: sans-serif;
+  font-family: inherit;
   font-weight: bold;
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: inset 0 0 25px white;
+  transition: background 0.3s;
+}
+
+.header-toolbar-button-left {
+  float: left;
+}
+
+.header-toolbar-button-right {
+  float: right;
+}
+
+.header-toolbar-button-right:hover, .header-toolbar-button-left:hover {
+  background: white;
 }
