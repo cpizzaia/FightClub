@@ -1,7 +1,7 @@
 (function(){
 
   var _groups = [];
-  var _group = [];
+  var _group = {};
 
   var GroupStore = window.GroupStore = $.extend({}, EventEmitter.prototype);
 
@@ -34,7 +34,7 @@
   });
 
   GroupStore.addEvent = function(event){
-    _group[0].events.push(event);
+    _group.events.push(event);
     this.changed();
   };
 
@@ -44,12 +44,12 @@
   };
 
   GroupStore.storeGroup = function(group){
-    _group = [group];
+    _group = group;
     this.changed();
   };
 
   GroupStore.clearGroup = function(group){
-    _group = [];
+    _group = {};
   };
 
 
@@ -58,7 +58,7 @@
   };
 
   GroupStore.group = function(){
-    return _group.slice()[0];
+    return _group;
   };
 
   GroupStore.fetchAllGroups = function(){

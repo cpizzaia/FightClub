@@ -72,7 +72,7 @@ var GroupShow = React.createClass({
     var eventCreate;
 
 
-    if (typeof this.state.group !== "undefined"){
+    if (typeof this.state.group.id !== "undefined"){
       if (this.state.createEvent){
         eventCreate = <EventCreate groupId={this.state.group.id} stopCreateEvent={this._stopCreateEvent} />;
       }
