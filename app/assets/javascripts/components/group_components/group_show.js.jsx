@@ -42,6 +42,19 @@ var GroupShow = React.createClass({
     return <button onClick={this._joinGroup} className="group-join">Join</button>;
   },
 
+  _ableToAddEvents: function(){
+    var currentUser = UserStore.currentUser();
+
+    if (typeof currentUser === "undefined") {
+      return;
+    }
+    else if (this.state.group.organizer.id === currentUser.id) {
+      return <a className="group-nav-bar-link-right" href={"#/group" + this.state.group.id}>Add Event</a>;
+    } else {
+      return;
+    }
+  },
+
   render: function(){
     var html;
     if (typeof this.state.group !== "undefined"){
@@ -53,7 +66,7 @@ var GroupShow = React.createClass({
             <nav className="group-show-nav group">
               <a className="group-nav-bar-link-left" href={"#/group" + this.state.group.id}>Home</a>
               <a className="group-nav-bar-link-left" href={"#/group" + this.state.group.id}>Members</a>
-              <a className="group-nav-bar-link-right" href={"#/group" + this.state.group.id}>Add Event</a>
+              {this._ableToAddEvents()}
             </nav>
           </section>
 
