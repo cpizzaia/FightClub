@@ -52,16 +52,16 @@ var HeaderToolbar = React.createClass({
           {groupCreate}
 
           <a href="#/" className="logo"> <img src={FightClub.logoUrl}/> </a>
-          <a className="groups-button" href="#/"> Groups </a>
+          <a className="header-toolbar-button-left" href="#/"> Groups </a>
 
-          <button onClick={this._createGroup} className="groups-button"> Create Group </button>
+          <button onClick={this._createGroup} className="header-toolbar-button-left"> Create Group </button>
 
             <a className="toolbar-thumbnail-link" href="#/profile" title="profile">
               <img className="toolbar-thumbnail center-image" src={this.state.user.profile_img_url}/>
             </a>
 
 
-              <button onClick={this._signOut}className="signout-button"> Sign Out </button>
+              <button onClick={this._signOut} className="header-toolbar-button-right"> Sign Out </button>
 
 
         </section>
