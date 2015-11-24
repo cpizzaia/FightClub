@@ -93,16 +93,17 @@
 .group-join {
   margin-top: 5px;
   color: white;
-  background: #E0393E;
+  background: darkred;
   border-radius: 3px;
   padding: 5px 10px;
   float: right;
   font-weight: bold;
-  transition: background 0.2s
+  transition: background 0.2s;
+  cursor: pointer;
 }
 
 .group-join:hover {
-  background: darkred;
+  background: red;
 }
 
 
