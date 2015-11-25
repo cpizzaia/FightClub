@@ -11,10 +11,13 @@ class Api::UsersEventsController < ApplicationController
   end
 
   def destroy
-    @users_event = UsersEvent.where({event_id: params[:id], user_id: current_user.id}).first
-    @event = @users_event.event
-    @users_event.destroy
-    render "api/events/show"
+    unless current_user.id == Event.find(params[:id]).group.organizer_id
+      current_user == Event.find(params[:id]).group.organizer_id
+      @users_event = UsersEvent.where({event_id: params[:id], user_id: current_user.id}).first
+      @event = @users_event.event
+      @users_event.destroy
+      render "api/events/show"
+    end
   end
 
 end
