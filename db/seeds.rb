@@ -70,7 +70,7 @@ Event.create({
 })
 
 Event.create({
-  start_time: DateTime.new(2016,1,1),
+  start_time: DateTime.new(2016,2,1),
   title: "Punchout Panic",
   description: "Fight all things!",
   group_id: Group.first.id,
@@ -78,7 +78,7 @@ Event.create({
 })
 
 Event.create({
-  start_time: DateTime.new(2016,1,1),
+  start_time: DateTime.new(2016,3,1),
   title: "Haymaker Harvest",
   description: "Fight all things!",
   group_id: Group.first.id,

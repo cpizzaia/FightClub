@@ -13,9 +13,17 @@ if show_members
   end
 end
 
-if show_events
-  json.events do
-    json.array!(group.events) do |event|
+if show_upcoming_events
+  json.upcoming_events do
+    json.array!(group.events.upcoming.order("start_time")) do |event|
+      json.partial!('api/events/event', event: event, show_users: true)
+    end
+  end
+end
+
+if show_past_events
+  json.past_events do
+    json.array!(group.events.past.order("start_time")) do |event|
       json.partial!('api/events/event', event: event, show_users: true)
     end
   end

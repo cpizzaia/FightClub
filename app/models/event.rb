@@ -1,5 +1,7 @@
 class Event < ActiveRecord::Base
   validates :start_time, :title, :description, :group_id, :address, presence: true
+  scope :upcoming, -> {where("start_time > ?", DateTime.now)}
+  scope :past, -> {where("start_time <= ?", DateTime.now)}
 
   belongs_to(
     :group,
@@ -28,5 +30,4 @@ class Event < ActiveRecord::Base
   def start_hour
     self.start_time.strftime("%l:%M %p")
   end
-
 end

@@ -118,7 +118,7 @@ var GroupShow = React.createClass({
 
               <ul>
                 <li className="group-show-detail">{"Members: " + this.state.group.members.length}</li>
-                <li className="group-show-detail">{"Events: " + this.state.group.events.length}</li>
+                <li className="group-show-detail">{"Events: " + this.state.group.upcoming_events.length}</li>
               </ul>
 
             </section>
@@ -135,7 +135,7 @@ var GroupShow = React.createClass({
 
           <div className="group-event-index-container">
             <h1 className="group-event-index-header">Events:</h1>
-            {this.state.group.events.map(function(event){
+            {this.state.group.upcoming_events.map(function(event){
               return (<GroupEventIndex key={event.id} currentUser={this.state.currentUser} event={event}/>);
             }.bind(this))}
           </div>
