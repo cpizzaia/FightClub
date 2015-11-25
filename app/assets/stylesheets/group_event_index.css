@@ -55,16 +55,25 @@
   font-size: 13px;
 }
 
-.join-event {
+.join-event-container {
   height: 40px;
+  width: 80px;
   border-radius: 3px;
-  margin: 10px 0;
-  cursor: pointer;
-  transition: box-shadow 0.3s;
-  background: black;
+  overflow: hidden;
+  position: relative;
+  background:black;
   box-shadow: 0 0 10px black;
+  cursor: pointer;
+  margin: 10px;
+  transition: box-shadow 0.3s;
 }
 
-.join-event:hover {
+.join-event {
+  height: inherit;
+
+
+}
+
+.join-event-container:hover {
   box-shadow:0 0 10px black, inset 0 0 20px red;
 }
