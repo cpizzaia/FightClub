@@ -9,6 +9,8 @@ class Api::UsersEventsController < ApplicationController
       else
         flash[:errors] = @event.errors.full_messages
       end
+    else
+      render json: "User is not in group", status: 401
     end
   end
 
@@ -25,6 +27,7 @@ class Api::UsersEventsController < ApplicationController
   private
 
   def user_included_in_group?
+    return false if current_user.nil?
     Event.find(params[:event_id]).group.members.include?(current_user)
   end
 

@@ -133,6 +133,9 @@ ApiUtil.joinEvent = function(eventId){
     data: JSON.stringify({event_id: eventId}),
     success: function(data){
       ApiActions.receiveGroupEvent(data);
+    },
+    error: function(data){
+      console.log(data);
     }
   });
 };
