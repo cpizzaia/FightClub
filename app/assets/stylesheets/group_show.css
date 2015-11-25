@@ -157,10 +157,16 @@
 .group-event-tab {
   float: left;
   padding: 5px 10px;
-  background: white;
+  background: #ddd;
   color: black;
-  margin: 0 10px;
+  margin-left: 10px;
   border-radius: inherit;
   cursor: pointer;
+  border-bottom: 1px solid grey;
 
+}
+
+.tab-selected {
+  background: white;
+  border-bottom: 1px solid white;
 }

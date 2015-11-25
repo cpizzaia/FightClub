@@ -4,8 +4,7 @@ var GroupShow = React.createClass({
       group: GroupStore.group(),
       createEvent: false,
       currentUser: UserStore.currentUser(),
-      upcoming: true,
-      past: false
+      tabTitle: "Upcoming"
     });
   },
 
@@ -76,13 +75,13 @@ var GroupShow = React.createClass({
   },
 
   _eventFilter: function(){
-    if (this.state.upcoming){
+    if (this.state.tabTitle === "Upcoming"){
       return (
         this.state.group.upcoming_events.map(function(event){
           return (<GroupEventIndex key={event.id} currentUser={this.state.currentUser} event={event}/>);
         }.bind(this))
       );
-    } else if (this.state.past){
+    } else if (this.state.tabTitle === "Past"){
       return (
         this.state.group.past_events.map(function(event){
           return (<GroupEventIndex key={event.id} currentUser={this.state.currentUser} event={event}/>);
@@ -92,16 +91,18 @@ var GroupShow = React.createClass({
   },
 
   _eventType: function(e) {
-    switch (e.currentTarget.innerHTML) {
-      case "Upcoming":
-        this.setState({upcoming: true, past: false});
-        break;
-      case "Past":
-        this.setState({upcoming: false, past: true});
-        break;
-    }
+    this.setState({tabTitle: e.currentTarget.innerHTML});
   },
 
+  _tabs: function() {
+     return ["Upcoming", "Past"].map(function(tab){
+      if (this.state.tabTitle === tab){
+        return <h3 className="group-event-tab tab-selected" onClick={this._eventType}>{tab}</h3>;
+      } else {
+        return <h3 className="group-event-tab" onClick={this._eventType}>{tab}</h3>;
+      }
+    }.bind(this));
+  },
 
   render: function(){
     var html;
@@ -178,8 +179,7 @@ var GroupShow = React.createClass({
             <h1 className="group-event-index-header">Events:</h1>
 
             <nav className="group-event-tab-container group">
-              <h3 className="group-event-tab" onClick={this._eventType}>Upcoming</h3>
-              <h3 className="group-event-tab" onClick={this._eventType}>Past</h3>
+              {this._tabs()}
             </nav>
 
             {this._eventFilter()}
