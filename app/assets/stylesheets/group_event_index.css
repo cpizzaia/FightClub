@@ -3,19 +3,19 @@
   font-size: 28px;
   font-weight: bold;
   letter-spacing: -0.5px;
+  padding: 10px 10px 0 10px;
 }
 
 .group-event-index-container{
   background: white;
   border-radius: inherit;
-  padding: 10px;
-  width: 770px;
+  width: 790px;
   float: right;
 }
 
 .group-event-index-item-container{
   border-bottom: 1px solid black;
-  padding: 15px;
+  padding: 15px 25px;
 }
 
 .group-event-index-item-container > *{
@@ -28,6 +28,43 @@
   font-weight: bold;
 }
 
-.group-event-index-address{
+.group-event-index-details {
+  float: right;
+}
+
+.group-event-index-content {
+  float: left;
+}
+
+.group-event-index-start-date {
   font-size: 16px;
+  color: #333;
+  padding-bottom: 5px;
+}
+
+.group-event-index-start-hour {
+  font-size: 13px;
+  color: #666;
+}
+
+.group-event-index-address {
+
+}
+
+.group-event-index-members {
+  font-size: 13px;
+}
+
+.join-event {
+  height: 40px;
+  border-radius: 3px;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+  background: black;
+  box-shadow: 0 0 10px black;
+}
+
+.join-event:hover {
+  box-shadow:0 0 10px black, inset 0 0 20px red;
 }

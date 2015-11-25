@@ -1,10 +1,15 @@
 var GroupShow = React.createClass({
   getInitialState: function(){
-    return({group: GroupStore.group(), createEvent: false});
+    return({
+      group: GroupStore.group(),
+      createEvent: false,
+      currentUser: UserStore.currentUser()
+    });
   },
 
   componentDidMount: function(){
     GroupStore.addChangeListener(this._changed);
+    UserStore.addChangeListener(this._changed);
     GroupStore.fetchGroup(this.props.routeParams.id);
   },
 
@@ -14,7 +19,10 @@ var GroupShow = React.createClass({
   },
 
   _changed: function(){
-    this.setState({group: GroupStore.group()});
+    this.setState({
+      group: GroupStore.group(),
+      currentUser: UserStore.currentUser()
+     });
   },
 
   _joinGroup: function(e) {
@@ -33,9 +41,8 @@ var GroupShow = React.createClass({
   },
 
   _memberOfGroup: function(){
-    var currentUser = UserStore.currentUser();
     for (var i = 0; i < this.state.group.members.length; i++){
-      if (currentUser.id === this.state.group.members[i].id){
+      if (this.state.currentUser.id === this.state.group.members[i].id){
         return <button onClick={this._leaveGroup} className="group-join">Leave</button>;
       }
     }
@@ -43,12 +50,11 @@ var GroupShow = React.createClass({
   },
 
   _ableToAddEvents: function(){
-    var currentUser = UserStore.currentUser();
 
-    if (typeof currentUser === "undefined") {
+    if (typeof this.state.currentUser === "undefined") {
       return;
     }
-    else if (this.state.group.organizer.id === currentUser.id) {
+    else if (this.state.group.organizer.id === this.state.currentUser.id) {
       return <a className="group-nav-bar-link-right" onClick={this._createEvent} href={"#/group" + this.state.group.id}>Add Event</a>;
     } else {
       return;
