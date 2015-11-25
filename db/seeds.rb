@@ -85,9 +85,19 @@ Event.create({
   address: "Great Wall of China"
 })
 
+Event.create({
+  start_time: DateTime.new(2015,9,1),
+  title: "Fall Fight",
+  description: "Fight all things!",
+  group_id: Group.first.id,
+  address: "Great Wall of China"
+})
+
 
 
 UsersEvent.create({event_id: 1, user_id: User.first.id})
 UsersEvent.create({event_id: 2, user_id: User.first.id})
+UsersEvent.create({event_id: 3, user_id: User.first.id})
+UsersEvent.create({event_id: 4, user_id: User.first.id})
 UsersEvent.create({event_id: 1, user_id: User.all[1].id})
 UsersEvent.create({event_id: 3, user_id: User.all[1].id})
