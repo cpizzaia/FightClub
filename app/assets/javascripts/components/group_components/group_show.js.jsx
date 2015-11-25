@@ -3,7 +3,9 @@ var GroupShow = React.createClass({
     return({
       group: GroupStore.group(),
       createEvent: false,
-      currentUser: UserStore.currentUser()
+      currentUser: UserStore.currentUser(),
+      upcoming: true,
+      past: false
     });
   },
 
@@ -73,6 +75,34 @@ var GroupShow = React.createClass({
     this.setState({createEvent: false});
   },
 
+  _eventFilter: function(){
+    if (this.state.upcoming){
+      return (
+        this.state.group.upcoming_events.map(function(event){
+          return (<GroupEventIndex key={event.id} currentUser={this.state.currentUser} event={event}/>);
+        }.bind(this))
+      );
+    } else if (this.state.past){
+      return (
+        this.state.group.past_events.map(function(event){
+          return (<GroupEventIndex key={event.id} currentUser={this.state.currentUser} event={event}/>);
+        }.bind(this))
+      );
+    }
+  },
+
+  _eventType: function(e) {
+    switch (e.currentTarget.innerHTML) {
+      case "Upcoming":
+        this.setState({upcoming: true, past: false});
+        break;
+      case "Past":
+        this.setState({upcoming: false, past: true});
+        break;
+    }
+  },
+
+
   render: function(){
     var html;
     var eventCreate;
@@ -88,15 +118,19 @@ var GroupShow = React.createClass({
           {eventCreate}
 
           <section className="group-show-header">
+
             <h1 className="group-show-title">{this.state.group.title}</h1>
             <nav className="group-show-nav group">
               <a className="group-nav-bar-link-left" href={"#/group" + this.state.group.id}>Home</a>
               <a className="group-nav-bar-link-left" href={"#/group" + this.state.group.id}>Members</a>
               {this._ableToAddEvents()}
             </nav>
+
           </section>
 
+
           <section className="group-show-description-container">
+
             <article className="group-show-description">
               {this.state.group.description}
             </article>
@@ -105,7 +139,9 @@ var GroupShow = React.createClass({
               {this._memberOfGroup()}
               <GroupMemberList members={this.state.group.members.slice(0,10)} />
             </section>
+
           </section>
+
 
           <div className="group-show-sidebar group">
 
@@ -123,26 +159,28 @@ var GroupShow = React.createClass({
 
             </section>
 
+
             <div className="group-show-organizer group">
+
               <h2 className="group-show-organizer-header">Organizer:</h2>
               <h2 className="group-show-oragnizer-name">{this.state.group.organizer.name}</h2>
               <div className="group-show-organizer-image-container">
                 <img className="group-show-organizer-image center-image" src={this.state.group.organizer.profile_img_url}/>
               </div>
+
             </div>
+
 
           </div>
 
           <div className="group-event-index-container">
+
             <h1 className="group-event-index-header">Events:</h1>
-            {this.state.group.upcoming_events.map(function(event){
-              return (<GroupEventIndex key={event.id} currentUser={this.state.currentUser} event={event}/>);
-            }.bind(this))}
+            <h3 className="group-event-index-tab" onClick={this._eventType}>Upcoming</h3>
+            <h3 className="group-event-index-tab" onClick={this._eventType}>Past</h3>
+            {this._eventFilter()}
+
           </div>
-
-
-
-
 
 
         </div>
