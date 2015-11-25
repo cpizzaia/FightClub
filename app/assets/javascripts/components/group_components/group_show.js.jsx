@@ -78,13 +78,13 @@ var GroupShow = React.createClass({
     if (this.state.tabTitle === "Upcoming"){
       return (
         this.state.group.upcoming_events.map(function(event){
-          return (<GroupEventIndex key={event.id} currentUser={this.state.currentUser} event={event}/>);
+          return (<GroupEventIndex key={event.id} currentUser={this.state.currentUser} upcoming={true} event={event}/>);
         }.bind(this))
       );
     } else if (this.state.tabTitle === "Past"){
       return (
         this.state.group.past_events.map(function(event){
-          return (<GroupEventIndex key={event.id} currentUser={this.state.currentUser} event={event}/>);
+          return (<GroupEventIndex key={event.id} currentUser={this.state.currentUser} upcoming={false} event={event}/>);
         }.bind(this))
       );
     }

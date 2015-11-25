@@ -55,9 +55,12 @@
   font-size: 13px;
 }
 
-.join-event-container {
+.join-event-container, .join-event-container-empty {
   height: 40px;
   width: 80px;
+}
+
+.join-event-container {
   border-radius: 3px;
   overflow: hidden;
   position: relative;
