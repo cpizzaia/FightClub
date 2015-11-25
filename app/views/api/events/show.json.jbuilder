@@ -1,1 +1,1 @@
-json.partial!('event', event: @event, show_users: true)
+json.partial!('api/events/event', event: @event, show_users: true)

@@ -124,6 +124,19 @@ ApiUtil.joinGroup = function(formData){
   });
 };
 
+ApiUtil.joinEvent = function(eventId){
+  $.ajax({
+    url: "api/users_events/",
+    type: "POST",
+    contentType: "application/json",
+    dataType: "json",
+    data: JSON.stringify({event_id: eventId}),
+    success: function(data){
+      ApiActions.receiveGroupEvent(data);
+    }
+  });
+};
+
 ApiUtil.leaveGroup = function(group_id){
   $.ajax({
     url: "api/users_groups/" + group_id,

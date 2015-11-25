@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :groups
     resources :events
     resources :users_groups
+    resources :users_events
     resource :session
   end
 end
