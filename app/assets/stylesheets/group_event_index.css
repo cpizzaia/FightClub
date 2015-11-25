@@ -58,6 +58,7 @@
 .join-event-container, .join-event-container-empty {
   height: 40px;
   width: 80px;
+  margin: 10px;
 }
 
 .join-event-container {
@@ -67,7 +68,6 @@
   background:black;
   box-shadow: 2px 2px 3px black;
   cursor: pointer;
-  margin: 10px;
   transition: box-shadow 0.3s;
 }
 
