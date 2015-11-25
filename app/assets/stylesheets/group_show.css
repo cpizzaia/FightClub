@@ -144,3 +144,23 @@
 .group-show-organizer-image {
   height: inherit;
 }
+
+.group-event-tab-container {
+  background: grey;
+  margin: 10px 10px 0 10px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  padding-top: 5px;
+
+}
+
+.group-event-tab {
+  float: left;
+  padding: 5px 10px;
+  background: white;
+  color: black;
+  margin: 0 10px;
+  border-radius: inherit;
+  cursor: pointer;
+
+}

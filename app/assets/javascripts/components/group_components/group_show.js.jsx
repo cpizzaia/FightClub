@@ -176,8 +176,12 @@ var GroupShow = React.createClass({
           <div className="group-event-index-container">
 
             <h1 className="group-event-index-header">Events:</h1>
-            <h3 className="group-event-index-tab" onClick={this._eventType}>Upcoming</h3>
-            <h3 className="group-event-index-tab" onClick={this._eventType}>Past</h3>
+
+            <nav className="group-event-tab-container group">
+              <h3 className="group-event-tab" onClick={this._eventType}>Upcoming</h3>
+              <h3 className="group-event-tab" onClick={this._eventType}>Past</h3>
+            </nav>
+
             {this._eventFilter()}
 
           </div>

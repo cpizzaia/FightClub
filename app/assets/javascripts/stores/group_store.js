@@ -34,9 +34,9 @@
   });
 
   GroupStore.addEvent = function(event){
-    for (var i = 0; i < _group.events.length; i++){
-      if (_group.events[i].id === event.id){
-        _group.events[i] = event;
+    for (var i = 0; i < _group.upcoming_events.length; i++){
+      if (_group.upcoming_events[i].id === event.id){
+        _group.upcoming_events[i] = event;
         this.changed();
         return;
       }
