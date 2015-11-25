@@ -34,9 +34,17 @@
   });
 
   GroupStore.addEvent = function(event){
+    for (var i = 0; i < _group.events.length; i++){
+      if (_group.events[i].id === event.id){
+        _group.events[i] = event;
+        this.changed();
+        return;
+      }
+    }
     _group.events.push(event);
     this.changed();
   };
+
 
   GroupStore.storeAllGroups = function(groups){
     _groups = groups;

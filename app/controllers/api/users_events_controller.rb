@@ -1,7 +1,6 @@
 class Api::UsersEventsController < ApplicationController
 
   def create
-    byebug
     @users_event = current_user.users_events.new(event_id: params[:event_id])
     if @users_event.save
       @event = @users_event.event

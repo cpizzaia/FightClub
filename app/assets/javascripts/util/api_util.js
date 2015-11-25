@@ -137,6 +137,18 @@ ApiUtil.joinEvent = function(eventId){
   });
 };
 
+ApiUtil.leaveEvent = function(event_id){
+  $.ajax({
+    url: "api/users_events/" + event_id,
+    type: "DELETE",
+    dataType: 'json',
+    success: function(data){
+      ApiActions.receiveGroupEvent(data);
+    }
+  });
+};
+
+
 ApiUtil.leaveGroup = function(group_id){
   $.ajax({
     url: "api/users_groups/" + group_id,

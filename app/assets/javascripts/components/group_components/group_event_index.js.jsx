@@ -4,22 +4,27 @@ var GroupEventIndex = React.createClass({
     for (var i = 0; i < this.props.event.users.length; i++){
       if (this.props.event.users[i].id === this.props.currentUser.id){
         return (
-          <div className="join-event-container" onClick={this._signUp}>
+          <div className="join-event-container" onClick={this._leaveEvent}>
             <img className="join-event center-image" src={FightClub.koUrl}/>
           </div>
         );
       }
     }
     return (
-      <div className="join-event-container" onClick={this._signUp}>
+      <div className="join-event-container" onClick={this._joinEvent}>
         <img className="join-event center-image" src={FightClub.fightUrl}/>
       </div>
     );
   },
 
-  _signUp: function(e){
+  _joinEvent: function(e){
     e.preventDefault();
     ApiUtil.joinEvent(this.props.event.id);
+  },
+
+  _leaveEvent :function(e){
+    e.preventDefault();
+    ApiUtil.leaveEvent(this.props.event.id);
   },
 
   render: function(){
