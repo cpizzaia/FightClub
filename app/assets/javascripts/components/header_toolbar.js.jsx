@@ -3,7 +3,11 @@ var HeaderToolbar = React.createClass({
   mixins: [ReactRouter.History],
 
   getInitialState: function(){
-    return({user: UserStore.currentUser(), createGroup: false});
+    return({
+      user: UserStore.currentUser(),
+      createGroup: false,
+      signIn: false,
+    });
   },
 
   componentDidMount: function(){
@@ -40,16 +44,30 @@ var HeaderToolbar = React.createClass({
     this.setState({createGroup: false});
   },
 
+  _signIn: function(e){
+    e.preventDefault();
+    this.setState({signIn: true});
+  },
+
+  _stopSignIn: function(e){
+    if (typeof e !== "undefined"){
+      e.preventDefault();
+    }
+    this.setState({signIn: false});
+  },
+
   render: function(){
-    var groupCreate;
+    var modal;
     if (this.state.createGroup){
-      groupCreate = <GroupCreate stopCreateGroup={this._stopCreateGroup} />;
+      modal = <GroupCreate stopCreateGroup={this._stopCreateGroup} />;
+    } else if (this.state.signIn){
+      modal = <NewSession stopSignIn={this._stopSignIn} />;
     }
     if (typeof this.state.user.id !== "undefined"){
       return(
         <section className="header-toolbar group">
 
-          {groupCreate}
+          {modal}
 
           <a href="#/" className="logo"> <img src={FightClub.logoUrl}/> </a>
 
@@ -77,6 +95,8 @@ var HeaderToolbar = React.createClass({
       return(
         <section className="header-toolbar group">
 
+          {modal}
+
           <h1 className="logo"> <img src={FightClub.logoUrl}/> </h1>
           <a className="header-toolbar-button-left" href="#/">
             <img className="header-toolbar-button-image center-image" src={FightClub.groups}/>
@@ -85,9 +105,9 @@ var HeaderToolbar = React.createClass({
           <a className="header-toolbar-button-right" href="#/users/new">
             <img className="header-toolbar-button-image center-image" src={FightClub.sign_up}/>
           </a>
-          <a className="header-toolbar-button-right" href="#/session/new">
+          <button className="header-toolbar-button-right" onClick={this._signIn}>
             <img className="header-toolbar-button-image center-image" src={FightClub.sign_in}/>
-          </a>
+          </button>
 
         </section>
       );

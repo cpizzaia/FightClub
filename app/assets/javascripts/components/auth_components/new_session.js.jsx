@@ -16,25 +16,31 @@ var NewSession = React.createClass({
     formData.append("user[useremail]", email);
     formData.append("user[password]", password);
 
-    ApiUtil.signUserIn(formData, this._redirect);
+    ApiUtil.signUserIn(formData, this.props.stopSignIn);
   },
 
-  _redirect: function(){
-    this.history.pushState(null, "/");
-  },
 
   render: function(){
     return(
-      <form className="login-signup-form" onSubmit={this._handleSubmit}>
-        <label className="signup-in-label"> Email
-          <input className="login-input" type="email" valueLink={this.linkState("email")}/>
-        </label>
+      <div className="modal-background">
+        <form className="modal-form group" onSubmit={this._handleSubmit}>
 
-        <label className="signup-in-label"> Password
-          <input className="login-input" type="password" valueLink={this.linkState("password")}/>
-        </label>
-        <button className="login-form-button"> Sign In </button>
-      </form>
+          <button className="modal-exit" onClick={this.props.stopSignIn}>X</button>
+
+          <h1 className="modal-form-header"> Sign In </h1>
+
+          <label className="modal-label"> Email
+            <input className="modal-input" type="email" valueLink={this.linkState("email")}/>
+          </label>
+
+          <label className="modal-label"> Password
+            <input className="modal-input" type="password" valueLink={this.linkState("password")}/>
+          </label>
+
+          <button className="modal-submit-button"> Sign In </button>
+
+        </form>
+      </div>
     );
   }
 });
