@@ -15,13 +15,11 @@ class Api::UsersEventsController < ApplicationController
   end
 
   def destroy
-    if user_is_not_organizer?
-      current_user == Event.find(params[:id]).group.organizer_id
-      @users_event = UsersEvent.where({event_id: params[:id], user_id: current_user.id}).first
-      @event = @users_event.event
-      @users_event.destroy
-      render "api/events/show"
-    end
+    current_user == Event.find(params[:id]).group.organizer_id
+    @users_event = UsersEvent.where({event_id: params[:id], user_id: current_user.id}).first
+    @event = @users_event.event
+    @users_event.destroy
+    render "api/events/show"
   end
 
   private
@@ -29,10 +27,6 @@ class Api::UsersEventsController < ApplicationController
   def user_included_in_group?
     return false if current_user.nil?
     Event.find(params[:event_id]).group.members.include?(current_user)
-  end
-
-  def user_is_not_organizer?
-    current_user.id != Event.find(params[:id]).group.organizer_id
   end
 
 end
