@@ -13,6 +13,7 @@ class Api::UsersGroupsController < ApplicationController
   def destroy
     @users_group = UsersGroup.where({group_id: params[:id], user_id: current_user.id}).first
     @group = @users_group.group
+    @group.all_users_events(current_user.id).destroy_all
     @users_group.destroy
     render "api/groups/show"
   end
