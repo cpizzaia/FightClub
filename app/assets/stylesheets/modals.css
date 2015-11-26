@@ -12,7 +12,7 @@
 .form-background {
   height: inherit;
   z-index: -999;
-  opacity: 0.05;
+  opacity: 0.25;
 }
 
 
@@ -40,6 +40,7 @@
   padding: 6px 12px;
   width: 434px;
   transition: box-shadow 0.3s;
+  background: rgba(255, 255, 255, 1);;
 }
 
 .modal-input-zipcode {
