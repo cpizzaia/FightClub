@@ -35,7 +35,7 @@
 
 
 .header-toolbar-button-left, .header-toolbar-button-right {
-  width: 120px;
+  width: 156px;
   height: 32px;
 
   margin: 12.8px 5px 12.8px 5px;
@@ -50,10 +50,6 @@
 
 .header-toolbar-button-image {
   height: 25px;;
-}
-
-.header-toolbar-button-image-smaller {
-  height: 22px;
 }
 
 .header-toolbar-button-left {
