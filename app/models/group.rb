@@ -35,4 +35,11 @@ class Group < ActiveRecord::Base
     self.city = zipcode.to_region(:city => true)
     self.state = zipcode.to_region(:state => true)
   end
+
+  def all_users_events(user_id)
+    UsersEvent
+    .joins('INNER JOIN events ON events.id = users_events.event_id')
+    .joins('INNER JOIN groups ON groups.id = events.group_id')
+    .where('users_events.user_id = ? AND groups.id = ?', user_id, self.id)
+  end
 end
