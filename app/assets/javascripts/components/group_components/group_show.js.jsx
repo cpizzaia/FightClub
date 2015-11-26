@@ -123,9 +123,9 @@ var GroupShow = React.createClass({
   _tabs: function() {
      return ["Upcoming", "Past"].map(function(tab){
       if (this.state.tabTitle === tab){
-        return <h3 key={tab} className="group-event-tab tab-selected" onClick={this._eventType}>{tab}</h3>;
+        return <h3 key={tab} className="group-event-tab tab-selected" onClick={this._eventType}>{tab + " (" +this.state.group.upcoming_events.length + ")"}</h3>;
       } else {
-        return <h3 key={tab} className="group-event-tab" onClick={this._eventType}>{tab}</h3>;
+        return <h3 key={tab} className="group-event-tab" onClick={this._eventType}>{tab + " (" + this.state.group.past_events.length + ")"}</h3>;
       }
     }.bind(this));
   },
