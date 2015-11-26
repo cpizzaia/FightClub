@@ -45,9 +45,12 @@ var GroupCreate = React.createClass({
       formData.append("group[group_img]", file);
     }
 
+    if (memberNoun !== ""){
+      formData.append("group[member_noun]", memberNoun);
+    }
+
     formData.append("group[title]", title);
     formData.append("group[description]", description);
-    formData.append("group[member_noun]", memberNoun);
     formData.append("group[zipcode]", zipcode);
 
 

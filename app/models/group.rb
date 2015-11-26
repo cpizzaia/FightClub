@@ -1,4 +1,5 @@
 class Group < ActiveRecord::Base
+
   validates :title, :organizer_id, :description, :city, :state, presence: :true
 
   has_attached_file :group_img, default_url: "group_missing.jpg"
