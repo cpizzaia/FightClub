@@ -13,7 +13,7 @@ ApiUtil.fetchCurrentUser= function(){
   });
 };
 
-ApiUtil.updateUser = function(id, formData){
+ApiUtil.updateUser = function(id, formData, callback){
   $.ajax({
     url: "api/users/" + id,
     type: "PATCH",
@@ -23,6 +23,7 @@ ApiUtil.updateUser = function(id, formData){
     data: formData,
     success: function(data){
       ApiActions.receiveUser(data);
+      callback();
     }
   });
 };
@@ -135,7 +136,6 @@ ApiUtil.joinEvent = function(eventId){
       ApiActions.receiveGroupEvent(data);
     },
     error: function(data){
-      console.log(data);
     }
   });
 };

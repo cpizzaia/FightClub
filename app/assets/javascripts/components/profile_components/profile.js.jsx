@@ -9,6 +9,7 @@ var Profile = React.createClass({
       profileImgFile: null,
       profileNameEdit: false,
       profileName: "",
+      updated: false,
     });
   },
 
@@ -58,7 +59,7 @@ var Profile = React.createClass({
     }
     formData.append("user[name]", name);
 
-    ApiUtil.updateUser(this.state.user.id, formData);
+    ApiUtil.updateUser(this.state.user.id, formData, this._updated);
   },
 
   _editName: function(){
@@ -85,10 +86,23 @@ var Profile = React.createClass({
     }
   },
 
+  _updated: function(){
+    this.setState({updated: true});
+
+    window.setTimeout(function(){
+      this._removeUpdated();
+    }.bind(this), 2000);
+  },
+
+  _removeUpdated: function(){
+    this.setState({updated: false});
+  },
+
 
   render: function(){
     var html;
     var html2;
+    var html3;
     if (typeof this.state.user.id !== "undefined"){
       html = (
           <div className="group">
@@ -109,10 +123,16 @@ var Profile = React.createClass({
             <button className="profile-update-button" onClick={this._handleSubmit}>Update Profile</button>
           <h2 className="profile-group-amount">{"Member of " + this.state.user.groups.length + " groups"}</h2>
           <ProfileGroups groups={this.state.user.groups} />
-        </div>);
+        </div>
+      );
+      if(this.state.updated) {
+        html3 = (
+          <h2 className="status-banner"> Profile Updated </h2>
+        );
+      }
     }
     return (
-      <div className="profile">{html}{html2} </div>
+      <div className="profile">{html3}{html}{html2} </div>
     );
   }
 });
