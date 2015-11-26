@@ -7,6 +7,7 @@ var HeaderToolbar = React.createClass({
       user: UserStore.currentUser(),
       createGroup: false,
       signIn: false,
+      signUp: false
     });
   },
 
@@ -56,12 +57,26 @@ var HeaderToolbar = React.createClass({
     this.setState({signIn: false});
   },
 
+  _signUp: function(e){
+    e.preventDefault();
+    this.setState({signUp: true});
+  },
+
+  _stopSignUp: function(e){
+    if (typeof e !== "undefined"){
+      e.preventDefault();
+    }
+    this.setState({signUp: false});
+  },
+
   render: function(){
     var modal;
     if (this.state.createGroup){
       modal = <GroupCreate stopCreateGroup={this._stopCreateGroup} />;
     } else if (this.state.signIn){
       modal = <NewSession stopSignIn={this._stopSignIn} />;
+    } else if (this.state.signUp){
+      modal = <NewUser stopSignUp={this._stopSignUp} />;
     }
     if (typeof this.state.user.id !== "undefined"){
       return(
@@ -102,9 +117,10 @@ var HeaderToolbar = React.createClass({
             <img className="header-toolbar-button-image center-image" src={FightClub.groups}/>
           </a>
 
-          <a className="header-toolbar-button-right" href="#/users/new">
+          <button className="header-toolbar-button-right" onClick={this._signUp}>
             <img className="header-toolbar-button-image center-image" src={FightClub.sign_up}/>
-          </a>
+          </button>
+
           <button className="header-toolbar-button-right" onClick={this._signIn}>
             <img className="header-toolbar-button-image center-image" src={FightClub.sign_in}/>
           </button>

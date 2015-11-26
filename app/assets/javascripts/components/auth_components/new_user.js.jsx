@@ -22,26 +22,33 @@ var NewUser = React.createClass({
   },
 
   _redirect: function(){
+    this.props.stopSignUp();
     this.history.pushState(null, "/profile");
   },
 
   render: function(){
     return(
-      <form className="login-signup-form" onSubmit={this._handleSubmit}>
+      <div className="modal-background">
+        <form className="modal-form group" onSubmit={this._handleSubmit}>
 
-        <label className="signup-in-label"> Name
-          <input className="login-input" type="text" valueLink={this.linkState("name")}/>
-        </label>
+          <button className="modal-exit" onClick={this.props.stopSignUp}>X</button>
 
-        <label className="signup-in-label"> Email
-          <input className="login-input" type="email" valueLink={this.linkState("email")}/>
-        </label>
+          <h1 className="modal-form-header"> Sign Up </h1>
 
-        <label className="signup-in-label"> Password
-          <input className="login-input" type="password" valueLink={this.linkState("password")}/>
-        </label>
-        <button className="login-form-button"> Sign Up </button>
-      </form>
+          <label className="modal-label"> Name
+            <input className="modal-input" type="text" valueLink={this.linkState("name")}/>
+          </label>
+
+          <label className="modal-label"> Email
+            <input className="modal-input" type="email" valueLink={this.linkState("email")}/>
+          </label>
+
+          <label className="modal-label"> Password
+            <input className="modal-input" type="password" valueLink={this.linkState("password")}/>
+          </label>
+          <button className="modal-submit-button"> Sign Up </button>
+        </form>
+      </div>
     );
   }
 });
