@@ -109,9 +109,6 @@
   animation-duration: 2s;
 }
 
-.status-banner.fade-out {
-  opacity: 0;
-}
 
 @-webkit-keyframes fade-out {
     from {opacity: 1;}

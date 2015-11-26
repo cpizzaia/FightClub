@@ -90,14 +90,9 @@ var Profile = React.createClass({
     this.setState({updated: true});
 
     window.setTimeout(function(){
-      this._removeUpdated();
+      this.setState({updated: false});
     }.bind(this), 2000);
   },
-
-  _removeUpdated: function(){
-    this.setState({updated: false});
-  },
-
 
   render: function(){
     var html;

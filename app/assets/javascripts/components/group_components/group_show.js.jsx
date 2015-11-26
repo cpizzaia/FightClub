@@ -4,7 +4,8 @@ var GroupShow = React.createClass({
       group: GroupStore.group(),
       createEvent: false,
       currentUser: UserStore.currentUser(),
-      tabTitle: "Upcoming"
+      tabTitle: "Upcoming",
+      error: "",
     });
   },
 
@@ -37,8 +38,16 @@ var GroupShow = React.createClass({
   },
 
   _leaveGroup: function(e) {
-    e.preventDefault();
-    ApiUtil.leaveGroup(this.state.group.id);
+    if (this.state.group.organizer_id !== this.state.currentUser.id) {
+      e.preventDefault();
+      ApiUtil.leaveGroup(this.state.group.id);
+    } else {
+      this.setState({error: "Owner cannot leave group"});
+
+      window.setTimeout(function(){
+        this.setState({error: ""});
+      }.bind(this), 2000);
+    }
   },
 
   _memberOfGroup: function(){
@@ -105,13 +114,16 @@ var GroupShow = React.createClass({
   },
 
   render: function(){
-    var html;
+    var html, html2;
     var eventCreate;
 
 
     if (typeof this.state.group.id !== "undefined"){
       if (this.state.createEvent){
         eventCreate = <EventCreate groupId={this.state.group.id} stopCreateEvent={this._stopCreateEvent} />;
+      }
+      if (this.state.error !== "") {
+        html2 = <h2 className="group-status-banner"> {this.state.error} </h2>;
       }
       html = (
         <div className="group-show-container group">
@@ -190,7 +202,7 @@ var GroupShow = React.createClass({
         </div>
         );
     }
-    return (<div>{html}</div>);
+    return (<div>{html2}{html}</div>);
   }
 
 
