@@ -54,6 +54,10 @@
   height: 25px;;
 }
 
+.header-toolbar-button-image-smaller {
+  height: 20px;
+}
+
 .header-toolbar-button-left {
   float: left;
 }
