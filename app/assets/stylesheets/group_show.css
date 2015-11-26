@@ -1,6 +1,7 @@
 
 .group-show-container {
   border-radius: 3px;
+  opacity: 0.95;
 }
 
 .group-show-header {
