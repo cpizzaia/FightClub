@@ -36,15 +36,22 @@
 
 .header-toolbar-button-left, .header-toolbar-button-right {
   width: 120px;
-  padding: 7px 18px 7px 18px;
-  text-align: center;
+  height: 32px;
+  /*padding: 7px 18px 7px 18px;*/
+  /*text-align: center;*/
   margin: 12.8px 5px 12.8px 5px;
-  font-family: inherit;
-  font-weight: bold;
+  /*font-family: inherit;
+  font-weight: bold;*/
   border-radius: 3px;
   cursor: pointer;
   box-shadow: inset 0 0 25px white;
   transition: background 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-toolbar-button-image {
+  height: 25px;;
 }
 
 .header-toolbar-button-left {

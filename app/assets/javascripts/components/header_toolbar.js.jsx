@@ -52,16 +52,23 @@ var HeaderToolbar = React.createClass({
           {groupCreate}
 
           <a href="#/" className="logo"> <img src={FightClub.logoUrl}/> </a>
-          <a className="header-toolbar-button-left" href="#/"> Groups </a>
+          
+          <a className="header-toolbar-button-left" href="#/">
+            <img className="header-toolbar-button-image center-image" src={FightClub.groups}/>
+          </a>
 
-          <button onClick={this._createGroup} className="header-toolbar-button-left"> Create Group </button>
+          <button onClick={this._createGroup} className="header-toolbar-button-left">
+            <img className="header-toolbar-button-image center-image" src={FightClub.create_group}/>
+          </button>
 
             <a className="toolbar-thumbnail-link" href="#/profile" title="profile">
               <img className="toolbar-thumbnail center-image" src={this.state.user.profile_img_url}/>
             </a>
 
 
-              <button onClick={this._signOut} className="header-toolbar-button-right"> Sign Out </button>
+              <button onClick={this._signOut} className="header-toolbar-button-right">
+                <img className="header-toolbar-button-image center-image" src={FightClub.sign_out}/>
+              </button>
 
 
         </section>
@@ -71,10 +78,16 @@ var HeaderToolbar = React.createClass({
         <section className="header-toolbar group">
 
           <h1 className="logo"> <img src={FightClub.logoUrl}/> </h1>
-          <a className="header-toolbar-button-left" href="#/"> Groups </a>
+          <a className="header-toolbar-button-left" href="#/">
+            <img className="header-toolbar-button-image center-image" src={FightClub.groups}/>
+          </a>
 
-          <a className="header-toolbar-button-right" href="#/users/new">Sign Up</a>
-          <a className="header-toolbar-button-right" href="#/session/new">Sign In</a>
+          <a className="header-toolbar-button-right" href="#/users/new">
+            <img className="header-toolbar-button-image center-image" src={FightClub.sign_up}/>
+          </a>
+          <a className="header-toolbar-button-right" href="#/session/new">
+            <img className="header-toolbar-button-image center-image" src={FightClub.sign_in}/>
+          </a>
 
         </section>
       );
