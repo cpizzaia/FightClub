@@ -37,7 +37,7 @@ var GroupShow = React.createClass({
 
       ApiUtil.joinGroup(formData);
     } else {
-      this._displayError("Sign up to join groups");
+      this._displayError("Sign in to join groups");
     }
   },
 
@@ -98,7 +98,13 @@ var GroupShow = React.createClass({
     if (this.state.tabTitle === "Upcoming"){
       return (
         this.state.group.upcoming_events.map(function(event){
-          return (<GroupEventIndex key={event.id} displayError={this._displayError} currentUser={this.state.currentUser} upcoming={true} event={event}/>);
+          return (
+            <GroupEventIndex
+              key={event.id}
+              displayError={this._displayError}
+              currentUser={this.state.currentUser}
+              currentUserInGroup={this._currentUserInGroup}
+              upcoming={true} event={event}/>);
         }.bind(this))
       );
     } else if (this.state.tabTitle === "Past"){
@@ -122,6 +128,15 @@ var GroupShow = React.createClass({
         return <h3 className="group-event-tab" onClick={this._eventType}>{tab}</h3>;
       }
     }.bind(this));
+  },
+
+  _currentUserInGroup: function(){
+    for (var i = 0; i < this.state.group.members.length; i++){
+      if (this.state.currentUser.id === this.state.group.members[i].id){
+        return true;
+      }
+    }
+    return false;
   },
 
   render: function(){
