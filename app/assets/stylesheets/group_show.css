@@ -170,29 +170,3 @@
   background: white;
   border-bottom: 1px solid white;
 }
-
-.group-status-banner {
-  background: rgba(0,0,0, 0.7);
-  padding: 80px 0;
-  left: 0;
-  text-align: center;
-  width: 100%;
-  color: white;
-  z-index: 999;
-  position: fixed;
-  opacity: 1;
-  top: 255px;
-  font-size: 26px;
-
-
-  animation-name: fade-out;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-out;
-  animation-duration: 2s;
-}
-
-
-@-webkit-keyframes fade-out {
-    from {opacity: 1;}
-    to {opacity: 0;}
-}

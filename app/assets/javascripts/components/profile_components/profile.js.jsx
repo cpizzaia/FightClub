@@ -122,7 +122,7 @@ var Profile = React.createClass({
       );
       if(this.state.updated) {
         html3 = (
-          <h2 className="status-banner"> Profile Updated </h2>
+          <h2 className="profile-status-banner"> Profile Updated </h2>
         );
       }
     }

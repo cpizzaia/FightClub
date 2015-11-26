@@ -28,13 +28,17 @@ var GroupShow = React.createClass({
   },
 
   _joinGroup: function(e) {
-    e.preventDefault();
+    if (typeof this.state.currentUser.id !== "undefined") {
+      e.preventDefault();
 
-    var formData = new FormData();
+      var formData = new FormData();
 
-    formData.append('users_group[group_id]', this.state.group.id);
+      formData.append('users_group[group_id]', this.state.group.id);
 
-    ApiUtil.joinGroup(formData);
+      ApiUtil.joinGroup(formData);
+    } else {
+      this._displayError("Sign up to join groups");
+    }
   },
 
   _leaveGroup: function(e) {
@@ -42,12 +46,19 @@ var GroupShow = React.createClass({
       e.preventDefault();
       ApiUtil.leaveGroup(this.state.group.id);
     } else {
-      this.setState({error: "Owner cannot leave group"});
-
-      window.setTimeout(function(){
-        this.setState({error: ""});
-      }.bind(this), 2000);
+      this._displayError("User cannot leave own group");
     }
+  },
+
+  _displayError: function(message){
+    this.setState({error: message});
+    this._errorReset();
+  },
+
+  _errorReset: function() {
+    window.setTimeout(function(){
+      this.setState({error: ""});
+    }.bind(this), 2000);
   },
 
   _memberOfGroup: function(){
