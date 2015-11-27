@@ -9,14 +9,112 @@ User.create({
   useremail: "ken@capcom.com",
   name: "Ken",
   password: "123456",
-  profile_img: File.new("#{Rails.root}/app/assets/images/ken.jpg")
+  profile_img: File.new("#{Rails.root}/app/assets/images/ken.gif")
 })
 
 User.create({
   useremail: "feilong@capcom.com",
   name: "Fei Long",
   password: "123456",
-  profile_img: File.new("#{Rails.root}/app/assets/images/feilong.png")
+  profile_img: File.new("#{Rails.root}/app/assets/images/feilong.gif")
+})
+
+User.create({
+  useremail: "cammy@capcom.com",
+  name: "Cammy",
+  password: "123456",
+  profile_img: File.new("#{Rails.root}/app/assets/images/cammy.gif")
+})
+
+User.create({
+  useremail: "chunli@capcom.com",
+  name: "Chun Li",
+  password: "123456",
+  profile_img: File.new("#{Rails.root}/app/assets/images/chun_li.gif")
+})
+
+User.create({
+  useremail: "deejay@capcom.com",
+  name: "Dee Jay",
+  password: "123456",
+  profile_img: File.new("#{Rails.root}/app/assets/images/deejay.gif")
+})
+
+User.create({
+  useremail: "blanka@capcom.com",
+  name: "Blanka",
+  password: "123456",
+  profile_img: File.new("#{Rails.root}/app/assets/images/blanka.gif")
+})
+
+User.create({
+  useremail: "dhalsim@capcom.com",
+  name: "Dhalsim",
+  password: "123456",
+  profile_img: File.new("#{Rails.root}/app/assets/images/dhalsim.gif")
+})
+
+User.create({
+  useremail: "guile@capcom.com",
+  name: "Guile",
+  password: "123456",
+  profile_img: File.new("#{Rails.root}/app/assets/images/guile.gif")
+})
+
+User.create({
+  useremail: "balrog@capcom.com",
+  name: "Balrog",
+  password: "123456",
+  profile_img: File.new("#{Rails.root}/app/assets/images/balrog.gif")
+})
+
+User.create({
+  useremail: "akuma@capcom.com",
+  name: "Akuma",
+  password: "123456",
+  profile_img: File.new("#{Rails.root}/app/assets/images/akuma.gif")
+})
+
+User.create({
+  useremail: "honda@capcom.com",
+  name: "Honda",
+  password: "123456",
+  profile_img: File.new("#{Rails.root}/app/assets/images/honda.gif")
+})
+
+User.create({
+  useremail: "mbison@capcom.com",
+  name: "M. Bison",
+  password: "123456",
+  profile_img: File.new("#{Rails.root}/app/assets/images/mbison.gif")
+})
+
+User.create({
+  useremail: "sagat@capcom.com",
+  name: "Sagat",
+  password: "123456",
+  profile_img: File.new("#{Rails.root}/app/assets/images/sagat.gif")
+})
+
+User.create({
+  useremail: "vega@capcom.com",
+  name: "Vega",
+  password: "123456",
+  profile_img: File.new("#{Rails.root}/app/assets/images/vega.gif")
+})
+
+User.create({
+  useremail: "thawk@capcom.com",
+  name: "T. Hawk",
+  password: "123456",
+  profile_img: File.new("#{Rails.root}/app/assets/images/thawk.gif")
+})
+
+User.create({
+  useremail: "zangief@capcom.com",
+  name: "Zangief",
+  password: "123456",
+  profile_img: File.new("#{Rails.root}/app/assets/images/zangief.gif")
 })
 
 
@@ -54,12 +152,14 @@ Group.create({
   state: "NY"
 })
 
-UsersGroup.create({group_id: 1, user_id: User.first.id})
 UsersGroup.create({group_id: 2, user_id: User.first.id})
 UsersGroup.create({group_id: 3, user_id: User.first.id})
-UsersGroup.create({group_id: 1, user_id: User.all[1].id})
 UsersGroup.create({group_id: 2, user_id: User.all[1].id})
 UsersGroup.create({group_id: 4, user_id: User.all[1].id})
+
+User.all.each do |user|
+  UsersGroup.create({group_id: 1, user_id: user.id})
+end
 
 Event.create({
   start_time: DateTime.new(2016,1,1),

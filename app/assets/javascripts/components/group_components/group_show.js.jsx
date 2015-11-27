@@ -185,7 +185,7 @@ var GroupShow = React.createClass({
             <section className="group-show-lower-description group">
               <h2 className="group-description-noun">{"We're " + this.state.group.members.length + " " + this.state.group.member_noun}</h2>
               {this._memberOfGroup()}
-              <GroupMemberList members={this.state.group.members.slice(0,10)} />
+              <GroupMemberList members={this.state.group.members.slice(0,12)} />
             </section>
 
           </section>
