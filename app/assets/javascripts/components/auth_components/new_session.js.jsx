@@ -26,8 +26,8 @@ var NewSession = React.createClass({
         <form className="modal-form group" onSubmit={this._handleSubmit}>
 
           <img className="form-background center-image" src={FightClub.modal_background} />
+          <div className="modal-exit" onClick={this.props.stopSignIn}>X</div>
 
-          <button className="modal-exit" onClick={this.props.stopSignIn}>X</button>
 
           <h1 className="modal-form-header"> Sign In </h1>
 

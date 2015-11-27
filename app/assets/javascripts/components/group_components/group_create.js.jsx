@@ -69,7 +69,7 @@ var GroupCreate = React.createClass({
 
           <img className="form-background center-image" src={FightClub.modal_background} />
 
-          <button className="modal-exit" onClick={this.props.stopCreateGroup}>X</button>
+          <div className="modal-exit" onClick={this.props.stopCreateGroup}>X</div>
           <h1 className="modal-form-header"> New Group </h1>
           <label className="modal-label"> What is your group's name?
             <input className="modal-input" type="text" valueLink={this.linkState("title")}/>

@@ -33,7 +33,7 @@ var NewUser = React.createClass({
 
           <img className="form-background center-image" src={FightClub.modal_background} />
 
-          <button className="modal-exit" onClick={this.props.stopSignUp}>X</button>
+          <div className="modal-exit" onClick={this.props.stopSignUp}>X</div>
 
           <h1 className="modal-form-header"> Sign Up </h1>
 

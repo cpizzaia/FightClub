@@ -40,7 +40,7 @@ var EventCreate = React.createClass({
       <div className="modal-background">
         <form className="modal-form group" onSubmit={this._handleSubmit}>
 
-          <button className="modal-exit" onClick={this.props.stopCreateEvent}>X</button>
+          <div className="modal-exit" onClick={this.props.stopCreateEvent}>X</div>
 
           <h1 className="modal-form-header"> New Event </h1>
 
