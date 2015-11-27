@@ -117,7 +117,7 @@ User.create({
   profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/zangief.gif")
 })
 
-
+# 
 # Group.create({
 #   title: "Addicted to the Shoryuken",
 #   description: "Join if you like to dragon punch",
@@ -153,161 +153,161 @@ User.create({
 # })
 
 Group.create({
-  title: "Placeholder",
+  title: "Airfield Addicts",
   description: "Join if you like to dragon punch",
   organizer_id: User.first.id,
   group_img: File.new("#{Rails.root}/app/assets/images/stages/airfield.png"),
-  member_noun: "Members",
+  member_noun: "Addicts",
   city: "New York",
   state: "NY"
 })
 
 Group.create({
-  title: "Placeholder",
+  title: "Alley Ambushers",
   description: "Join if you like to dragon punch",
   organizer_id: User.first.id,
   group_img: File.new("#{Rails.root}/app/assets/images/stages/alley.png"),
-  member_noun: "Members",
+  member_noun: "Ambushers",
   city: "New York",
   state: "NY"
 })
 
 Group.create({
-  title: "Placeholder",
+  title: "Brewery Brawlers",
   description: "Join if you like to dragon punch",
   organizer_id: User.first.id,
   group_img: File.new("#{Rails.root}/app/assets/images/stages/brewery.png"),
-  member_noun: "Members",
+  member_noun: "Brawlers",
   city: "New York",
   state: "NY"
 })
 
 Group.create({
-  title: "Placeholder",
+  title: "Bridge Busters",
   description: "Join if you like to dragon punch",
   organizer_id: User.first.id,
   group_img: File.new("#{Rails.root}/app/assets/images/stages/bridge.png"),
-  member_noun: "Members",
+  member_noun: "Busters",
   city: "New York",
   state: "NY"
 })
 
 Group.create({
-  title: "Placeholder",
+  title: "Construction Crazed",
   description: "Join if you like to dragon punch",
   organizer_id: User.first.id,
   group_img: File.new("#{Rails.root}/app/assets/images/stages/constructionsite.png"),
-  member_noun: "Members",
+  member_noun: "Crazies",
   city: "New York",
   state: "NY"
 })
 
 Group.create({
-  title: "Placeholder",
+  title: "Diner Dashers",
   description: "Join if you like to dragon punch",
   organizer_id: User.first.id,
   group_img: File.new("#{Rails.root}/app/assets/images/stages/diner.png"),
-  member_noun: "Members",
+  member_noun: "Dashers",
   city: "New York",
   state: "NY"
 })
 
 Group.create({
-  title: "Placeholder",
+  title: "Jungle Jammers",
   description: "Join if you like to dragon punch",
   organizer_id: User.first.id,
   group_img: File.new("#{Rails.root}/app/assets/images/stages/jungle.png"),
-  member_noun: "Members",
+  member_noun: "Jammers",
   city: "New York",
   state: "NY"
 })
 
 Group.create({
-  title: "Placeholder",
+  title: "Lab Lungers",
   description: "Join if you like to dragon punch",
   organizer_id: User.first.id,
   group_img: File.new("#{Rails.root}/app/assets/images/stages/lab.png"),
-  member_noun: "Members",
+  member_noun: "Lungers",
   city: "New York",
   state: "NY"
 })
 
 Group.create({
-  title: "Placeholder",
+  title: "Olympic Warriors",
   description: "Join if you like to dragon punch",
   organizer_id: User.first.id,
   group_img: File.new("#{Rails.root}/app/assets/images/stages/olympics.png"),
-  member_noun: "Members",
+  member_noun: "Warriors",
   city: "New York",
   state: "NY"
 })
 
 Group.create({
-  title: "Placeholder",
+  title: "Plains Punchers",
   description: "Join if you like to dragon punch",
   organizer_id: User.first.id,
   group_img: File.new("#{Rails.root}/app/assets/images/stages/plains.png"),
-  member_noun: "Members",
+  member_noun: "Punchers",
   city: "New York",
   state: "NY"
 })
 
 Group.create({
-  title: "Placeholder",
+  title: "Railyard Rumblers",
   description: "Join if you like to dragon punch",
   organizer_id: User.first.id,
   group_img: File.new("#{Rails.root}/app/assets/images/stages/railyard.png"),
-  member_noun: "Members",
+  member_noun: "Rumblers",
   city: "New York",
   state: "NY"
 })
 
 Group.create({
-  title: "Placeholder",
+  title: "Rural Rampants",
   description: "Join if you like to dragon punch",
   organizer_id: User.first.id,
   group_img: File.new("#{Rails.root}/app/assets/images/stages/rural.png"),
-  member_noun: "Members",
+  member_noun: "Rampants",
   city: "New York",
   state: "NY"
 })
 
 Group.create({
-  title: "Placeholder",
+  title: "Ship Shooters",
   description: "Join if you like to dragon punch",
   organizer_id: User.first.id,
   group_img: File.new("#{Rails.root}/app/assets/images/stages/ship.png"),
-  member_noun: "Members",
+  member_noun: "Shooters",
   city: "New York",
   state: "NY"
 })
 
 Group.create({
-  title: "Placeholder",
+  title: "Temple Tempests",
   description: "Join if you like to dragon punch",
   organizer_id: User.first.id,
   group_img: File.new("#{Rails.root}/app/assets/images/stages/temple.png"),
-  member_noun: "Members",
+  member_noun: "Tempests",
   city: "New York",
   state: "NY"
 })
 
 Group.create({
-  title: "Placeholder",
+  title: "Town Tumblers",
   description: "Join if you like to dragon punch",
   organizer_id: User.first.id,
   group_img: File.new("#{Rails.root}/app/assets/images/stages/town.png"),
-  member_noun: "Members",
+  member_noun: "Tumblers",
   city: "New York",
   state: "NY"
 })
 
 Group.create({
-  title: "Placeholder",
+  title: "Volcano Valiants",
   description: "Join if you like to dragon punch",
   organizer_id: User.first.id,
   group_img: File.new("#{Rails.root}/app/assets/images/stages/volcano.png"),
-  member_noun: "Members",
+  member_noun: "Valiants",
   city: "New York",
   state: "NY"
 })
