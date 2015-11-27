@@ -1,0 +1,19 @@
+.group-member-item {
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+
+.group-member-name {
+
+}
+
+.group-member-image-container {
+  position: relative;
+  height: 70px;
+  width: 70px;
+  overflow: hidden;
+}
+
+.group-member-item-image {
+  height: inherit;
+}

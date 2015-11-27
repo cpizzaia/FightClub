@@ -6,6 +6,7 @@ var GroupShow = React.createClass({
       currentUser: UserStore.currentUser(),
       tabTitle: "Upcoming",
       error: "",
+      showMembers: false,
     });
   },
 
@@ -148,6 +149,63 @@ var GroupShow = React.createClass({
     return false;
   },
 
+  _showDescription: function(){
+    if (!this.state.showMembers) {
+      return (
+          <section className="group-show-description-container">
+
+            <article className="group-show-description">
+              {this.state.group.description}
+            </article>
+            <section className="group-show-lower-description group">
+              <h2 className="group-description-noun">{"We're " + this.state.group.members.length + " " + this.state.group.member_noun}</h2>
+              {this._memberOfGroup()}
+              <GroupMemberList members={this.state.group.members.slice(0,12)} />
+            </section>
+
+        </section>
+      );
+    }
+  },
+
+  _showEvents: function(){
+    if (!this.state.showMembers) {
+      return (
+        <div className="group-event-index-container">
+
+          <h1 className="group-event-index-header">Events:</h1>
+
+          <nav className="group-event-tab-container group">
+            {this._tabs()}
+          </nav>
+
+          {this._eventFilter()}
+
+        </div>
+      );
+    }
+  },
+
+  _showMembers: function(){
+    if (this.state.showMembers){
+      return (
+        <section className="group-show-description-container">
+          <GroupMembers members={this.state.group.members}/>
+        </section>
+      );
+    }
+  },
+
+  _switchToMembers: function(e){
+    e.preventDefault();
+    this.setState({showMembers: true});
+  },
+
+  _switchToDescription: function(e){
+    e.preventDefault();
+    this.setState({showMembers: false});
+  },
+
   render: function(){
     var html, html2;
     var eventCreate;
@@ -169,26 +227,15 @@ var GroupShow = React.createClass({
 
             <h1 className="group-show-title">{this.state.group.title}</h1>
             <nav className="group-show-nav group">
-              <a className="group-nav-bar-link-left" href={"#/group" + this.state.group.id}>Home</a>
-              <a className="group-nav-bar-link-left" href={"#/group" + this.state.group.id}>Members</a>
+              <button className="group-nav-bar-link-left" onClick={this._switchToDescription}>Home</button>
+              <button className="group-nav-bar-link-left" onClick={this._switchToMembers}>Members</button>
               {this._ableToAddEvents()}
             </nav>
 
           </section>
 
-
-          <section className="group-show-description-container">
-
-            <article className="group-show-description">
-              {this.state.group.description}
-            </article>
-            <section className="group-show-lower-description group">
-              <h2 className="group-description-noun">{"We're " + this.state.group.members.length + " " + this.state.group.member_noun}</h2>
-              {this._memberOfGroup()}
-              <GroupMemberList members={this.state.group.members.slice(0,12)} />
-            </section>
-
-          </section>
+          {this._showDescription()}
+          {this._showMembers()}
 
 
           <div className="group-show-sidebar group">
@@ -221,17 +268,9 @@ var GroupShow = React.createClass({
 
           </div>
 
-          <div className="group-event-index-container">
 
-            <h1 className="group-event-index-header">Events:</h1>
+          {this._showEvents()}
 
-            <nav className="group-event-tab-container group">
-              {this._tabs()}
-            </nav>
-
-            {this._eventFilter()}
-
-          </div>
 
 
         </div>
