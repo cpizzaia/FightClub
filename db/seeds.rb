@@ -2,119 +2,119 @@ User.create({
   useremail: "ryu@capcom.com",
   name: "Ryu",
   password: "123456",
-  profile_img: File.new("#{Rails.root}/app/assets/images/ryu.png")
+  profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/ryu.png")
 })
 
 User.create({
   useremail: "ken@capcom.com",
   name: "Ken",
   password: "123456",
-  profile_img: File.new("#{Rails.root}/app/assets/images/ken.gif")
+  profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/ken.gif")
 })
 
 User.create({
   useremail: "feilong@capcom.com",
   name: "Fei Long",
   password: "123456",
-  profile_img: File.new("#{Rails.root}/app/assets/images/feilong.gif")
+  profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/feilong.gif")
 })
 
 User.create({
   useremail: "cammy@capcom.com",
   name: "Cammy",
   password: "123456",
-  profile_img: File.new("#{Rails.root}/app/assets/images/cammy.gif")
+  profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/cammy.gif")
 })
 
 User.create({
   useremail: "chunli@capcom.com",
   name: "Chun Li",
   password: "123456",
-  profile_img: File.new("#{Rails.root}/app/assets/images/chun_li.gif")
+  profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/chun_li.gif")
 })
 
 User.create({
   useremail: "deejay@capcom.com",
   name: "Dee Jay",
   password: "123456",
-  profile_img: File.new("#{Rails.root}/app/assets/images/deejay.gif")
+  profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/deejay.gif")
 })
 
 User.create({
   useremail: "blanka@capcom.com",
   name: "Blanka",
   password: "123456",
-  profile_img: File.new("#{Rails.root}/app/assets/images/blanka.gif")
+  profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/blanka.gif")
 })
 
 User.create({
   useremail: "dhalsim@capcom.com",
   name: "Dhalsim",
   password: "123456",
-  profile_img: File.new("#{Rails.root}/app/assets/images/dhalsim.gif")
+  profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/dhalsim.gif")
 })
 
 User.create({
   useremail: "guile@capcom.com",
   name: "Guile",
   password: "123456",
-  profile_img: File.new("#{Rails.root}/app/assets/images/guile.gif")
+  profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/guile.gif")
 })
 
 User.create({
   useremail: "balrog@capcom.com",
   name: "Balrog",
   password: "123456",
-  profile_img: File.new("#{Rails.root}/app/assets/images/balrog.gif")
+  profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/balrog.gif")
 })
 
 User.create({
   useremail: "akuma@capcom.com",
   name: "Akuma",
   password: "123456",
-  profile_img: File.new("#{Rails.root}/app/assets/images/akuma.gif")
+  profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/akuma.gif")
 })
 
 User.create({
   useremail: "honda@capcom.com",
   name: "Honda",
   password: "123456",
-  profile_img: File.new("#{Rails.root}/app/assets/images/honda.gif")
+  profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/honda.gif")
 })
 
 User.create({
   useremail: "mbison@capcom.com",
   name: "M. Bison",
   password: "123456",
-  profile_img: File.new("#{Rails.root}/app/assets/images/mbison.gif")
+  profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/mbison.gif")
 })
 
 User.create({
   useremail: "sagat@capcom.com",
   name: "Sagat",
   password: "123456",
-  profile_img: File.new("#{Rails.root}/app/assets/images/sagat.gif")
+  profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/sagat.gif")
 })
 
 User.create({
   useremail: "vega@capcom.com",
   name: "Vega",
   password: "123456",
-  profile_img: File.new("#{Rails.root}/app/assets/images/vega.gif")
+  profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/vega.gif")
 })
 
 User.create({
   useremail: "thawk@capcom.com",
   name: "T. Hawk",
   password: "123456",
-  profile_img: File.new("#{Rails.root}/app/assets/images/thawk.gif")
+  profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/thawk.gif")
 })
 
 User.create({
   useremail: "zangief@capcom.com",
   name: "Zangief",
   password: "123456",
-  profile_img: File.new("#{Rails.root}/app/assets/images/zangief.gif")
+  profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/zangief.gif")
 })
 
 
