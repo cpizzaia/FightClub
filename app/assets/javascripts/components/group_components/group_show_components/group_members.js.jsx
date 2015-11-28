@@ -2,7 +2,7 @@ var GroupMembers = React.createClass({
 
   render: function(){
     return (
-      <div className="group-members-container">
+      <div className="group-show-description-container">
         {this.props.members.map(function(member){
           return (
             <div key={member.id} className="group-member-item group">

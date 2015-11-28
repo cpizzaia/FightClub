@@ -152,7 +152,7 @@ var GroupShow = React.createClass({
   _showDescription: function(){
     if (!this.state.showMembers) {
       return (
-          <GroupShowDescription group={this.state.group} memberOfGroup={this._memberOfGroup}/>
+        <GroupShowDescription group={this.state.group} memberOfGroup={this._memberOfGroup}/>
       );
     }
   },
@@ -168,9 +168,7 @@ var GroupShow = React.createClass({
   _showMembers: function(){
     if (this.state.showMembers){
       return (
-        <section className="group-show-description-container">
           <GroupMembers members={this.state.group.members}/>
-        </section>
       );
     }
   },
