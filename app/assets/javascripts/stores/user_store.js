@@ -52,6 +52,10 @@
     return _currentUser;
   };
 
+  UserStore.user = function(){
+    return _user;
+  };
+
   UserStore.fetchCurrentUser = function(){
     ApiUtil.fetchCurrentUser();
   };

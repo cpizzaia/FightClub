@@ -6,10 +6,13 @@ var GroupMembers = React.createClass({
         {this.props.members.map(function(member){
           return (
             <div key={member.id} className="group-member-item group">
+
               <h2 className="group-member-name">{member.name}</h2>
-              <div className="group-member-image-container">
+
+              <a className="group-member-image-container" href={"#/users/" + member.id}>
                 <img className="group-member-item-image center-image" src={member.profile_img_url}/>
-              </div>
+              </a>
+              
             </div>
           );
         })}

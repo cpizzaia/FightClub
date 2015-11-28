@@ -11,6 +11,7 @@
           <Route path="/profile" component={Profile} />
           <Route path="/groups" component={GroupIndex} />
           <Route path="/groups/:id" component={GroupShow} />
+          <Route path="/users/:id" component={MemberProfile} />
         </Route>
     );
     React.render(<Router>{routes}</Router>, root);
