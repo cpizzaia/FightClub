@@ -152,18 +152,7 @@ var GroupShow = React.createClass({
   _showDescription: function(){
     if (!this.state.showMembers) {
       return (
-          <section className="group-show-description-container">
-
-            <article className="group-show-description">
-              {this.state.group.description}
-            </article>
-            <section className="group-show-lower-description group">
-              <h2 className="group-description-noun">{"We're " + this.state.group.members.length + " " + this.state.group.member_noun}</h2>
-              {this._memberOfGroup()}
-              <GroupMemberList members={this.state.group.members.slice(0,12)} />
-            </section>
-
-        </section>
+          <GroupShowDescription group={this.state.group} memberOfGroup={this._memberOfGroup}/>
       );
     }
   },
