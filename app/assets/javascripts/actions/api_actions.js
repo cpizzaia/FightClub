@@ -2,6 +2,13 @@ var ApiActions = window.ApiActions = function(){
 
 };
 
+ApiActions.receiveCurrentUser = function(data){
+  AppDispatcher.dispatch({
+    actionType: UserConstants.CURRENT_USER_RECEIVED,
+    user: data
+  });
+};
+
 ApiActions.receiveUser = function(data){
   AppDispatcher.dispatch({
     actionType: UserConstants.USER_RECEIVED,

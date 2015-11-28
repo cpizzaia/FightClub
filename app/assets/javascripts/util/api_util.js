@@ -8,6 +8,17 @@ ApiUtil.fetchCurrentUser= function(){
     type: "GET",
     contentType: "application/json",
     success: function(data){
+      ApiActions.receiveCurrentUser(data);
+    }
+  });
+};
+
+ApiUtil.fetchUserById= function(id){
+  $.ajax({
+    url: "/api/users/" + id,
+    type: "GET",
+    contentType: "application/json",
+    success: function(data){
       ApiActions.receiveUser(data);
     }
   });
@@ -22,7 +33,7 @@ ApiUtil.updateUser = function(id, formData, callback){
     dataType: 'json',
     data: formData,
     success: function(data){
-      ApiActions.receiveUser(data);
+      ApiActions.receiveCurrentUser(data);
       callback();
     }
   });
@@ -34,7 +45,7 @@ ApiUtil.signUserOut = function(callback){
     type: "DELETE",
     dataType: 'json',
     success: function(data){
-      ApiActions.receiveUser(data);
+      ApiActions.receiveCurrentUser(data);
       callback();
     }
   });
@@ -49,7 +60,7 @@ ApiUtil.signUserIn = function(credentials, callback){
     dataType: 'json',
     data: credentials,
     success: function(data){
-      ApiActions.receiveUser(data);
+      ApiActions.receiveCurrentUser(data);
       callback();
     }
   });
@@ -64,7 +75,7 @@ ApiUtil.signUserUp = function(credentials, callback){
     dataType: 'json',
     data: credentials,
     success: function(data){
-      ApiActions.receiveUser(data);
+      ApiActions.receiveCurrentUser(data);
       callback();
     }
   });

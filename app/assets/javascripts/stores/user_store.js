@@ -1,6 +1,7 @@
 (function(){
 
   var _user = {};
+  var _currentUser = {};
 
   var UserStore = window.UserStore = $.extend({}, EventEmitter.prototype);
 
@@ -20,6 +21,9 @@
 
   UserStore.dispatcherId = AppDispatcher.register(function(payload){
     switch (payload.actionType) {
+      case UserConstants.CURRENT_USER_RECEIVED:
+        UserStore.storeCurrentUser(payload.user);
+        break;
       case UserConstants.USER_RECEIVED:
         UserStore.store(payload.user);
         break;
@@ -34,17 +38,26 @@
     this.changed();
   };
 
+  UserStore.storeCurrentUser = function(user){
+    _currentUser = user;
+    this.changed();
+  };
+
   UserStore.clearCurrentUser = function(){
     _user = {};
   };
 
 
   UserStore.currentUser = function(){
-    return _user;
+    return _currentUser;
   };
 
   UserStore.fetchCurrentUser = function(){
     ApiUtil.fetchCurrentUser();
+  };
+
+  UserStore.fetchUserById = function(id){
+    ApiUtil.fetchUserById(id);
   };
 
 

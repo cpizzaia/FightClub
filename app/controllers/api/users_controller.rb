@@ -3,7 +3,11 @@ class Api::UsersController < ApplicationController
 
 
   def show
-    @user = current_user
+    if params[:id] == "current_user"
+      @user = current_user
+    else
+      @user = User.find(params[:id])
+    end
   end
 
   def create
