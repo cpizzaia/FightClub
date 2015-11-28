@@ -13,8 +13,6 @@ class Api::GroupsController < ApplicationController
   def create
     @group = current_user.groups_led.new(group_params)
     if @group.save
-      @usersgroup = current_user.users_groups.new({group_id: @group.id})
-      @usersgroup.save
       render :show
     else
       flash[:errors] = @group.errors.full_messages

@@ -128,7 +128,6 @@ Group.create({
   state: "NY"
 })
 
-UsersGroup.create({group_id: 1, user_id: 1})
 
 Group.create({
   title: "Alley Ambushers",
@@ -140,7 +139,7 @@ Group.create({
   state: "NY"
 })
 
-UsersGroup.create({group_id: 2, user_id: 2})
+
 
 Group.create({
   title: "Brewery Brawlers",
@@ -152,7 +151,7 @@ Group.create({
   state: "NY"
 })
 
-UsersGroup.create({group_id: 3, user_id: 3})
+
 
 Group.create({
   title: "Bridge Busters",
@@ -164,7 +163,7 @@ Group.create({
   state: "NY"
 })
 
-UsersGroup.create({group_id: 4, user_id: 4})
+
 
 Group.create({
   title: "Construction Crazed",
@@ -176,7 +175,7 @@ Group.create({
   state: "NY"
 })
 
-UsersGroup.create({group_id: 5, user_id: 5})
+
 
 Group.create({
   title: "Diner Dashers",
@@ -188,7 +187,6 @@ Group.create({
   state: "NY"
 })
 
-UsersGroup.create({group_id: 6, user_id: 6})
 
 Group.create({
   title: "Jungle Jammers",
@@ -200,7 +198,6 @@ Group.create({
   state: "NY"
 })
 
-UsersGroup.create({group_id: 7, user_id: 7})
 
 Group.create({
   title: "Lab Lungers",
@@ -212,7 +209,6 @@ Group.create({
   state: "NY"
 })
 
-UsersGroup.create({group_id: 8, user_id: 8})
 
 Group.create({
   title: "Olympic Warriors",
@@ -224,7 +220,6 @@ Group.create({
   state: "NY"
 })
 
-UsersGroup.create({group_id: 9, user_id: 9})
 
 Group.create({
   title: "Plains Punchers",
@@ -236,7 +231,6 @@ Group.create({
   state: "NY"
 })
 
-UsersGroup.create({group_id: 10, user_id: 10})
 
 Group.create({
   title: "Railyard Rumblers",
@@ -248,7 +242,6 @@ Group.create({
   state: "NY"
 })
 
-UsersGroup.create({group_id: 11, user_id: 11})
 
 Group.create({
   title: "Rural Rampants",
@@ -260,7 +253,6 @@ Group.create({
   state: "NY"
 })
 
-UsersGroup.create({group_id: 12, user_id: 12})
 
 Group.create({
   title: "Ship Shooters",
@@ -272,7 +264,6 @@ Group.create({
   state: "NY"
 })
 
-UsersGroup.create({group_id: 13, user_id: 13})
 
 Group.create({
   title: "Temple Tempests",
@@ -284,7 +275,6 @@ Group.create({
   state: "NY"
 })
 
-UsersGroup.create({group_id: 14, user_id: 14})
 
 Group.create({
   title: "Town Tumblers",
@@ -296,7 +286,6 @@ Group.create({
   state: "NY"
 })
 
-UsersGroup.create({group_id: 15, user_id: 15})
 
 Group.create({
   title: "Volcano Valiants",
@@ -308,7 +297,6 @@ Group.create({
   state: "NY"
 })
 
-UsersGroup.create({group_id: 16, user_id: 16})
 
 
 User.all.each do |user|
