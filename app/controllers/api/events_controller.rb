@@ -14,7 +14,6 @@ class Api::EventsController < ApplicationController
     if current_user.id == Group.find(event_params[:group_id]).organizer_id
       @event = Event.new(event_params)
       if @event.save
-        UsersEvent.create({event_id: @event.id, user_id: current_user.id})
         render :show
       end
     end

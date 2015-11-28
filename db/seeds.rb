@@ -328,8 +328,6 @@ Group.all.length.times do |i|
     address: "Times Square"
   })
 
-  UsersEvent.create({event_id: event.id, user_id: Group.all[i].organizer_id})
-
   event = Event.create({
     start_time: DateTime.new(2016,2,1),
     title: "Punchout Panic",
@@ -337,8 +335,6 @@ Group.all.length.times do |i|
     group_id: Group.all[i].id,
     address: "Hawaii"
   })
-
-  UsersEvent.create({event_id: event.id, user_id: Group.all[i].organizer_id})
 
   event = Event.create({
     start_time: DateTime.new(2016,3,1),
@@ -348,8 +344,6 @@ Group.all.length.times do |i|
     address: "Great Wall of China"
   })
 
-  UsersEvent.create({event_id: event.id, user_id: Group.all[i].organizer_id})
-
   event = Event.create({
     start_time: DateTime.new(2015,9,1),
     title: "Fall Fight",
@@ -357,6 +351,4 @@ Group.all.length.times do |i|
     group_id: Group.all[i].id,
     address: "Pyramids of Giza"
   })
-
-  UsersEvent.create({event_id: event.id, user_id: Group.all[i].organizer_id})
 end
