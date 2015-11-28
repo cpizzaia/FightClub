@@ -3,7 +3,7 @@ var NewSession = React.createClass({
   mixins: [React.addons.LinkedStateMixin, ReactRouter.History],
 
   getInitialState: function(){
-    return({email: "feilong@capcom.com", password: "123456"});
+    return({email: "chunli@capcom.com", password: "123456"});
   },
 
   _handleSubmit: function(e){
