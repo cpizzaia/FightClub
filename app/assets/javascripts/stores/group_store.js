@@ -41,7 +41,7 @@
         return;
       }
     }
-    _group.events.push(event);
+    _group.upcoming_events.push(event);
     this.changed();
   };
 
