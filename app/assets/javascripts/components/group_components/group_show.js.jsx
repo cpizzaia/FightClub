@@ -160,17 +160,7 @@ var GroupShow = React.createClass({
   _showEvents: function(){
     if (!this.state.showMembers) {
       return (
-        <div className="group-event-index-container">
-
-          <h1 className="group-event-index-header">Events:</h1>
-
-          <nav className="group-event-tab-container group">
-            {this._tabs()}
-          </nav>
-
-          {this._eventFilter()}
-
-        </div>
+        <GroupShowEvents tabs={this._tabs}  eventFilter={this._eventFilter}/>
       );
     }
   },
