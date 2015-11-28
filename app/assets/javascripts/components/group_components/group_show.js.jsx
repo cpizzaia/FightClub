@@ -223,6 +223,7 @@ var GroupShow = React.createClass({
 
             <section className="group-show-details">
               <h1 className="group-show-location">{this.state.group.city + ", " + this.state.group.state}</h1>
+              <h4 className="group-show-founded">{"Founded " + this.state.group.founded}</h4>
 
               <ul>
                 <li className="group-show-detail">{"Members: " + this.state.group.members.length}</li>

@@ -43,6 +43,10 @@ class Group < ActiveRecord::Base
     UsersGroup.create({group_id: self.id, user_id: self.organizer_id})
   end
 
+  def founded
+    self.created_at.strftime('%b %d %Y')
+  end
+
   def all_users_events(user_id)
     UsersEvent
     .joins('INNER JOIN events ON events.id = users_events.event_id')

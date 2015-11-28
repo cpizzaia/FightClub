@@ -118,6 +118,11 @@
   padding: 10px 0;
 }
 
+.group-show-founded {
+  padding-bottom: 10px;
+  font-size: 13px;
+}
+
 .group-show-detail {
   padding: 10px;
   border-top: 1px solid #ddd;

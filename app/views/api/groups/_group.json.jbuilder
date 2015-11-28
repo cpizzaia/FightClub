@@ -1,6 +1,6 @@
 json.extract!(
   group,
-  :id, :title, :organizer_id, :description, :city, :state, :member_noun
+  :id, :title, :organizer_id, :description, :city, :state, :member_noun, :founded
 )
 
 json.group_img_url asset_path(group.group_img.url)
