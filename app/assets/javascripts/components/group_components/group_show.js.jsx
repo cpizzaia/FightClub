@@ -117,16 +117,16 @@ var GroupShow = React.createClass({
     }
   },
 
-  _eventType: function(e) {
+  _switchTab: function(e) {
     this.setState({tabTitle: e.currentTarget.dataset.tab});
   },
 
   _tabs: function() {
      return ["Upcoming", "Past"].map(function(tab, idx){
       if (this.state.tabTitle === tab){
-        return <h3 key={tab} data-tab={tab} className="group-event-tab tab-selected" onClick={this._eventType}>{tab + " (" + this._tabLength(tab) + ")"}</h3>;
+        return <h3 key={tab} data-tab={tab} className="group-event-tab tab-selected" onClick={this._switchTab}>{tab + " (" + this._tabLength(tab) + ")"}</h3>;
       } else {
-        return <h3 key={tab} data-tab={tab} className="group-event-tab" onClick={this._eventType}>{tab + " (" + this._tabLength(tab) + ")"}</h3>;
+        return <h3 key={tab} data-tab={tab} className="group-event-tab" onClick={this._switchTab}>{tab + " (" + this._tabLength(tab) + ")"}</h3>;
       }
     }.bind(this));
   },
