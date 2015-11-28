@@ -13,22 +13,27 @@ var EventCreate = React.createClass({
 
   _handleSubmit: function(e){
     e.preventDefault();
-    var title = this.state.title,
-        description = this.state.description,
-        startTime = this.state.startTime,
-        address = this.state.address;
-        groupId = this.props.groupId;
+    if (new Date(this.state.startTime) > new Date()){
 
-    var formData = new FormData();
+        var title = this.state.title,
+            description = this.state.description,
+            startTime = this.state.startTime,
+            address = this.state.address;
+            groupId = this.props.groupId;
 
-    formData.append("event[title]", title);
-    formData.append("event[description]", description);
-    formData.append("event[address]", address);
-    formData.append("event[start_time]", startTime);
-    formData.append("event[group_id]", groupId);
+        var formData = new FormData();
+
+        formData.append("event[title]", title);
+        formData.append("event[description]", description);
+        formData.append("event[address]", address);
+        formData.append("event[start_time]", startTime);
+        formData.append("event[group_id]", groupId);
 
 
-    ApiUtil.createEvent(formData, this._redirectOnSuccess);
+
+
+      ApiUtil.createEvent(formData, this._redirectOnSuccess);
+    }
   },
 
   _redirectOnSuccess: function(id){

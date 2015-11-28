@@ -11,7 +11,7 @@ class Api::EventsController < ApplicationController
   end
 
   def create
-    if current_user.id == Group.find(event_params[:group_id]).organizer_id
+    if current_user_is_organizer?
       @event = Event.new(event_params)
       if @event.save
         render :show
@@ -25,5 +25,8 @@ class Api::EventsController < ApplicationController
     params.require(:event).permit(:group_id, :title, :description, :address, :start_time)
   end
 
+  def current_user_is_organizer?
+    current_user.id == Group.find(event_params[:group_id]).organizer_id
+  end
 
 end
