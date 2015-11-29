@@ -4,9 +4,9 @@ var GroupEventUserList = React.createClass({
       <ul className="group-event-user-list group">
         {this.props.users.map(function(user){
           return (
-            <li key={user.id} className="group-event-user">
+            <a href={"#/users/" + user.id} key={user.id} className="group-event-user">
               <img className="group-event-user-image center-image" src={user.profile_img_url}/>
-            </li>
+            </a>
           );
         })}
       </ul>
