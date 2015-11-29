@@ -16,7 +16,7 @@ ApiActions.receiveUser = function(data){
   });
 };
 
-ApiActions.receiveAllGroups = function(data){
+ApiActions.receiveGroups = function(data){
   AppDispatcher.dispatch({
     actionType: GroupConstants.GROUPS_RECEIVED,
     groups: data

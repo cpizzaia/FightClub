@@ -22,7 +22,7 @@
   GroupStore.dispatcherId = AppDispatcher.register(function(payload){
     switch (payload.actionType) {
       case GroupConstants.GROUPS_RECEIVED:
-        GroupStore.storeAllGroups(payload.groups);
+        GroupStore.addToGroups(payload.groups);
         break;
       case GroupConstants.GROUP_RECEIVED:
         GroupStore.storeGroup(payload.group);
@@ -46,7 +46,7 @@
   };
 
 
-  GroupStore.storeAllGroups = function(groups){
+  GroupStore.addToGroups = function(groups){
     _groups = _groups.concat(groups);
     this.changed();
   };
@@ -67,10 +67,6 @@
 
   GroupStore.group = function(){
     return _group;
-  };
-
-  GroupStore.fetchAllGroups = function(){
-    GroupApiUtil.fetchAllGroups();
   };
 
   GroupStore.fetchGroupsByPage = function(page){

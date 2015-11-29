@@ -2,17 +2,6 @@ var GroupApiUtil = window.GroupApiUtil = function(){
 
 };
 
-GroupApiUtil.fetchAllGroups = function(){
-  $.ajax({
-    url: "/api/groups",
-    type: "GET",
-    contentType: "application/json",
-    success: function(data){
-      ApiActions.receiveAllGroups(data);
-    }
-  });
-};
-
 GroupApiUtil.fetchGroupsByPage = function(page){
   $.ajax({
     url: "/api/groups",
@@ -20,7 +9,7 @@ GroupApiUtil.fetchGroupsByPage = function(page){
     contentType: "application/json",
     data: {page: page},
     success: function(data){
-      ApiActions.receiveAllGroups(data);
+      ApiActions.receiveGroups(data);
     }
   });
 };
