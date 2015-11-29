@@ -14,12 +14,25 @@ var GroupShow = React.createClass({
     GroupStore.addChangeListener(this._changed);
     UserStore.addChangeListener(this._changed);
     GroupStore.fetchGroup(this.props.routeParams.id);
+    if (this.props.location.pathname.indexOf("members") !== -1) {
+      this.setState({showMembers: true});
+    }
   },
 
   componentWillUnmount: function(){
     GroupStore.removeChangeListener(this._changed);
     GroupStore.clearGroup();
   },
+
+  componentWillReceiveProps: function(nextProps){
+    GroupStore.fetchGroup(nextProps.routeParams.id);
+    if (nextProps.location.pathname.indexOf("members") !== -1) {
+      this.setState({showMembers: true});
+    } else {
+      this.setState({showMembers: false});
+    }
+  },
+
 
   _changed: function(){
     this.setState({
@@ -173,16 +186,6 @@ var GroupShow = React.createClass({
     }
   },
 
-  _switchToMembers: function(e){
-    e.preventDefault();
-    this.setState({showMembers: true});
-  },
-
-  _switchToDescription: function(e){
-    e.preventDefault();
-    this.setState({showMembers: false});
-  },
-
   render: function(){
     var html, html2;
     var eventCreate;
@@ -204,8 +207,8 @@ var GroupShow = React.createClass({
 
             <h1 className="group-show-title">{this.state.group.title}</h1>
             <nav className="group-show-nav group">
-              <button className="group-nav-bar-link-left" onClick={this._switchToDescription}>Home</button>
-              <button className="group-nav-bar-link-left" onClick={this._switchToMembers}>Members</button>
+              <a href={"#/groups/" + this.state.group.id} className="group-nav-bar-link-left" >Home</a>
+              <a href={"#/groups/" + this.state.group.id + "/members"} className="group-nav-bar-link-left">Members</a>
               {this._ableToAddEvents()}
             </nav>
 

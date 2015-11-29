@@ -10,6 +10,7 @@
           <IndexRoute component={LandingPage} />
           <Route path="/profile" component={Profile} />
           <Route path="/groups" component={GroupIndex} />
+          <Route path="/groups/:id/members" component={GroupShow} />
           <Route path="/groups/:id" component={GroupShow} />
           <Route path="/users/:id" component={MemberProfile} />
         </Route>
