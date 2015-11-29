@@ -29,6 +29,10 @@ if show_past_events
   end
 end
 
+if show_member_count
+  json.member_count group.member_count
+end
+
 json.organizer do
    json.partial!('api/users/user', user: group.organizer, show_groups: false)
 end

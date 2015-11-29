@@ -14,9 +14,10 @@ unless user.nil?
         json.partial!(
           'api/groups/group',
           group: group,
-          show_members: true,
+          show_members: false,
           show_upcoming_events: false,
-          show_past_events: false
+          show_past_events: false,
+          show_member_count: true
         )
       end
     end

@@ -3,5 +3,6 @@ json.partial!(
   group: @group,
   show_members: true,
   show_upcoming_events: true,
-  show_past_events: true
+  show_past_events: true,
+  show_member_count: true
 )
