@@ -4,7 +4,7 @@ var MemberProfile = React.createClass({
 
   getInitialState: function(){
     return ({
-      user: UserStore.currentUser(),
+      user: UserStore.user(),
     });
   },
 
@@ -15,6 +15,7 @@ var MemberProfile = React.createClass({
 
   componentWillUnmount: function(){
     UserStore.removeChangeListener(this._changed);
+    UserStore.clearUser();
   },
 
   componentWillReceiveProps: function(nextProps){

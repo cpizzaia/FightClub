@@ -44,9 +44,12 @@
   };
 
   UserStore.clearCurrentUser = function(){
-    _user = {};
+    _currentUser = {};
   };
 
+  UserStore.clearUser = function(){
+    _user = {};
+  };
 
   UserStore.currentUser = function(){
     return _currentUser;
