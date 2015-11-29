@@ -31,6 +31,8 @@ gem 'paperclip'
 
 gem 'area'
 
+gem 'kaminari'
+
 
 
 # Use ActiveModel has_secure_password
