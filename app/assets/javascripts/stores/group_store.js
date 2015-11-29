@@ -47,7 +47,7 @@
 
 
   GroupStore.storeAllGroups = function(groups){
-    _groups = groups;
+    _groups = _groups.concat(groups);
     this.changed();
   };
 
@@ -71,6 +71,10 @@
 
   GroupStore.fetchAllGroups = function(){
     GroupApiUtil.fetchAllGroups();
+  };
+
+  GroupStore.fetchGroupsByPage = function(page){
+    GroupApiUtil.fetchGroupsByPage(page);
   };
 
   GroupStore.fetchGroup = function(id){

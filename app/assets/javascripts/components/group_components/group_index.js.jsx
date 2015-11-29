@@ -7,19 +7,27 @@ var GroupIndex = React.createClass({
   },
 
   componentDidMount: function(){
+    window.addEventListener('scroll', this._handleScroll);
     GroupStore.addChangeListener(this._changed);
-    GroupStore.fetchAllGroups();
+    GroupStore.fetchGroupsByPage(1);
   },
 
   componentWillUnmount: function(){
+    window.removeEventListener('scroll', this._handleScroll);
     GroupStore.removeChangeListener(this._changed);
+  },
+
+  _handleScroll: function(){
+    if (window.scrollY > $(document).height() - $(window).height() - 100){
+      GroupStore.fetchGroupsByPage(2);
+    }
   },
 
   _changed: function(){
     this.setState({groups: GroupStore.all()});
   },
 
-  handleClick: function(id){
+  _handleClick: function(id){
     this.history.pushState(null, "/groups/" + id);
   },
 
@@ -28,7 +36,7 @@ var GroupIndex = React.createClass({
       <div className="group-index group">
         {this.state.groups.map(function(group){
           return(
-          <div onClick={this.handleClick.bind(this, group.id)} key={group.id} className="group-index-item">
+          <div onClick={this._handleClick.bind(this, group.id)} key={group.id} className="group-index-item">
             <img key={group.image} className="group-index-image center-image" src={group.group_img_url}/>
             <div key={group.title} className="group-index-details">
               <h2>{group.title}</h2>

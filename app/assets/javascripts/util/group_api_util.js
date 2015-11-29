@@ -13,6 +13,18 @@ GroupApiUtil.fetchAllGroups = function(){
   });
 };
 
+GroupApiUtil.fetchGroupsByPage = function(page){
+  $.ajax({
+    url: "/api/groups",
+    type: "GET",
+    contentType: "application/json",
+    data: {page: page},
+    success: function(data){
+      ApiActions.receiveAllGroups(data);
+    }
+  });
+};
+
 GroupApiUtil.createGroup = function(formData, callback){
   $.ajax({
     url: "api/groups/",
