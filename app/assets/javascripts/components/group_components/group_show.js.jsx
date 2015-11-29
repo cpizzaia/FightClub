@@ -1,4 +1,5 @@
 var GroupShow = React.createClass({
+
   getInitialState: function(){
     return({
       group: GroupStore.group(),
@@ -32,7 +33,6 @@ var GroupShow = React.createClass({
       this.setState({showMembers: false});
     }
   },
-
 
   _changed: function(){
     this.setState({
@@ -76,16 +76,14 @@ var GroupShow = React.createClass({
   },
 
   _memberOfGroup: function(){
-    for (var i = 0; i < this.state.group.members.length; i++){
-      if (this.state.currentUser.id === this.state.group.members[i].id){
+      if (this._currentUserInGroup()){
         return <button onClick={this._leaveGroup} className="group-join">Leave</button>;
+      } else {
+        return <button onClick={this._joinGroup} className="group-join">Join</button>;
       }
-    }
-    return <button onClick={this._joinGroup} className="group-join">Join</button>;
   },
 
   _ableToAddEvents: function(){
-
     if (typeof this.state.currentUser === "undefined") {
       return;
     }
