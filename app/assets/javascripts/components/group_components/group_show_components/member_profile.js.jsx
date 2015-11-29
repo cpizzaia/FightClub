@@ -17,6 +17,10 @@ var MemberProfile = React.createClass({
     UserStore.removeChangeListener(this._changed);
   },
 
+  componentWillReceiveProps: function(nextProps){
+    UserStore.fetchUserById(nextProps.routeParams.id);
+  },
+
   _changed: function(){
     this.setState({user: UserStore.user()});
   },
