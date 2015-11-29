@@ -33,6 +33,8 @@ gem 'area'
 
 gem 'kaminari'
 
+gem 'pg_search'
+
 
 
 # Use ActiveModel has_secure_password

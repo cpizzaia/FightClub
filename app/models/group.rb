@@ -1,4 +1,6 @@
 class Group < ActiveRecord::Base
+  include PgSearch
+  multisearchable :against => [:title, :description]
 
   validates :title, :organizer_id, :description, :city, :state, presence: :true
 
