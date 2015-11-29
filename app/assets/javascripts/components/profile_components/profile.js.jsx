@@ -112,11 +112,18 @@ var Profile = React.createClass({
       );
       html2 = (
         <div>
-            <label className="profile-form-upload">Choose Picture
-              <input onChange={this._changeFile} type="file"/>
-            </label>
-            <button className="profile-update-button" onClick={this._handleSubmit}>Update Profile</button>
+
+          <label className="profile-form-upload">Choose Picture
+            <input onChange={this._changeFile} type="file"/>
+          </label>
+
+          <button className="profile-update-button" onClick={this._handleSubmit}>Update Profile</button>
+
+          <h2 className="profile-group-amount">{"Organizer of " + this.state.user.groups_led.length + " groups"}</h2>
+          <ProfileGroups groups={this.state.user.groups_led} />
+
           <h2 className="profile-group-amount">{"Member of " + this.state.user.groups.length + " groups"}</h2>
+
           <ProfileGroups groups={this.state.user.groups} />
         </div>
       );
