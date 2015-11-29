@@ -54,7 +54,7 @@ var GroupCreate = React.createClass({
     formData.append("group[zipcode]", zipcode);
 
 
-    ApiUtil.createGroup(formData, this._redirectOnSuccess);
+    GroupApiUtil.createGroup(formData, this._redirectOnSuccess);
   },
 
   _redirectOnSuccess: function(id){

@@ -50,11 +50,11 @@
   };
 
   EventStore.fetchAllGroupEvents = function(){
-    ApiUtil.fetchAllGroupEvents();
+    EventApiUtil.fetchAllGroupEvents();
   };
 
   EventStore.fetchEvent = function(id){
-    ApiUtil.fetchEvent(id);
+    EventApiUtil.fetchEvent(id);
   };
 
 

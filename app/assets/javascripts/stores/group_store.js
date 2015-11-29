@@ -70,11 +70,11 @@
   };
 
   GroupStore.fetchAllGroups = function(){
-    ApiUtil.fetchAllGroups();
+    GroupApiUtil.fetchAllGroups();
   };
 
   GroupStore.fetchGroup = function(id){
-    ApiUtil.fetchGroup(id);
+    GroupApiUtil.fetchGroup(id);
   };
 
 

@@ -32,7 +32,7 @@ var EventCreate = React.createClass({
 
 
 
-      ApiUtil.createEvent(formData, this._redirectOnSuccess);
+      EventApiUtil.createEvent(formData, this._redirectOnSuccess);
     }
   },
 

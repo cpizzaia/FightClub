@@ -60,11 +60,11 @@
   };
 
   UserStore.fetchCurrentUser = function(){
-    ApiUtil.fetchCurrentUser();
+    UserApiUtil.fetchCurrentUser();
   };
 
   UserStore.fetchUserById = function(id){
-    ApiUtil.fetchUserById(id);
+    UserApiUtil.fetchUserById(id);
   };
 
 

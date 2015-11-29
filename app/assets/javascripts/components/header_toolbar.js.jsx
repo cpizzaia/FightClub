@@ -30,7 +30,7 @@ var HeaderToolbar = React.createClass({
   },
 
   _signOut: function(){
-    ApiUtil.signUserOut(this._clearAndRedirect);
+    UserApiUtil.signUserOut(this._clearAndRedirect);
   },
 
   _createGroup: function(e){
