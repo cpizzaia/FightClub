@@ -237,9 +237,9 @@ var GroupShow = React.createClass({
 
               <h2 className="group-show-organizer-header">Organizer:</h2>
               <h2 className="group-show-oragnizer-name">{this.state.group.organizer.name}</h2>
-              <div className="group-show-organizer-image-container">
+              <a href={"#/users/" + this.state.group.organizer_id} className="group-show-organizer-image-container">
                 <img className="group-show-organizer-image center-image" src={this.state.group.organizer.profile_img_url}/>
-              </div>
+              </a>
 
             </div>
 
