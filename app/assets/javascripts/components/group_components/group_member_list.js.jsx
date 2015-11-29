@@ -4,9 +4,9 @@ var GroupMemberList = React.createClass({
       <ul className="group-member-list group">
         {this.props.members.map(function(member){
           return (
-            <li key={member.id} className="group-member">
+            <a href={"#/users/" + member.id} key={member.id} className="group-member">
               <img className="group-member-image center-image" src={member.profile_img_url}/>
-            </li>
+            </a>
           );
         })}
       </ul>
