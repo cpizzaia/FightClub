@@ -5,6 +5,7 @@ var LandingPage = React.createClass({
       <div>
         <img className="description" src={FightClub.description}/>
         <div className="welcome-banner"></div>
+        <SearchBar />
         <GroupIndex />
       </div>
     );

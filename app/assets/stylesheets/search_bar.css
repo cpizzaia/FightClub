@@ -1,0 +1,36 @@
+.search-bar {
+  background: lightgrey;
+  width: 524px;
+  margin: auto;
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.search-bar-input {
+  background: white;
+  padding: 6px 12px;
+  float: left;
+  width: 500px;
+  border-radius: inherit;
+  transition: box-shadow 0.5s;
+  text-align: center;
+}
+
+.search-bar-input:focus {
+  box-shadow: 0 0 25px red;
+}
+
+.search-bar-icon:before {
+  font-size: 25px;
+  content: "⚲";
+}
+
+.search-bar-icon {
+  float: left;
+  width: 10px;
+  transform: rotate(-45deg);
+  position: absolute;
+  right: 10px;
+  top: 3px;
+}
