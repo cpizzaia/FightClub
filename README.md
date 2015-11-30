@@ -49,19 +49,19 @@ Same as Phase 2 but will implement everything supporting the Event model.
 
 [Details][phase-three]
 
-### Phase 5: Create modals to allow users to create groups, events, users, and sessions (2 day)
-Phase 7 will create a better experience for users as it will allow them to
+### Phase 4: Create modals to allow users to create groups, events, users, and sessions (2 day)
+Phase 4 will create a better experience for users as it will allow them to
 create events and groups without having to navigate to a new page.
 
 
-### Phase 6: Style site and create searches (2 days)
-Phase 8 will bring the site together by making everything look production ready
+### Phase 5: Style site and create searches (2 days)
+Phase 5 will bring the site together by making everything look production ready
 through design and will also allow users to search for groups through filters
 and search boxes.
 
 
-### Phase 7: Create Transitions for all effects (.5 days)
-Phase 9 will complete the site by adding transitions to all the user
+### Phase 6: Create Transitions for all effects (.5 days)
+Phase 6 will complete the site by adding transitions to all the user
 interactions and will create an amazing user experience.
 
 
