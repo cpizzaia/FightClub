@@ -10,6 +10,6 @@ Rails.application.routes.draw do
     resources :users_groups
     resources :users_events
     resource :session
-    resources :search
+    resources :search, only: [:show]
   end
 end
