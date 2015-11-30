@@ -23,6 +23,13 @@ ApiActions.receiveGroups = function(data){
   });
 };
 
+ApiActions.receiveSearchGroups = function(data){
+  AppDispatcher.dispatch({
+    actionType: GroupConstants.SEARCH_GROUPS_RECEIVED,
+    groups: data.results
+  });
+};
+
 ApiActions.receiveGroup = function(data){
   AppDispatcher.dispatch({
     actionType: GroupConstants.GROUP_RECEIVED,

@@ -9,7 +9,7 @@ SearchApiUtil.search = function(query){
     contentType: "application/json",
     data: {query: query},
     success: function(data){
-      ApiActions.receiveGroups(data);
+      ApiActions.receiveSearchGroups(data);
     }
   });
 };

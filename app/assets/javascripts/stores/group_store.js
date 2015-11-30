@@ -24,6 +24,9 @@
       case GroupConstants.GROUPS_RECEIVED:
         GroupStore.addToGroups(payload.groups);
         break;
+      case GroupConstants.SEARCH_GROUPS_RECEIVED:
+        GroupStore.storeSearchGroups(payload.groups);
+        break;
       case GroupConstants.GROUP_RECEIVED:
         GroupStore.storeGroup(payload.group);
         break;
@@ -51,12 +54,21 @@
     this.changed();
   };
 
+  GroupStore.storeSearchGroups = function(groups){
+    _groups = groups;
+    this.changed();
+  };
+
   GroupStore.storeGroup = function(group){
     _group = group;
     this.changed();
   };
 
-  GroupStore.clearGroup = function(group){
+  GroupStore.clearGroups = function(){
+    _groups = [];
+  };
+
+  GroupStore.clearGroup = function(){
     _group = {};
   };
 
