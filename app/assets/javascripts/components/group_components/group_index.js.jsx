@@ -3,7 +3,7 @@ var GroupIndex = React.createClass({
   mixins: [ReactRouter.History],
 
   getInitialState: function(){
-    return({groups: GroupStore.all()});
+    return({groups: GroupStore.all(), page: 2});
   },
 
   componentDidMount: function(){
@@ -19,7 +19,8 @@ var GroupIndex = React.createClass({
 
   _handleScroll: function(){
     if (window.scrollY > $(document).height() - $(window).height() - 100){
-      GroupStore.fetchGroupsByPage(2);
+      GroupStore.fetchGroupsByPage(this.state.page);
+      this.setState({page: this.state.page + 1});
     }
   },
 
