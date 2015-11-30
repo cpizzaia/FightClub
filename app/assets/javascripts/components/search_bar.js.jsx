@@ -18,12 +18,10 @@ var SearchBar = React.createClass({
 
   render: function(){
     return (
-      <section className="search-bar group">
-        <form onSubmit={this._handleSubmit}>
-          <input valueLink={this.linkState("query")} type="text" className="search-bar-input" placeholder="Find Your Fight"/>
-        </form>
+      <form className="search-bar group" onSubmit={this._handleSubmit}>
+        <input valueLink={this.linkState("query")} type="text" className="search-bar-input" placeholder="Find Your Fight"/>
         <span className="search-bar-icon" onClick={this._handleSubmit}></span>
-      </section>
+      </form>
     );
   }
 });

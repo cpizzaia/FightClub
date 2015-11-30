@@ -12,7 +12,7 @@
   padding: 6px 12px;
   float: left;
   width: 500px;
-  border-radius: inherit;
+  border-radius: 4px;
   transition: box-shadow 0.5s;
   text-align: center;
 }
