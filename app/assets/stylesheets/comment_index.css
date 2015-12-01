@@ -24,3 +24,8 @@
 .comment-author-name {
   padding-bottom: 16px;
 }
+.comment-reply {
+  padding-top: 5px;
+  color: darkred;
+  cursor: pointer;
+}

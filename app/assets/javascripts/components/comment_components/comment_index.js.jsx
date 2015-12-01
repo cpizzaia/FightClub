@@ -1,20 +1,28 @@
 var CommentIndex = React.createClass({
   getInitialState: function(){
-    return ({comments: CommentStore.all()});
+    return ({comments: CommentStore.all(), user: UserStore.currentUser()});
   },
 
   componentDidMount: function(){
+    UserStore.addChangeListener(this._changed);
     CommentStore.addChangeListener(this._changed);
     CommentStore.fetchComments(this.props.eventId);
   },
 
   componentWillUnmount: function(){
+    UserStore.removeChangeListener(this._changed);
     CommentStore.removeChangeListener(this._changed);
     CommentStore.clearComments();
   },
 
   _changed: function(){
-    this.setState({comments: CommentStore.all()});
+    this.setState({comments: CommentStore.all(), user: UserStore.currentUser()});
+  },
+
+  _showReplyLinks: function(){
+    if (typeof this.state.user.id !== "undefined"){
+      return(<p className="comment-reply">Reply</p>);
+    }
   },
 
   render: function(){
@@ -35,7 +43,7 @@ var CommentIndex = React.createClass({
                 <section className="comment-details">
                   <h3 className="comment-author-name">{comment.author.name}</h3>
                   <article className="comment-body">{comment.body}</article>
-
+                  {this._showReplyLinks()}
                   {comment.responses.map(function(response){
                     return (<Response key={response.id} response={response}/>);
                   })}
@@ -44,7 +52,7 @@ var CommentIndex = React.createClass({
 
               </section>
             );
-          })}
+          }.bind(this))}
         </section>
       );
     } else {
