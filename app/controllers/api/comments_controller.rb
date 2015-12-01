@@ -1,7 +1,7 @@
 class Api::CommentsController < ApplicationController
 
   def index
-    @comments = Comment.where(event_id: 1)
+    @comments = Comment.where(event_id: params[:event_id]).order('comments.created_at DESC')
   end
 
   def create

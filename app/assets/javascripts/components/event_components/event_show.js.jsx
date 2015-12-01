@@ -1,5 +1,9 @@
 var EventShow = React.createClass({
 
+  componentWillUnmount: function(){
+    EventStore.clearEvent();
+  },
+
   render: function(){
     if (typeof this.props.event.id !== "undefined") {
       return (

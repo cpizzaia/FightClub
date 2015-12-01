@@ -49,6 +49,10 @@
     return _event;
   };
 
+  EventStore.clearEvent = function(){
+    _event = {};
+  };
+
   EventStore.fetchAllGroupEvents = function(){
     EventApiUtil.fetchAllGroupEvents();
   };

@@ -1,6 +1,6 @@
 var CommentIndex = React.createClass({
   getInitialState: function(){
-    return ({comments: CommentStore.all});
+    return ({comments: CommentStore.all()});
   },
 
   componentDidMount: function(){
@@ -10,6 +10,7 @@ var CommentIndex = React.createClass({
 
   componentWillUnmount: function(){
     CommentStore.removeChangeListener(this._changed);
+    CommentStore.clearComments();
   },
 
   _changed: function(){

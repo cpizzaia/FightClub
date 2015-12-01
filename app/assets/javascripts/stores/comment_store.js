@@ -39,6 +39,11 @@
     this.changed();
   };
 
+  CommentStore.clearComments = function(){
+    _comments = [];
+    this.changed();
+  };
+
   CommentStore.fetchComments = function(eventId){
     CommentApiUtil.fetchComments(eventId);
   };
