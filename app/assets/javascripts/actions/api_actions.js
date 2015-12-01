@@ -64,3 +64,10 @@ ApiActions.receiveComments = function(data){
     comments: data
   });
 };
+
+ApiActions.receiveComment = function(data){
+  AppDispatcher.dispatch({
+    actionType: CommentConstants.COMMENT_RECEIVED,
+    comment: data
+  });
+};

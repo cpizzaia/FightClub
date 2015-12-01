@@ -23,8 +23,16 @@
       case CommentConstants.COMMENTS_RECEIVED:
         CommentStore.storeComments(payload.comments);
         break;
+      case CommentConstants.COMMENT_RECEIVED:
+        CommentStore.storeComment(payload.comment);
+        break;
     }
   });
+
+  CommentStore.storeComment = function(comment){
+    _comments.unshift(comment);
+    this.changed();
+  };
 
   CommentStore.storeComments = function(comments){
     _comments = comments;
