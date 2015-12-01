@@ -1,0 +1,13 @@
+.comment-item {
+
+}
+
+.comment-author-image-container {
+  position: relative;
+  height: 50px;
+  width: 50px;
+}
+
+.comment-author-image {
+  height: inherit;
+}

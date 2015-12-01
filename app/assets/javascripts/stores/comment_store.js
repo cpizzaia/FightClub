@@ -27,8 +27,12 @@
   });
 
   CommentStore.storeComments = function(event){
-    _event = event;
+    _comments = comments;
     this.changed();
+  };
+
+  CommentStore.all = function(){
+    return _comments.slice();
   };
 
 })();
