@@ -1,7 +1,7 @@
 (function(){
 
   var _events = [];
-  var _event = [];
+  var _event = {};
 
   var EventStore = window.EventStore = $.extend({}, EventEmitter.prototype);
 
@@ -35,8 +35,8 @@
     this.changed();
   };
 
-  EventStore.storeGroup = function(event){
-    _event = [event];
+  EventStore.storeEvent = function(event){
+    _event = event;
     this.changed();
   };
 
@@ -46,7 +46,7 @@
   };
 
   EventStore.event = function(){
-    return _event.slice()[0];
+    return _event;
   };
 
   EventStore.fetchAllGroupEvents = function(){

@@ -8,6 +8,7 @@ var GroupShow = React.createClass({
       tabTitle: "Upcoming",
       error: "",
       showMembers: false,
+      showEvent: false,
     });
   },
 
@@ -28,9 +29,11 @@ var GroupShow = React.createClass({
   componentWillReceiveProps: function(nextProps){
     GroupStore.fetchGroup(nextProps.routeParams.id);
     if (nextProps.location.pathname.indexOf("members") !== -1) {
-      this.setState({showMembers: true});
+      this.setState({showMembers: true, showEvent: false});
+    } else if (typeof nextProps.params.event_id !== "undefined") {
+      this.setState({showMembers: false, showEvent: true});
     } else {
-      this.setState({showMembers: false});
+      this.setState({showMembers: false, showEvent: false});
     }
   },
 
@@ -113,6 +116,7 @@ var GroupShow = React.createClass({
           return (
             <GroupEventIndex
               key={event.id}
+              groupId={this.state.group.id}
               displayError={this._displayError}
               currentUser={this.state.currentUser}
               currentUserInGroup={this._currentUserInGroup}
@@ -161,15 +165,23 @@ var GroupShow = React.createClass({
   },
 
   _showDescription: function(){
-    if (!this.state.showMembers) {
+    if (!this.state.showMembers && !this.state.showEvent) {
       return (
         <GroupShowDescription group={this.state.group} memberOfGroup={this._memberOfGroup}/>
       );
     }
   },
 
+  _showEvent: function(){
+    if(!this.state.showMembers && this.state.showEvent){
+      return (
+        <EventShow />
+      );
+    }
+  },
+
   _showEvents: function(){
-    if (!this.state.showMembers) {
+    if (!this.state.showMembers && !this.state.showEvent) {
       return (
         <GroupShowEvents tabs={this._tabs}  eventFilter={this._eventFilter}/>
       );
@@ -177,9 +189,9 @@ var GroupShow = React.createClass({
   },
 
   _showMembers: function(){
-    if (this.state.showMembers){
+    if (this.state.showMembers && !this.state.showEvent){
       return (
-          <GroupMembers members={this.state.group.members}/>
+        <GroupMembers members={this.state.group.members}/>
       );
     }
   },
@@ -213,6 +225,7 @@ var GroupShow = React.createClass({
           </section>
 
           {this._showDescription()}
+          {this._showEvent()}
           {this._showMembers()}
 
 

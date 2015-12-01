@@ -65,7 +65,7 @@ var GroupEventIndex = React.createClass({
 
         <section className="group-event-index-content" >
 
-          <h2 className="group-event-index-title">{this.props.event.title}</h2>
+          <a href={"#/groups/" + this.props.groupId + "/events/" + this.props.event.id} className="group-event-index-title">{this.props.event.title}</a>
           <h3 className="group-event-index-address">{this.props.event.address}</h3>
           <GroupEventUserList users={this.props.event.users.slice(0,10)}/>
           <article className="group-event-index-description">{this.props.event.description}</article>
