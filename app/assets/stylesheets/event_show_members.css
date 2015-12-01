@@ -22,17 +22,6 @@
   border-bottom: 1px solid lightgrey;
 }
 
-.event-show-container:before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 172px;
-  border-right: 1px solid lightgrey;
-  background: lightgrey;
-}
-
 .event-show-container {
   position: relative;
 }
