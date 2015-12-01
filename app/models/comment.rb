@@ -12,7 +12,7 @@ class Comment < ActiveRecord::Base
   belongs_to :event
 
   has_many(
-    :child_comments,
+    :responses,
     class_name: "Comment",
     foreign_key: :parent_comment_id,
     primary_key: :id

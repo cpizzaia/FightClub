@@ -4,7 +4,7 @@ json.extract!(
 )
 
 json.responses do
-  json.array!(comment.child_comments) do |comment|
+  json.array!(comment.responses) do |comment|
     json.partial!('comment', comment: comment)
   end
 end
