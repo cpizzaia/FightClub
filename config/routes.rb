@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :events
     resources :users_groups
     resources :users_events
+    resources :comments
     resource :session
     resources :search, only: [:index]
   end

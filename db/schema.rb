@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20151201150230) do
     t.integer  "author_id",         null: false
     t.integer  "parent_comment_id"
     t.text     "body",              null: false
-    t.integer  "event_id",          null: false
+    t.integer  "event_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end

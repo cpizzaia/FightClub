@@ -1,5 +1,6 @@
 class Comment < ActiveRecord::Base
-  validates :author_id, :body, :event_id, presence: true
+  validates :author_id, :body, presence: true
+  validate :has_reference
 
   belongs_to(
     :author,
@@ -23,4 +24,10 @@ class Comment < ActiveRecord::Base
     foreign_key: :parent_comment_id,
     primary_key: :id
   )
+
+  def has_reference
+    if event_id.nil? && parent_comment_id.nil?
+      errors[:base] << "Comment must be in response to something"
+    end
+  end
 end
