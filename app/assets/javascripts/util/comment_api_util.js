@@ -4,7 +4,7 @@ var CommentApiUtil = window.CommentApiUtil = function(){
 
 CommentApiUtil.fetchComments = function(eventId){
   $.ajax({
-      url: "api/events/",
+      url: "api/comments/",
       type: "GET",
       contentType: "application.json",
       data: {event_id: eventId},

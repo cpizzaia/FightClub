@@ -11,11 +11,11 @@
   };
 
   CommentStore.removeChangeListener = function(callback){
-    this.removeListener(EVENT_CHANGE, callback);
+    this.removeListener(COMMENT_CHANGE, callback);
   };
 
   CommentStore.changed = function(){
-    this.emit(EVENT_CHANGE);
+    this.emit(COMMENT_CHANGE);
   };
 
   CommentStore.dispatcherId = AppDispatcher.register(function(payload){
@@ -26,9 +26,13 @@
     }
   });
 
-  CommentStore.storeComments = function(event){
+  CommentStore.storeComments = function(comments){
     _comments = comments;
     this.changed();
+  };
+
+  CommentStore.fetchComments = function(eventId){
+    CommentApiUtil.fetchComments(eventId);
   };
 
   CommentStore.all = function(){

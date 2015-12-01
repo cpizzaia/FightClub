@@ -13,7 +13,7 @@ var CommentIndex = React.createClass({
   },
 
   _changed: function(){
-    this.setState({comments: CommentStore.all});
+    this.setState({comments: CommentStore.all()});
   },
 
   render: function(){
@@ -22,21 +22,29 @@ var CommentIndex = React.createClass({
         <section className="comments-container">
           {this.state.comments.map(function(comment){
             return (
-              <section className="comment-item">
+              <section key={comment.id} className="comment-item group">
 
                 <div className="comment-author-image-container">
-                  <img className="comment-author-image center-image"/>
+                  <img src={comment.author.profile_img_url} className="comment-author-image center-image"/>
                 </div>
 
-                <h3 className="author-name">{comment.author.name}</h3>
+                <section className="comment-details">
+                  <h3 className="comment-author-name">{comment.author.name}</h3>
+                  <article className="comment-body">{comment.body}</article>
 
-                <article className="comment-body">{comment.body}</article>
+                  {comment.responses.map(function(response){
+                    return (<Response response={response}/>);
+                  })}
+
+                </section>
 
               </section>
             );
           })}
         </section>
       );
+    } else {
+      return <div></div>;
     }
   }
 });
