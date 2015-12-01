@@ -13,7 +13,7 @@ var EventShow = React.createClass({
             <h2 className="event-show-location">{this.props.event.address}</h2>
             <article className="event-show-description">{this.props.event.description}</article>
 
-            <CommentIndex evenId={this.props.event.id}/>
+            <CommentIndex eventId={this.props.event.id}/>
 
           </section>
 

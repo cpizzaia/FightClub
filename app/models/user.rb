@@ -16,6 +16,13 @@ class User < ActiveRecord::Base
   )
 
   has_many(
+    :comments,
+    class_name: "Comment",
+    foreign_key: :author_id,
+    primary_key: :id
+  )
+
+  has_many(
     :users_groups,
     class_name: "UsersGroup",
     foreign_key: :user_id,

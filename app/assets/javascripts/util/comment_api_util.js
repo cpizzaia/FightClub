@@ -13,3 +13,17 @@ CommentApiUtil.fetchComments = function(eventId){
       }
   });
 };
+
+CommentApiUtil.createComment = function(formData){
+  $.ajax({
+      url: "api/comments/",
+      type: "POST",
+      processData: false,
+      contentType: false,
+      dataType: 'json',
+      data: formData,
+      success: function(data){
+        ApiActions.receiveComment(data);
+      }
+  });
+};

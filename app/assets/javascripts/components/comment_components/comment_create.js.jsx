@@ -21,6 +21,15 @@ var CommentCreate = React.createClass({
 
   _handleSubmit: function(e){
     e.preventDefault();
+
+    var body = this.state.body;
+    var eventId = this.props.eventId;
+    var formData = new FormData();
+
+    formData.append("comment[event_id]", eventId);
+    formData.append("comment[body]", body);
+
+    CommentApiUtil.createComment(formData);
   },
 
   render: function(){
