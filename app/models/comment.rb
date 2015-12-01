@@ -26,7 +26,7 @@ class Comment < ActiveRecord::Base
   )
 
   def has_reference
-    if event_id.nil? && parent_comment_id.nil?
+    if (event_id.nil? && parent_comment_id.nil?) || (!event_id.nil? && !parent_comment_id.nil?)
       errors[:base] << "Comment must be in response to something"
     end
   end

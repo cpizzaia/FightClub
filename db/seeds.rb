@@ -358,5 +358,4 @@ Group.all.length.times do |i|
 end
 
 Comment.create({author_id: 1, event_id: 1, body: "hi"})
-Comment.create({author_id: 2, event_id: 1, body: "hey", parent_comment_id: 1})
-Comment.create({author_id: 2, body: "hey"})
+Comment.create({author_id: 2, body: "hey", parent_comment_id: 1})
