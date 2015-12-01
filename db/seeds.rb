@@ -355,4 +355,10 @@ Group.all.length.times do |i|
     group_id: Group.all[i].id,
     address: "Pyramids of Giza"
   })
+
+
+
+
+  Comment.create({author_id: 1, event_id: 1, body: "hi"})
+  Comment.create({author_id: 2, event_id: 1, body: "hey", parent_comment_id: 1})
 end
