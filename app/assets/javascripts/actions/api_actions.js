@@ -57,3 +57,10 @@ ApiActions.receiveEvent = function(data){
     event: data
   });
 };
+
+ApiActions.receiveComments = function(data){
+  AppDispatcher.dispatch({
+    actionType: CommentConstants.COMMENTS_RECEIVED,
+    comments: data
+  });
+};

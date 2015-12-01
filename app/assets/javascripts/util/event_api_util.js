@@ -1,4 +1,4 @@
-var EventApiUtil = window.GroupEventApiUtil = function(){
+var EventApiUtil = window.EventApiUtil = function(){
 
 };
 
