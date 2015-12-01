@@ -20,6 +20,9 @@ var CommentIndex = React.createClass({
     if (this.state.comments.length !== 0){
       return (
         <section className="comments-container">
+
+          <CommentCreate eventId={this.props.eventId}/>
+
           {this.state.comments.map(function(comment){
             return (
               <section key={comment.id} className="comment-item group">
@@ -33,7 +36,7 @@ var CommentIndex = React.createClass({
                   <article className="comment-body">{comment.body}</article>
 
                   {comment.responses.map(function(response){
-                    return (<Response response={response}/>);
+                    return (<Response key={response.id} response={response}/>);
                   })}
 
                 </section>
