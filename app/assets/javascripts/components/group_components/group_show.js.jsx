@@ -19,9 +19,10 @@ var GroupShow = React.createClass({
     GroupStore.fetchGroup(this.props.routeParams.id);
     if (this.props.location.pathname.indexOf("members") !== -1) {
       this.setState({showMembers: true});
-    } else if (this.props.params.event_id !== "undefined") {
+    } else if (typeof this.props.params.event_id !== "undefined") {
       EventStore.addChangeListener(this._changed);
       EventStore.fetchEvent(this.props.params.event_id);
+      this.setState({showEvent: true});
     }
   },
 

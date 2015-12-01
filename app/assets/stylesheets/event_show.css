@@ -5,3 +5,43 @@
   border-radius: inherit;
   background: white;
 }
+
+.event-show-content {
+  float: left;
+  width: 618px;
+}
+
+.event-show-members {
+  width: 172px;
+  float: right;
+}
+
+.event-show-title {
+  font-size: 38px;
+  padding: 20px 10px;
+  font-weight: bold;
+}
+
+.event-show-date {
+  font-weight: bold;
+  font-size: 20px;
+  padding: 0 10px;
+}
+
+.event-show-hour {
+  font-size: 16px;
+  color: grey;
+  padding: 0 0 10px 10px;
+}
+
+.event-show-location {
+  font-weight: bold;
+  font-size: 20px;
+  padding: 0 10px 10px 10px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.event-show-description {
+  color: grey;
+  padding: 10px;
+}

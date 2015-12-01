@@ -303,6 +303,10 @@ User.all.each do |user|
   UsersGroup.create({group_id: 1, user_id: user.id})
 end
 
+User.all.each do |user|
+  UsersEvent.create({event_id: 1, user_id: user.id})
+end
+
 def group_join_random_5_users (group)
   users = []
   while users.length <= 5

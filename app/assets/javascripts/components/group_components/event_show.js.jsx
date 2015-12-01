@@ -7,8 +7,9 @@ var EventShow = React.createClass({
 
           <section className="event-show-content">
 
-            <h1 className="event-show-header">{this.props.event.title}</h1>
+            <h1 className="event-show-title">{this.props.event.title}</h1>
             <h2 className="event-show-date">{this.props.event.start_date}</h2>
+            <h3 className="event-show-hour">{this.props.event.start_hour}</h3>
             <h2 className="event-show-location">{this.props.event.address}</h2>
             <article className="event-show-description">{this.props.event.description}</article>
 
