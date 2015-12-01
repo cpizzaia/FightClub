@@ -9,6 +9,7 @@ var GroupShow = React.createClass({
       error: "",
       showMembers: false,
       showEvent: false,
+      event: EventStore.event()
     });
   },
 
@@ -18,6 +19,9 @@ var GroupShow = React.createClass({
     GroupStore.fetchGroup(this.props.routeParams.id);
     if (this.props.location.pathname.indexOf("members") !== -1) {
       this.setState({showMembers: true});
+    } else if (this.props.params.event_id !== "undefined") {
+      EventStore.addChangeListener(this._changed);
+      EventStore.fetchEvent(this.props.params.event_id);
     }
   },
 
@@ -31,6 +35,8 @@ var GroupShow = React.createClass({
     if (nextProps.location.pathname.indexOf("members") !== -1) {
       this.setState({showMembers: true, showEvent: false});
     } else if (typeof nextProps.params.event_id !== "undefined") {
+      EventStore.addChangeListener(this._changed);
+      EventStore.fetchEvent(nextProps.params.event_id);
       this.setState({showMembers: false, showEvent: true});
     } else {
       this.setState({showMembers: false, showEvent: false});
@@ -40,7 +46,8 @@ var GroupShow = React.createClass({
   _changed: function(){
     this.setState({
       group: GroupStore.group(),
-      currentUser: UserStore.currentUser()
+      currentUser: UserStore.currentUser(),
+      event: EventStore.event()
      });
   },
 
@@ -175,7 +182,7 @@ var GroupShow = React.createClass({
   _showEvent: function(){
     if(!this.state.showMembers && this.state.showEvent){
       return (
-        <EventShow />
+        <EventShow event={this.state.event}/>
       );
     }
   },

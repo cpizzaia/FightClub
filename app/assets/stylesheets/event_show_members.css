@@ -1,0 +1,16 @@
+.event-show-member-count {
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.event-show-member-image-container {
+  height: 50px;
+  width: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.event-show-member-image {
+  height: inherit;
+}
