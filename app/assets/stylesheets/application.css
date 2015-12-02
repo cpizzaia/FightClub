@@ -55,6 +55,7 @@
     position: absolute;
     left: 50%;
     -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
     height: 500px;
     display: block;
     z-index: -998;

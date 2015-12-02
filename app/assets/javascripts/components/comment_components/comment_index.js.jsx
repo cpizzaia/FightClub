@@ -7,12 +7,16 @@ var CommentIndex = React.createClass({
     UserStore.addChangeListener(this._changed);
     CommentStore.addChangeListener(this._changed);
     CommentStore.fetchComments(this.props.eventId);
+    this.id = window.setInterval(function(){
+      CommentStore.fetchComments(this.props.eventId);
+    }.bind(this), 3000);
   },
 
   componentWillUnmount: function(){
     UserStore.removeChangeListener(this._changed);
     CommentStore.removeChangeListener(this._changed);
     CommentStore.clearComments();
+    window.clearInterval(this.id);
   },
 
   _changed: function(){
