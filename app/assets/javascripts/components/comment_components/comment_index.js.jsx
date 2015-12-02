@@ -19,12 +19,6 @@ var CommentIndex = React.createClass({
     this.setState({comments: CommentStore.all(), user: UserStore.currentUser()});
   },
 
-  _showReplyLinks: function(){
-    if (typeof this.state.user.id !== "undefined"){
-      return(<p className="comment-reply">Reply</p>);
-    }
-  },
-
   render: function(){
     if (this.state.comments.length !== 0){
       return (
@@ -34,23 +28,7 @@ var CommentIndex = React.createClass({
 
           {this.state.comments.map(function(comment){
             return (
-              <section key={comment.id} className="comment-item group">
-
-                <div className="comment-author-image-container">
-                  <img src={comment.author.profile_img_url} className="comment-author-image center-image"/>
-                </div>
-
-                <section className="comment-details">
-                  <h3 className="comment-author-name">{comment.author.name}</h3>
-                  <article className="comment-body">{comment.body}</article>
-                  {this._showReplyLinks()}
-                  {comment.responses.map(function(response){
-                    return (<Response key={response.id} response={response}/>);
-                  })}
-
-                </section>
-
-              </section>
+              <CommentIndexItem comment={comment} user={this.state.user}/>
             );
           }.bind(this))}
         </section>
