@@ -2,7 +2,12 @@ class User < ActiveRecord::Base
   validates :useremail, :password_digest, :session_token, presence: true, uniqueness: true
   validates :name, presence: true
   validates :password, length: {minimum: 6, allow_nil: true}
-  has_attached_file :profile_img, default_url: "missing.jpeg"
+  has_attached_file :profile_img,
+                    :styles => {
+                      :thumb => {geometry: "x120", format: :png},
+                      :profile => {geometry: "x300", format: :png}
+                    },
+                     default_url: "missing.jpeg"
   validates_attachment_content_type :profile_img, content_type: /\Aimage\/.*\Z/
 
   attr_reader :password

@@ -38,7 +38,7 @@ var MemberProfile = React.createClass({
               </h2>
             </div>
             <div className="profile-image-container group">
-              <img className="profile-image center-image" src={this.state.user.profile_img_url}/>
+              <img className="profile-image center-image" src={this.state.user.big_profile_img_url}/>
             </div>
           </div>
       );

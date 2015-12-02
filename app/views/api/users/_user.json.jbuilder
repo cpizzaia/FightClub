@@ -5,7 +5,8 @@ unless user.nil?
     :id, :name
   )
 
-  json.profile_img_url asset_path(user.profile_img.url)
+  json.profile_img_url asset_path(user.profile_img.url(:thumb))
+  json.big_profile_img_url asset_path(user.profile_img.url(:profile))
 
 
   if show_groups

@@ -25,7 +25,7 @@ var Profile = React.createClass({
   _changed: function(){
     this.setState({
       user: UserStore.currentUser(),
-      profileImgUrl: UserStore.currentUser().profile_img_url,
+      profileImgUrl: UserStore.currentUser().big_profile_img_url,
       profileName: UserStore.currentUser().name
     });
   },
