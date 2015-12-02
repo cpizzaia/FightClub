@@ -1,6 +1,6 @@
 json.extract!(
   comment,
-  :id, :body
+  :id, :body, :parent_comment_id
 )
 
 json.author do

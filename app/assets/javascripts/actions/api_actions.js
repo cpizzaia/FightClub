@@ -71,3 +71,10 @@ ApiActions.receiveComment = function(data){
     comment: data
   });
 };
+
+ApiActions.receiveReply = function(data){
+  AppDispatcher.dispatch({
+    actionType: CommentConstants.REPLY_RECEIVED,
+    comment: data
+  });
+};

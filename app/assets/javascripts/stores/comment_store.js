@@ -26,6 +26,9 @@
       case CommentConstants.COMMENT_RECEIVED:
         CommentStore.storeComment(payload.comment);
         break;
+      case CommentConstants.REPLY_RECEIVED:
+        CommentStore.storeReply(payload.comment);
+        break;
     }
   });
 
@@ -33,6 +36,16 @@
     _comments.unshift(comment);
     this.changed();
   };
+
+  CommentStore.storeReply = function(comment){
+    for (var i = 0; i < _comments.length; i++){
+      if (_comments[i].id === comment.parent_comment_id){
+        _comments[i].responses.push(comment);
+      }
+    }
+    this.changed();
+  };
+
 
   CommentStore.storeComments = function(comments){
     _comments = comments;

@@ -28,7 +28,7 @@ var CommentIndex = React.createClass({
 
           {this.state.comments.map(function(comment){
             return (
-              <CommentIndexItem comment={comment} user={this.state.user}/>
+              <CommentIndexItem key={comment.id} comment={comment} user={this.state.user}/>
             );
           }.bind(this))}
         </section>

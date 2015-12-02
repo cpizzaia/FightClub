@@ -27,3 +27,18 @@ CommentApiUtil.createComment = function(formData){
       }
   });
 };
+
+CommentApiUtil.createReply = function(formData, callback){
+  $.ajax({
+      url: "api/comments/",
+      type: "POST",
+      processData: false,
+      contentType: false,
+      dataType: 'json',
+      data: formData,
+      success: function(data){
+        ApiActions.receiveReply(data);
+        callback();
+      }
+  });
+};

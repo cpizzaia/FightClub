@@ -14,12 +14,19 @@
   height: inherit;
 }
 
-.comment-create-input {
-  width: 498px;
+.comment-create-input, .reply-create-input {
   max-width: 498px;
   height: 100px;
   border: 1px solid grey;
   padding: 10px;
+}
+
+.comment-create-input {
+  width: 498px;
+}
+
+.reply-create-input {
+  width: 388px;
 }
 
 .comment-create-form {
