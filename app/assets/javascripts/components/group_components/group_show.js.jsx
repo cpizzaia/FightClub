@@ -60,7 +60,7 @@ var GroupShow = React.createClass({
 
       formData.append('users_group[group_id]', this.state.group.id);
 
-      ApiUtil.joinGroup(formData);
+      GroupApiUtil.joinGroup(formData);
     } else {
       this._displayError("Sign in to join groups");
     }
@@ -69,7 +69,7 @@ var GroupShow = React.createClass({
   _leaveGroup: function(e) {
     if (this.state.group.organizer_id !== this.state.currentUser.id) {
       e.preventDefault();
-      ApiUtil.leaveGroup(this.state.group.id);
+      GroupApiUtil.leaveGroup(this.state.group.id);
     } else {
       this._displayError("User cannot leave own group");
     }

@@ -14,7 +14,7 @@ CommentApiUtil.fetchComments = function(eventId){
   });
 };
 
-CommentApiUtil.createComment = function(formData){
+CommentApiUtil.createComment = function(formData, callback){
   $.ajax({
       url: "api/comments/",
       type: "POST",
@@ -24,6 +24,7 @@ CommentApiUtil.createComment = function(formData){
       data: formData,
       success: function(data){
         ApiActions.receiveComment(data);
+        callback();
       }
   });
 };

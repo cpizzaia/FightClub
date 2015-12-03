@@ -59,7 +59,7 @@ var Profile = React.createClass({
     }
     formData.append("user[name]", name);
 
-    ApiUtil.updateUser(this.state.user.id, formData, this._updated);
+    UserApiUtil.updateUser(this.state.user.id, formData, this._updated);
   },
 
   _editName: function(){

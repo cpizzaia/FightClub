@@ -27,7 +27,7 @@ var GroupEventIndex = React.createClass({
     if (typeof this.props.currentUser.id !== "undefined"){
       if (this.props.currentUserInGroup()) {
         e.preventDefault();
-        ApiUtil.joinEvent(this.props.event.id);
+        EventApiUtil.joinEvent(this.props.event.id);
       } else {
         this.props.displayError("Join the group to join events");
       }
@@ -38,7 +38,7 @@ var GroupEventIndex = React.createClass({
 
   _leaveEvent :function(e){
     e.preventDefault();
-    ApiUtil.leaveEvent(this.props.event.id);
+    EventApiUtil.leaveEvent(this.props.event.id);
   },
 
   _eventPassed: function(){
