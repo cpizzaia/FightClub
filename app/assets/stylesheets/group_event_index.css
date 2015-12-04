@@ -53,7 +53,11 @@
 }
 
 .group-event-index-address {
+  padding-bottom: 10px;
+}
 
+.group-event-index-description {
+  padding-top: 10px;
 }
 
 .group-event-index-members {
