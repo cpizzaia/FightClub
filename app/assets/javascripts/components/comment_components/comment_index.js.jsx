@@ -38,7 +38,11 @@ var CommentIndex = React.createClass({
         </section>
       );
     } else {
-      return <div></div>;
+      return (
+        <section className="comments-container">
+          <CommentCreate eventId={this.props.eventId}/>
+        </section>
+      );
     }
   }
 });
