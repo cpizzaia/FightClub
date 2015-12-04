@@ -19,7 +19,11 @@
   position: relative;
   border-radius: 100px;
   overflow: hidden;
+  transition: box-shadow 0.3s;
+}
 
+.toolbar-thumbnail-link:hover {
+  box-shadow: 0 0 5px black;
 }
 
 .logo > img {
