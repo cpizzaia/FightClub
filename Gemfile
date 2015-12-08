@@ -35,6 +35,10 @@ gem 'kaminari'
 
 gem 'pg_search'
 
+gem 'figaro'
+
+gem 'aws-sdk'
+
 
 
 # Use ActiveModel has_secure_password
