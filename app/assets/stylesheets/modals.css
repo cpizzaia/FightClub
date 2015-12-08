@@ -95,3 +95,41 @@
 .modal-submit-button:hover {
   background: darkred;
 }
+
+.modal-group-image-preview {
+  margin: auto;
+  position: relative;
+  height: 100px;
+  width: 171px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: white;
+  border-radius: 5px;
+}
+
+.modal-group-image {
+  height: inherit;
+}
+
+.modal-preview-details {
+  padding-bottom: 23px;
+  padding-left: 10px;
+  background: rgba(0,0,0, 0.7);
+  letter-spacing: -0.25px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: Whitney, helvetica, arial, sans-serif;
+  position: relative;
+  top: 66px;
+  transition: top 0.3s;
+  color: white;
+  transition: top 0.3s;
+}
+
+.modal-group-image-preview:hover > .modal-preview-details{
+  top: 82px;
+}
+
+.modal-preview-members {
+  font-weight: normal;
+}

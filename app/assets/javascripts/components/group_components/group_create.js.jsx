@@ -62,6 +62,36 @@ var GroupCreate = React.createClass({
     this.history.pushState(null, "/groups/" + id);
   },
 
+  displayFileName: function(){
+    if (this.state.groupImgUrl !== "") {
+      return(
+        <label className="modal-image-button"> {this.state.groupImgUrl}
+          <input type="file" onChange={this._changeFile}/>
+        </label>
+      );
+    } else {
+      return(
+        <label className="modal-image-button"> Choose an image to represent your group
+          <input type="file" onChange={this._changeFile}/>
+        </label>
+      );
+    }
+  },
+
+  displayTempGroup: function(){
+    if (this.state.groupImgUrl !== ""){
+      return (
+        <div className="modal-group-image-preview">
+          <img className="modal-group-image center-image" src={this.state.groupImgUrl}/>
+            <div className="modal-preview-details">
+              <h2>{this.state.title}</h2>
+              <h3 className="modal-preview-members">{"We're " + 1 + " " + this.state.memberNoun}</h3>
+            </div>
+        </div>
+      );
+    }
+  },
+
   render: function(){
     return(
       <div className="modal-background">
@@ -86,6 +116,8 @@ var GroupCreate = React.createClass({
           <label className="modal-label"> What would you like to call your group members?
             <input className="modal-input" type="text" valueLink={this.linkState("memberNoun")}/>
           </label>
+
+          {this.displayTempGroup()}
 
           <label className="modal-image-button"> Choose an image to represent your group
             <input type="file" onChange={this._changeFile}/>
