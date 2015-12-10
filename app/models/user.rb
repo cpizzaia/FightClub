@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
                       :thumb => {geometry: "x120", format: :png},
                       :profile => {geometry: "x300", format: :png}
                     },
-                     default_url: "missing.jpeg"
+                     default_url: "missing.png"
   validates_attachment_content_type :profile_img, content_type: /\Aimage\/.*\Z/
 
   attr_reader :password
