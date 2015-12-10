@@ -1,79 +1,59 @@
 # FightClub
 
-[Heroku link][heroku]
+[Live](http://fightclub.site)
 
-[heroku]: http://fight-club-app.herokuapp.com
+## Summary
 
-## Minimum Viable Product
+Fightclub is a clone of [Meetup](http://meetup.com), A site where you can find
+groups by similiar interest and signup for their events. FightClub replicates
+the basic functionality of Meetup. The main difference is that FightClub was
+entirely built as a simple application in ReactJS.
 
-FightClub is a web application inspired by Meetup built using Ruby on Rails
-and React.js. FightClub allows users to:
+## What can I do on this website?
 
-<!-- This is a Markdown checklist. Use it to keep track of your progress! -->
+You can:
+- Securely create an account
+- Edit your own profile and see the groups you organize or are a member of.
+- Join groups or start your own
+- Join events or start your own
+- View other members and see what groups they are part of.
+- Search for groups by title or description
+- Comment on events and chat with other members
 
-- [ ] Create an account
-- [ ] Log in / Log out
-- [ ] View and edit profile.
-- [ ] View Groups you manage and groups you are a part of.
-- [ ] Create and join Groups.
-- [ ] Within Groups create and join Events.
-- [ ] View Groups and Events.
-- [ ] Apply styling to Groups when creating them.
+### Languages:
+- Javascript
+- Ruby
+- HTML / CSS
 
-## Design Docs
-* [View Wireframes][view]
-* [DB schema][schema]
+### Frameworks:
+- React
+- Rails
 
-[view]: ./docs/views.md
-[schema]: ./docs/schema.md
-
-## Implementation Timeline
-
-
-### Phase 1: User Authentication, User Model, User API, User Controller, User React Components (.5 days)
-In Phase 1, I will implement the user model and all of its supporting features
-such as the API, controller, and React components used to create and display a
-profile.
-
-[Details][phase-one]
-
-### Phase 2: Group model, Group controller, Group API, and Group React Components (3 days)
-Phase 2 will implement the group modal and all the of features that support it
-such as being able to create a group and have users join it while also being
-able to display all this information through React.
-
-[Details][phase-two]
-
-### Phase 3: Event model, Event controller, Event API, and Event React Components (2 days)
-Same as Phase 2 but will implement everything supporting the Event model.
-
-[Details][phase-three]
-
-### Phase 4: Create modals to allow users to create groups, events, users, and sessions (2 day)
-Phase 4 will create a better experience for users as it will allow them to
-create events and groups without having to navigate to a new page.
+### Libraries and Technologies:
+- jQuery / AJAX
+- jQuery-UI
+- paperclip / AWS
+- pg_search
+- kaminari
+- figaro
+- jbuilder
 
 
-### Phase 5: Style site and create searches (2 days)
-Phase 5 will bring the site together by making everything look production ready
-through design and will also allow users to search for groups through filters
-and search boxes.
+## API
 
+FightClub is powered by a RESTful JSON API.
 
-### Phase 6: Create Transitions for all effects (.5 days)
-Phase 6 will complete the site by adding transitions to all the user
-interactions and will create an amazing user experience.
+I ensured that  React routes and API endpoints were the same. If you're on a
+page that displays data (besides the root), you can replace the `#` in
+the URI fragment at any time with `api` to see what's being served up for a
+given view.
 
+I used model scoping in rails to split the events up and display the results by
+upcoming or past and also took extra care to make sure all queries that would be
+N+1 were crafted in SQL not to be.
 
-### Bonus Features (TBD)
-- [ ] Tags
-- [ ] Messages
-- [ ] Comments
-- [ ] Group reviews
-- [ ] Reminders for events you are attending.
-- [ ] Adding interests to events and recommendations for users.
-- [ ] Facebook authentication.
-
-[phase-one]: ./docs/phases/phase1.md
-[phase-two]: ./docs/phases/phase2.md
-[phase-three]: ./docs/phases/phase3.md
+## Future polishing touches (TBD)
+- Tags on groups and users, to enable reccomendations.
+- Private messaging between users.
+- Group reviews.
+- Reminders for events you are attending.
