@@ -3,7 +3,7 @@ var GroupApiUtil = window.GroupApiUtil = function(){
 };
 
 GroupApiUtil.fetchGroupsByPage = function(page){
-  $.ajax({
+  return $.ajax({
     url: "/api/groups",
     type: "GET",
     contentType: "application/json",
@@ -14,8 +14,8 @@ GroupApiUtil.fetchGroupsByPage = function(page){
   });
 };
 
-GroupApiUtil.createGroup = function(formData, callback){
-  $.ajax({
+GroupApiUtil.createGroup = function(formData){
+  return $.ajax({
     url: "api/groups/",
     type: "POST",
     processData: false,
@@ -24,14 +24,13 @@ GroupApiUtil.createGroup = function(formData, callback){
     data: formData,
     success: function(data){
       ApiActions.receiveGroup(data);
-      callback(data.id);
     }
   });
 };
 
 
 GroupApiUtil.joinGroup = function(formData){
-  $.ajax({
+  return $.ajax({
     url: "api/users_groups/",
     type: "POST",
     processData: false,
@@ -45,7 +44,7 @@ GroupApiUtil.joinGroup = function(formData){
 };
 
 GroupApiUtil.leaveGroup = function(group_id){
-  $.ajax({
+  return $.ajax({
     url: "api/users_groups/" + group_id,
     type: "DELETE",
     dataType: 'json',
@@ -56,7 +55,7 @@ GroupApiUtil.leaveGroup = function(group_id){
 };
 
 GroupApiUtil.fetchGroup = function(id){
-  $.ajax({
+  return $.ajax({
       url: "api/groups/" + id,
       type: "GET",
       contentType: "application.json",
@@ -67,7 +66,7 @@ GroupApiUtil.fetchGroup = function(id){
 };
 
 GroupApiUtil.fetchAllGroupEvents = function(id){
-  $.ajax({
+  return $.ajax({
       url: "api/groups/" + id,
       type: "GET",
       contentType: "application.json",

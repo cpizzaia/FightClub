@@ -54,12 +54,12 @@ var GroupCreate = React.createClass({
     formData.append("group[zipcode]", zipcode);
 
 
-    GroupApiUtil.createGroup(formData, this._redirectOnSuccess);
+    GroupApiUtil.createGroup(formData).then(this._redirectOnSuccess);
   },
 
-  _redirectOnSuccess: function(id){
+  _redirectOnSuccess: function(group){
     this.props.stopCreateGroup();
-    this.history.pushState(null, "/groups/" + id);
+    this.history.pushState(null, "/groups/" + group.id);
   },
 
   displayFileName: function(){
