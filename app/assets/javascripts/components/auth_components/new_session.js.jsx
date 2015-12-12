@@ -16,7 +16,7 @@ var NewSession = React.createClass({
     formData.append("user[useremail]", email);
     formData.append("user[password]", password);
 
-    UserApiUtil.signUserIn(formData, this.props.stopSignIn);
+    UserApiUtil.signUserIn(formData).then(this.props.stopSignIn);
   },
 
 

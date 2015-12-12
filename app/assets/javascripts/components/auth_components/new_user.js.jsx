@@ -18,7 +18,7 @@ var NewUser = React.createClass({
     formData.append("user[password]", password);
     formData.append("user[name]", name);
 
-    UserApiUtil.signUserUp(formData, this._redirect);
+    UserApiUtil.signUserUp(formData).then(this._redirect);
   },
 
   _redirect: function(){

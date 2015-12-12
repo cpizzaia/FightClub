@@ -3,7 +3,7 @@ var UserApiUtil = window.UserApiUtil = function(){
 };
 
 UserApiUtil.fetchCurrentUser= function(){
-  $.ajax({
+  return $.ajax({
     url: "/api/users/current_user",
     type: "GET",
     contentType: "application/json",
@@ -14,7 +14,7 @@ UserApiUtil.fetchCurrentUser= function(){
 };
 
 UserApiUtil.fetchUserById= function(id){
-  $.ajax({
+ return $.ajax({
     url: "/api/users/" + id,
     type: "GET",
     contentType: "application/json",
@@ -24,8 +24,8 @@ UserApiUtil.fetchUserById= function(id){
   });
 };
 
-UserApiUtil.updateUser = function(id, formData, callback){
-  $.ajax({
+UserApiUtil.updateUser = function(id, formData){
+  return $.ajax({
     url: "api/users/" + id,
     type: "PATCH",
     processData: false,
@@ -34,25 +34,23 @@ UserApiUtil.updateUser = function(id, formData, callback){
     data: formData,
     success: function(data){
       ApiActions.receiveCurrentUser(data);
-      callback();
     }
   });
 };
 
-UserApiUtil.signUserOut = function(callback){
-  $.ajax({
+UserApiUtil.signUserOut = function(){
+  return $.ajax({
     url: "api/session/",
     type: "DELETE",
     dataType: 'json',
     success: function(data){
       ApiActions.receiveCurrentUser(data);
-      callback();
     }
   });
 };
 
-UserApiUtil.signUserIn = function(credentials, callback){
-  $.ajax({
+UserApiUtil.signUserIn = function(credentials){
+  return $.ajax({
     url: "api/session/",
     type: "POST",
     processData: false,
@@ -61,13 +59,12 @@ UserApiUtil.signUserIn = function(credentials, callback){
     data: credentials,
     success: function(data){
       ApiActions.receiveCurrentUser(data);
-      callback();
     }
   });
 };
 
-UserApiUtil.signUserUp = function(credentials, callback){
-  $.ajax({
+UserApiUtil.signUserUp = function(credentials){
+  return $.ajax({
     url: "api/users/",
     type: "POST",
     processData: false,
@@ -76,7 +73,6 @@ UserApiUtil.signUserUp = function(credentials, callback){
     data: credentials,
     success: function(data){
       ApiActions.receiveCurrentUser(data);
-      callback();
     }
   });
 };

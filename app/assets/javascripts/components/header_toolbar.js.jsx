@@ -30,7 +30,7 @@ var HeaderToolbar = React.createClass({
   },
 
   _signOut: function(){
-    UserApiUtil.signUserOut(this._clearAndRedirect);
+    UserApiUtil.signUserOut().then(this._clearAndRedirect);
   },
 
   _createGroup: function(e){
@@ -51,7 +51,7 @@ var HeaderToolbar = React.createClass({
   },
 
   _stopSignIn: function(e){
-    if (typeof e !== "undefined"){
+    if (typeof e == "object" && e.preventDefault){
       e.preventDefault();
     }
     this.setState({signIn: false});
