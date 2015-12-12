@@ -2,8 +2,8 @@ var EventApiUtil = window.EventApiUtil = function(){
 
 };
 
-EventApiUtil.createEvent = function(formData, callback){
-  $.ajax({
+EventApiUtil.createEvent = function(formData){
+  return $.ajax({
     url: "api/events/",
     type: "POST",
     processData: false,
@@ -12,14 +12,13 @@ EventApiUtil.createEvent = function(formData, callback){
     data: formData,
     success: function(data){
       ApiActions.receiveGroupEvent(data);
-      callback();
     }
   });
 };
 
 
 EventApiUtil.joinEvent = function(eventId){
-  $.ajax({
+  return $.ajax({
     url: "api/users_events/",
     type: "POST",
     contentType: "application/json",
@@ -34,7 +33,7 @@ EventApiUtil.joinEvent = function(eventId){
 };
 
 EventApiUtil.leaveEvent = function(event_id){
-  $.ajax({
+  return $.ajax({
     url: "api/users_events/" + event_id,
     type: "DELETE",
     dataType: 'json',
@@ -45,7 +44,7 @@ EventApiUtil.leaveEvent = function(event_id){
 };
 
 EventApiUtil.fetchEvent = function(id){
-  $.ajax({
+  return $.ajax({
       url: "api/events/" + id,
       type: "GET",
       contentType: "application.json",
