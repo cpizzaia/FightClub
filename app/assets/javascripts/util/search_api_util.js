@@ -3,7 +3,7 @@ var SearchApiUtil = window.SearchApiUtil = function(){
 };
 
 SearchApiUtil.search = function(query){
-  $.ajax({
+  return $.ajax({
     url: "/api/search",
     type: "GET",
     contentType: "application/json",
