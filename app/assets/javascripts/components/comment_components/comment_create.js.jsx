@@ -29,7 +29,7 @@ var CommentCreate = React.createClass({
     formData.append("comment[event_id]", eventId);
     formData.append("comment[body]", body);
 
-    CommentApiUtil.createComment(formData, this.setState({body: ""}));
+    CommentApiUtil.createComment(formData).then(this.setState({body: ""}));
   },
 
   render: function(){

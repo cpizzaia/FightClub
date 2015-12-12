@@ -16,7 +16,7 @@ var ReplyCreate = React.createClass({
     formData.append("comment[parent_comment_id]", parentCommentId);
     formData.append("comment[body]", body);
 
-    CommentApiUtil.createReply(formData, this.props.toggleReplyField);
+    CommentApiUtil.createReply(formData).then(this.props.toggleReplyField);
   },
 
   render: function(){

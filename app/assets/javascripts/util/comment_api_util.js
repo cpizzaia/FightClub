@@ -3,7 +3,7 @@ var CommentApiUtil = window.CommentApiUtil = function(){
 };
 
 CommentApiUtil.fetchComments = function(eventId){
-  $.ajax({
+  return $.ajax({
       url: "api/comments/",
       type: "GET",
       contentType: "application.json",
@@ -14,8 +14,8 @@ CommentApiUtil.fetchComments = function(eventId){
   });
 };
 
-CommentApiUtil.createComment = function(formData, callback){
-  $.ajax({
+CommentApiUtil.createComment = function(formData){
+  return $.ajax({
       url: "api/comments/",
       type: "POST",
       processData: false,
@@ -24,13 +24,12 @@ CommentApiUtil.createComment = function(formData, callback){
       data: formData,
       success: function(data){
         ApiActions.receiveComment(data);
-        callback();
       }
   });
 };
 
-CommentApiUtil.createReply = function(formData, callback){
-  $.ajax({
+CommentApiUtil.createReply = function(formData){
+  return $.ajax({
       url: "api/comments/",
       type: "POST",
       processData: false,
@@ -39,7 +38,6 @@ CommentApiUtil.createReply = function(formData, callback){
       data: formData,
       success: function(data){
         ApiActions.receiveReply(data);
-        callback();
       }
   });
 };
