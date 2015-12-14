@@ -356,20 +356,29 @@ Group.all.length.times do |i|
     address: "Pyramids of Giza"
   })
 end
-User.all.each do |user|
-  Comment.create({
-    author_id: user.id,
-    event_id: 1,
-    body: "Lorem Ipsum is simply dummy text of the printing and typesetting
-    industry. Lorem Ipsum has been the industry's standard dummy text ever
-    since the 1500s, when an unknown printer took a galley of type and scrambled
-    it to make a type specimen book. It has survived not only five centuries,
-    but also the leap into electronic typesetting, remaining essentially unchanged.
-    It was popularised in the 1960s with the release of Letraset sheets containing
-    Lorem Ipsum passages, and more recently with desktop publishing software like
-    Aldus PageMaker including versions of Lorem Ipsum."
-    })
-end
 
-Comment.create({author_id: 2, parent_comment_id: 1, body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."})
-Comment.create({author_id: 2, parent_comment_id: 1, body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."})
+Comment.create({
+  author_id: User.where(useremail: "ryu@capcom.com").first.id,
+  event_id: 1, body: "To live is to fight, to fight is to live!"
+  })
+Comment.create({
+  author_id: User.where(useremail: "mbison@capcom.com").first.id,
+  event_id: 1,
+  body: "You cannot fight destiny. The world will be mine."})
+Comment.create({
+  author_id: User.where(useremail: "ken@capcom.com").first.id,
+  event_id: 1,
+  body: "I could really improve if I could find someone strong enough to beat me!"})
+Comment.create({
+  author_id: User.where(useremail: "chunli@capcom.com").first.id,
+  event_id: 1,
+  body: "It's been much too long since I've been in a fair fight!"
+  })
+
+
+
+Comment.create({
+  author_id: User.where(useremail: "ryu@capcom.com").first.id,
+  parent_comment_id: 4,
+  body: "There's nothing like a fair fight. It improves both competitors."
+  })
