@@ -25,9 +25,11 @@
   position: absolute;
   float: left;
   width: 19px;
+  height: 19px;
   right: 7px;
-  top: 14px;
+  top: 5px;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .search-bar-icon > img {

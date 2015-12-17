@@ -25,7 +25,7 @@ var SearchBar = React.createClass({
           onChange={this._handleChange}/>
 
         <span className="search-bar-icon">
-          <img onClick={this.focusSearch} className="center-image" src={FightClub.magnifying_glass}/>
+          <img onClick={this.focusSearch}  src={FightClub.magnifying_glass}/>
         </span>
       </form>
     );
