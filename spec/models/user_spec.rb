@@ -13,6 +13,45 @@ RSpec.describe User, type: :model do
     end
   end
 
+  describe "#password=" do
+    before(:each) do
+      @user = build(:user)
+      @user.password=("password")
+    end
+
+    it "sets the instance variable @password" do
+      expect(@user.password).to eq("password")
+    end
+
+    it "sets an attribute password_digest" do
+      expect(@user.password_digest).to_not be_nil
+    end
+
+    it "password_digest and password are not the same" do
+      expect(@user.password).not_to eq(@user.password_digest)
+    end
+  end
+
+  describe "#is_password?" do
+    before(:each) do
+      @user = build(:user)
+      @user.password=("password")
+    end
+
+    it "returns true if the password is correct" do
+      expect(@user.is_password?("password")).to be true
+    end
+
+    it "returns false if the password is incorrect" do
+      expect(@user.is_password?("password1")).to be false
+    end
+
+    it "returns false when given nil" do
+      expect(@user.is_password?(nil)).to be false
+    end
+  end
+
+
   describe "#groups_led" do
     before(:each) do
       @user = create(:user)
