@@ -143,4 +143,26 @@ RSpec.describe User, type: :model do
       expect(@user.groups).not_to include(@group2)
     end
   end
+
+  describe "#events" do
+    before(:each) do
+      @user = create(:user)
+      @group = @user.groups_led.create(attributes_for(:group))
+      @event = @group.events.create(attributes_for(:event))
+    end
+
+    it "user should have many events" do
+      t = User.reflect_on_association(:events)
+      expect(t.macro).to eq(:has_many)
+    end
+
+    it "returns the events a user is a part of" do
+      expect(@user.events).to include(@event)
+    end
+
+    it "does not return events a user is not a part of" do
+      UsersEvent.destroy_all
+      expect(@user.events).not_to include(@event)
+    end
+  end
 end
