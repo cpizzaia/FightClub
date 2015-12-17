@@ -21,16 +21,15 @@
   box-shadow: 0 0 25px red;
 }
 
-.search-bar-icon:before {
-  font-size: 25px;
-  content: "⚲";
+.search-bar-icon {
+  position: absolute;
+  float: left;
+  width: 19px;
+  right: 7px;
+  top: 14px;
+  cursor: pointer;
 }
 
-.search-bar-icon {
-  float: left;
-  width: 10px;
-  transform: rotate(-45deg);
-  position: absolute;
-  right: 10px;
-  top: 3px;
+.search-bar-icon > img {
+  width: inherit;
 }

@@ -3,7 +3,7 @@ var SearchBar = React.createClass({
   mixins: [React.addons.LinkedStateMixin],
 
   getInitialState: function(){
-    return({query: ""});
+    return({query: "", focus: false});
   },
 
   _handleChange: function(e){
@@ -24,7 +24,9 @@ var SearchBar = React.createClass({
           placeholder="Find Your Fight"
           onChange={this._handleChange}/>
 
-        <span className="search-bar-icon"></span>
+        <span className="search-bar-icon">
+          <img onClick={this.focusSearch} className="center-image" src={FightClub.magnifying_glass}/>
+        </span>
       </form>
     );
   }
