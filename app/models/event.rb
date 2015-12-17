@@ -5,6 +5,8 @@ class Event < ActiveRecord::Base
 
   after_save :create_users_event
 
+  has_many :comments
+
   belongs_to(
     :group,
     class_name: "Group",

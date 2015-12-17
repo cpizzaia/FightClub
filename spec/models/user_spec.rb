@@ -165,4 +165,19 @@ RSpec.describe User, type: :model do
       expect(@user.events).not_to include(@event)
     end
   end
+
+  describe "#comments" do
+    before(:each) do
+      @user = create(:user)
+      @group = @user.groups_led.create(attributes_for(:group))
+      @event = @group.events.create(attributes_for(:event))
+      @comment = @event.comments.new(attributes_for(:comment))
+      @comment.author_id = @user.id
+      @comment.save
+    end
+
+    it "returns all the comments the user has created" do
+      expect(@user.comments).to include(@comment)
+    end
+  end
 end
