@@ -53,10 +53,6 @@ class User < ActiveRecord::Base
     source: :event
   )
 
-  def groups_where_not_organizer
-    self.groups.where("organizer_id != ?", self.id)
-  end
-
   def self.find_by_credentials(useremail, password)
     user = User.find_by_useremail(useremail)
     return nil if user.nil?
@@ -65,6 +61,10 @@ class User < ActiveRecord::Base
     else
       nil
     end
+  end
+
+  def groups_where_not_organizer
+    self.groups.where("organizer_id != ?", self.id)
   end
 
   def is_password?(password)
