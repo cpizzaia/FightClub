@@ -16,9 +16,18 @@ var NewSession = React.createClass({
     formData.append("user[useremail]", email);
     formData.append("user[password]", password);
 
-    UserApiUtil.signUserIn(formData).then(this.props.stopSignIn);
+    $('body').addClass("wait");
+    UserApiUtil.signUserIn(formData).then(this._onSuccess, this._removeWait);
   },
 
+  _onSuccess: function() {
+    this.props.stopSignIn();
+    this._removeWait();
+  },
+
+  _removeWait: function() {
+    $('body').removeClass("wait");
+  },
 
   render: function(){
     return(

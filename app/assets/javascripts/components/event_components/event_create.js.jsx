@@ -15,29 +15,35 @@ var EventCreate = React.createClass({
     e.preventDefault();
     if (new Date(this.state.startTime) > new Date()){
 
-        var title = this.state.title,
-            description = this.state.description,
-            startTime = this.state.startTime,
-            address = this.state.address;
-            groupId = this.props.groupId;
+      var
+      title = this.state.title,
+      description = this.state.description,
+      startTime = this.state.startTime,
+      address = this.state.address;
+      groupId = this.props.groupId;
 
-        var formData = new FormData();
+      var formData = new FormData();
 
-        formData.append("event[title]", title);
-        formData.append("event[description]", description);
-        formData.append("event[address]", address);
-        formData.append("event[start_time]", startTime);
-        formData.append("event[group_id]", groupId);
-
-
+      formData.append("event[title]", title);
+      formData.append("event[description]", description);
+      formData.append("event[address]", address);
+      formData.append("event[start_time]", startTime);
+      formData.append("event[group_id]", groupId);
 
 
-      EventApiUtil.createEvent(formData).then(this._redirectOnSuccess);
+
+      $('body').addClass("wait");
+      EventApiUtil.createEvent(formData).then(this._redirectOnSuccess, this._removeWait);
     }
   },
 
   _redirectOnSuccess: function(id){
     this.props.stopCreateEvent();
+    $('body').removeClass("wait");
+  },
+
+  _removeWait: function() {
+    $('body').removeClass("wait");
   },
 
   render: function(){

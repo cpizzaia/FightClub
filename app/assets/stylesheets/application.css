@@ -45,6 +45,10 @@
     background: black;
   }
 
+  body.wait *, body.wait {
+    cursor: progress !important;
+  }
+
   .container {
    width: 1000px;
    margin: auto;

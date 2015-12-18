@@ -18,12 +18,18 @@ var NewUser = React.createClass({
     formData.append("user[password]", password);
     formData.append("user[name]", name);
 
-    UserApiUtil.signUserUp(formData).then(this._redirect);
+    $('body').addClass("wait");
+    UserApiUtil.signUserUp(formData).then(this._redirect, this._removeWait);
   },
 
   _redirect: function(){
     this.props.stopSignUp();
     this.history.pushState(null, "/profile");
+    this._removeWait();
+  },
+
+  _removeWait: function() {
+    $('body').removeClass("wait");
   },
 
   render: function(){

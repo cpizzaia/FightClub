@@ -53,13 +53,18 @@ var GroupCreate = React.createClass({
     formData.append("group[description]", description);
     formData.append("group[zipcode]", zipcode);
 
-
-    GroupApiUtil.createGroup(formData).then(this._redirectOnSuccess);
+    $('body').addClass("wait");
+    GroupApiUtil.createGroup(formData).then(this._redirectOnSuccess, this._removeWait);
   },
 
   _redirectOnSuccess: function(group){
     this.props.stopCreateGroup();
     this.history.pushState(null, "/groups/" + group.id);
+    $('body').removeClass("wait");
+  },
+
+  _removeWait: function() {
+    $('body').removeClass("wait");
   },
 
   displayFileName: function(){
