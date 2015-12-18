@@ -3,6 +3,7 @@ class Group < ActiveRecord::Base
   multisearchable :against => [:title, :description]
 
   validates :title, :organizer_id, :description, :city, :state, presence: :true
+  validates :title, uniqueness: true
 
   has_attached_file :group_img,
                     :styles => {

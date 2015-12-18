@@ -3,23 +3,28 @@ var NewUser = React.createClass({
   mixins: [React.addons.LinkedStateMixin, ReactRouter.History],
 
   getInitialState: function(){
-    return({name: "", email: "", password: ""});
+    return({name: "", email: "", password: "", pendingSubmit: false});
   },
 
   _handleSubmit: function(e){
     e.preventDefault();
-    var email = this.state.email;
-    var password = this.state.password;
-    var name = this.state.name;
+    if (this.state.pendingSubmit !== true) {
+      
+      var
+      email = this.state.email,
+      password = this.state.password,
+      name = this.state.name;
 
-    var formData = new FormData();
+      var formData = new FormData();
 
-    formData.append("user[useremail]", email);
-    formData.append("user[password]", password);
-    formData.append("user[name]", name);
+      formData.append("user[useremail]", email);
+      formData.append("user[password]", password);
+      formData.append("user[name]", name);
 
-    $('body').addClass("wait");
-    UserApiUtil.signUserUp(formData).then(this._redirect, this._removeWait);
+      $('body').addClass("wait");
+      this.setState({pendingSubmit: true});
+      UserApiUtil.signUserUp(formData).then(this._redirect, this._removeWait);
+    }
   },
 
   _redirect: function(){
@@ -30,6 +35,7 @@ var NewUser = React.createClass({
 
   _removeWait: function() {
     $('body').removeClass("wait");
+    this.setState({pendingSubmit: false});
   },
 
   render: function(){

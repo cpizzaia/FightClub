@@ -8,12 +8,13 @@ var EventCreate = React.createClass({
       description: "",
       startTime: "",
       address: "",
+      pendingSubmit: false
     });
   },
 
   _handleSubmit: function(e){
     e.preventDefault();
-    if (new Date(this.state.startTime) > new Date()){
+    if (new Date(this.state.startTime) > new Date() && this.state.pendingSubmit !== true){
 
       var
       title = this.state.title,
@@ -33,6 +34,7 @@ var EventCreate = React.createClass({
 
 
       $('body').addClass("wait");
+      this.setState({pendingSubmit: true});
       EventApiUtil.createEvent(formData).then(this._redirectOnSuccess, this._removeWait);
     }
   },
@@ -44,6 +46,7 @@ var EventCreate = React.createClass({
 
   _removeWait: function() {
     $('body').removeClass("wait");
+    this.setState({pendingSubmit: false});
   },
 
   render: function(){

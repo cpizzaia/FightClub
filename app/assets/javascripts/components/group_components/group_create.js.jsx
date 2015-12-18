@@ -9,7 +9,8 @@ var GroupCreate = React.createClass({
       memberNoun: "",
       zipcode: "",
       groupImgFile: null,
-      groupImgUrl: ""
+      groupImgUrl: "",
+      pendingSubmit: false
     });
   },
 
@@ -33,28 +34,31 @@ var GroupCreate = React.createClass({
 
   _handleSubmit: function(e){
     e.preventDefault();
-    var title = this.state.title,
-        file = this.state.groupImgFile,
-        description = this.state.description,
-        memberNoun = this.state.memberNoun,
-        zipcode = this.state.zipcode;
+    if (this.state.pendingSubmit !== true) {
+      var title = this.state.title,
+          file = this.state.groupImgFile,
+          description = this.state.description,
+          memberNoun = this.state.memberNoun,
+          zipcode = this.state.zipcode;
 
-    var formData = new FormData();
+      var formData = new FormData();
 
-    if (file !== null){
-      formData.append("group[group_img]", file);
+      if (file !== null){
+        formData.append("group[group_img]", file);
+      }
+
+      if (memberNoun !== ""){
+        formData.append("group[member_noun]", memberNoun);
+      }
+
+      formData.append("group[title]", title);
+      formData.append("group[description]", description);
+      formData.append("group[zipcode]", zipcode);
+
+      $('body').addClass("wait");
+      this.setState({pendingSubmit: true});
+      GroupApiUtil.createGroup(formData).then(this._redirectOnSuccess, this._removeWait);
     }
-
-    if (memberNoun !== ""){
-      formData.append("group[member_noun]", memberNoun);
-    }
-
-    formData.append("group[title]", title);
-    formData.append("group[description]", description);
-    formData.append("group[zipcode]", zipcode);
-
-    $('body').addClass("wait");
-    GroupApiUtil.createGroup(formData).then(this._redirectOnSuccess, this._removeWait);
   },
 
   _redirectOnSuccess: function(group){
@@ -65,6 +69,7 @@ var GroupCreate = React.createClass({
 
   _removeWait: function() {
     $('body').removeClass("wait");
+    this.setState({pendingSubmit: false});
   },
 
   displayFileName: function(){

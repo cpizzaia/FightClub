@@ -3,21 +3,24 @@ var NewSession = React.createClass({
   mixins: [React.addons.LinkedStateMixin, ReactRouter.History],
 
   getInitialState: function(){
-    return({email: "chunli@capcom.com", password: "123456"});
+    return({email: "chunli@capcom.com", password: "123456", pendingSubmit: false});
   },
 
   _handleSubmit: function(e){
     e.preventDefault();
-    var email = this.state.email;
-    var password = this.state.password;
+    if (this.state.pendingSubmit !== true) {
+      var email = this.state.email;
+      var password = this.state.password;
 
-    var formData = new FormData();
+      var formData = new FormData();
 
-    formData.append("user[useremail]", email);
-    formData.append("user[password]", password);
+      formData.append("user[useremail]", email);
+      formData.append("user[password]", password);
 
-    $('body').addClass("wait");
-    UserApiUtil.signUserIn(formData).then(this._onSuccess, this._removeWait);
+      $('body').addClass("wait");
+      this.setState({pendingSubmit: true});
+      UserApiUtil.signUserIn(formData).then(this._onSuccess, this._removeWait);
+    }
   },
 
   _onSuccess: function() {
@@ -27,6 +30,7 @@ var NewSession = React.createClass({
 
   _removeWait: function() {
     $('body').removeClass("wait");
+    this.setState({pendingSubmit: false});
   },
 
   render: function(){
