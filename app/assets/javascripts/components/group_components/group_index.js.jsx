@@ -3,7 +3,7 @@ var GroupIndex = React.createClass({
   mixins: [ReactRouter.History],
 
   getInitialState: function(){
-    return({groups: GroupStore.all(), page: 2});
+    return({groups: GroupStore.all(), page: 2, pendingFetch: false});
   },
 
   componentDidMount: function(){
@@ -18,14 +18,17 @@ var GroupIndex = React.createClass({
   },
 
   _handleScroll: function(){
-    if (window.scrollY > $(document).height() - $(window).height() - 100){
-      GroupStore.fetchGroupsByPage(this.state.page);
-      this.setState({page: this.state.page + 1});
+    if (window.scrollY > $(document).height() - $(window).height() - 30){
+      if (this.state.pendingFetch !== true) {
+        this.setState({pendingFetch: true});
+        GroupStore.fetchGroupsByPage(this.state.page);
+        this.setState({page: this.state.page + 1});
+      }
     }
   },
 
   _changed: function(){
-    this.setState({groups: GroupStore.all()});
+    this.setState({groups: GroupStore.all(), pendingFetch: false});
   },
 
   _handleClick: function(id){
