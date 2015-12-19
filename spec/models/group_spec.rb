@@ -23,8 +23,7 @@ RSpec.describe Group, type: :model do
   describe "#create_users_group" do
     it "adds the group organizer as a member after_save" do
       @usergroup = UsersGroup.where(group_id: @group.id, user_id: @user.id).first
-      expect(@group.id).to eq(@usergroup.group_id)
-      expect(@user.id).to eq(@usergroup.user_id)
+      expect(@usergroup).not_to be_nil
     end
   end
 
