@@ -121,7 +121,7 @@ var HeaderToolbar = React.createClass({
             <img className="header-toolbar-button-image center-image" src={FightClub.sign_up}/>
           </button>
 
-          <button className="header-toolbar-button-right" onClick={this._signIn}>
+          <button className="header-toolbar-button-right" id="sign-in" onClick={this._signIn}>
             <img className="header-toolbar-button-image center-image" src={FightClub.sign_in}/>
           </button>
 
