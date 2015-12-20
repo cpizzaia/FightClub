@@ -8,7 +8,7 @@ RSpec.describe User, type: :model do
     end
 
     it "returns the correct user given an email and password" do
-      result = User.find_by_credentials(@user.useremail, @user.password)
+      result = User.find_by_credentials(@user.email, @user.password)
       expect(result).to eq(@user)
     end
   end

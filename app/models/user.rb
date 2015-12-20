@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  validates :useremail, :password_digest, :session_token, presence: true, uniqueness: true
+  validates :email, :password_digest, :session_token, presence: true, uniqueness: true
   validates :name, presence: true
   validates :password, length: {minimum: 6, allow_nil: true}
   has_attached_file :profile_img,
@@ -53,8 +53,8 @@ class User < ActiveRecord::Base
     source: :event
   )
 
-  def self.find_by_credentials(useremail, password)
-    user = User.find_by_useremail(useremail)
+  def self.find_by_credentials(email, password)
+    user = User.find_by_email(email)
     return nil if user.nil?
     if user.is_password?(password)
       user

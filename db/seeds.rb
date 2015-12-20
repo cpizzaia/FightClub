@@ -1,117 +1,117 @@
 User.create({
-  useremail: "ryu@capcom.com",
+  email: "ryu@capcom.com",
   name: "Ryu",
   password: "123456",
   profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/ryu.png")
 })
 
 User.create({
-  useremail: "ken@capcom.com",
+  email: "ken@capcom.com",
   name: "Ken",
   password: "123456",
   profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/ken.gif")
 })
 
 User.create({
-  useremail: "feilong@capcom.com",
+  email: "feilong@capcom.com",
   name: "Fei Long",
   password: "123456",
   profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/feilong.gif")
 })
 
 User.create({
-  useremail: "cammy@capcom.com",
+  email: "cammy@capcom.com",
   name: "Cammy",
   password: "123456",
   profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/cammy.gif")
 })
 
 User.create({
-  useremail: "chunli@capcom.com",
+  email: "chunli@capcom.com",
   name: "Chun Li",
   password: "123456",
   profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/chun_li.gif")
 })
 
 User.create({
-  useremail: "deejay@capcom.com",
+  email: "deejay@capcom.com",
   name: "Dee Jay",
   password: "123456",
   profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/deejay.gif")
 })
 
 User.create({
-  useremail: "blanka@capcom.com",
+  email: "blanka@capcom.com",
   name: "Blanka",
   password: "123456",
   profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/blanka.gif")
 })
 
 User.create({
-  useremail: "dhalsim@capcom.com",
+  email: "dhalsim@capcom.com",
   name: "Dhalsim",
   password: "123456",
   profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/dhalsim.gif")
 })
 
 User.create({
-  useremail: "guile@capcom.com",
+  email: "guile@capcom.com",
   name: "Guile",
   password: "123456",
   profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/guile.gif")
 })
 
 User.create({
-  useremail: "balrog@capcom.com",
+  email: "balrog@capcom.com",
   name: "Balrog",
   password: "123456",
   profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/balrog.gif")
 })
 
 User.create({
-  useremail: "akuma@capcom.com",
+  email: "akuma@capcom.com",
   name: "Akuma",
   password: "123456",
   profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/akuma.gif")
 })
 
 User.create({
-  useremail: "honda@capcom.com",
+  email: "honda@capcom.com",
   name: "Honda",
   password: "123456",
   profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/honda.gif")
 })
 
 User.create({
-  useremail: "mbison@capcom.com",
+  email: "mbison@capcom.com",
   name: "M. Bison",
   password: "123456",
   profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/mbison.gif")
 })
 
 User.create({
-  useremail: "sagat@capcom.com",
+  email: "sagat@capcom.com",
   name: "Sagat",
   password: "123456",
   profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/sagat.gif")
 })
 
 User.create({
-  useremail: "vega@capcom.com",
+  email: "vega@capcom.com",
   name: "Vega",
   password: "123456",
   profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/vega.gif")
 })
 
 User.create({
-  useremail: "thawk@capcom.com",
+  email: "thawk@capcom.com",
   name: "T. Hawk",
   password: "123456",
   profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/thawk.gif")
 })
 
 User.create({
-  useremail: "zangief@capcom.com",
+  email: "zangief@capcom.com",
   name: "Zangief",
   password: "123456",
   profile_img: File.new("#{Rails.root}/app/assets/images/profile_images/zangief.gif")
@@ -358,19 +358,19 @@ Group.all.length.times do |i|
 end
 
 Comment.create({
-  author_id: User.where(useremail: "ryu@capcom.com").first.id,
+  author_id: User.where(email: "ryu@capcom.com").first.id,
   event_id: 1, body: "To live is to fight, to fight is to live!"
   })
 Comment.create({
-  author_id: User.where(useremail: "mbison@capcom.com").first.id,
+  author_id: User.where(email: "mbison@capcom.com").first.id,
   event_id: 1,
   body: "You cannot fight destiny. The world will be mine."})
 Comment.create({
-  author_id: User.where(useremail: "ken@capcom.com").first.id,
+  author_id: User.where(email: "ken@capcom.com").first.id,
   event_id: 1,
   body: "I could really improve if I could find someone strong enough to beat me!"})
 Comment.create({
-  author_id: User.where(useremail: "chunli@capcom.com").first.id,
+  author_id: User.where(email: "chunli@capcom.com").first.id,
   event_id: 1,
   body: "It's been much too long since I've been in a fair fight!"
   })
@@ -378,7 +378,7 @@ Comment.create({
 
 
 Comment.create({
-  author_id: User.where(useremail: "ryu@capcom.com").first.id,
+  author_id: User.where(email: "ryu@capcom.com").first.id,
   parent_comment_id: 4,
   body: "There's nothing like a fair fight. It improves both competitors."
   })

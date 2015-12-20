@@ -14,7 +14,7 @@ var NewSession = React.createClass({
 
       var formData = new FormData();
 
-      formData.append("user[useremail]", email);
+      formData.append("user[email]", email);
       formData.append("user[password]", password);
 
       $('body').addClass("wait");
