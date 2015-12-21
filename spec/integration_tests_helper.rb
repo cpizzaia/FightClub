@@ -38,6 +38,31 @@ module IntegrationTestsHelper
     click_button("Submit")
   end
 
+  def sign_in_as_random_user
+    @user = create(:create)
+    sign_in_as(@user)
+  end
+
+  def sign_up_as_random_user
+    @user = build(:create)
+    sign_up_as(@user)
+  end
+
+  def create_random_group
+    @group = build(:group)
+    create_group(@group)
+  end
+
+  def create_random_event
+    @event = build(:event)
+    create_event(@event)
+  end
+
+  def create_random_comment
+    @comment = build(:comment)
+    create_comment(@comment)
+  end
+
 end
 
 RSpec.configure do |config|
