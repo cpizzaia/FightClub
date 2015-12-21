@@ -33,6 +33,11 @@ module IntegrationTestsHelper
     click_button("Create Event")
   end
 
+  def create_comment(comment)
+    find(".comment-create-input").set(comment.body)
+    click_button("Submit")
+  end
+
 end
 
 RSpec.configure do |config|
