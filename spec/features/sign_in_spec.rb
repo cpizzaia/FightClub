@@ -5,7 +5,7 @@ RSpec.feature "Sign in", js: true, type: :feature do
   describe "The signin process", type: :feature do
 
     it "signs a user in" do
-      @user = User.create(email: "idk@gmail.com", name: "whocares", password: "123456")
+      @user = create(:user)
       visit "/"
       find('#sign-in').click
       fill_in 'Email', with: @user.email
