@@ -90,7 +90,7 @@ var HeaderToolbar = React.createClass({
             <img className="header-toolbar-button-image center-image" src={FightClub.groups}/>
           </a>
 
-          <button onClick={this._createGroup} className="header-toolbar-button-left">
+          <button onClick={this._createGroup} className="header-toolbar-button-left" id="create-group">
             <img className="header-toolbar-button-image center-image" src={FightClub.create_group}/>
           </button>
 

@@ -15,6 +15,24 @@ module IntegrationTestsHelper
     fill_in 'Password', with: user.password
     click_button("Sign Up")
   end
+
+  def create_group(group)
+    find("#create-group").click
+    fill_in "What is your group's name?", with: group.title
+    fill_in "What is your group about?", with: group.description
+    fill_in "Where is your group located? (zipcode)", with: "10002"
+    click_button("Create Group")
+  end
+
+  def create_event(event)
+    click_link("Add Event")
+    fill_in "Name of event", with: event.title
+    fill_in "Description of event", with: event.description
+    fill_in "Location of event", with: event.address
+    fill_in "Start time of event", with: "01/01/2104, 4:00 AM"
+    click_button("Create Event")
+  end
+
 end
 
 RSpec.configure do |config|
