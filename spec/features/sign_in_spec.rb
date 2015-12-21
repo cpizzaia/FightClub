@@ -6,11 +6,7 @@ RSpec.feature "Sign in", js: true, type: :feature do
 
     it "signs a user in" do
       @user = create(:user)
-      visit "/"
-      find('#sign-in').click
-      fill_in 'Email', with: @user.email
-      fill_in 'Password', with: @user.password
-      click_button("Sign In")
+      sign_in_as(@user)
       expect(page).to have_css('.toolbar-thumbnail')
     end
   end
