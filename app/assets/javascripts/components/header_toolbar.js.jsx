@@ -99,7 +99,7 @@ var HeaderToolbar = React.createClass({
             </a>
 
 
-              <button onClick={this._signOut} className="header-toolbar-button-right">
+              <button onClick={this._signOut} className="header-toolbar-button-right" id="sign-out">
                 <img className="header-toolbar-button-image center-image" src={FightClub.sign_out}/>
               </button>
 

@@ -48,6 +48,10 @@ module IntegrationTestsHelper
     sign_up_as(@user)
   end
 
+  def sign_out
+    find("#sign-out").click
+  end
+
   def create_random_group
     @group = build(:group)
     create_group(@group)
