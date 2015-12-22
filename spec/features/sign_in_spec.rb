@@ -5,8 +5,7 @@ RSpec.feature "Sign in", js: true, type: :feature do
   describe "The signin process", type: :feature do
 
     it "signs a user in" do
-      @user = create(:user)
-      sign_in_as(@user)
+      sign_in_as_random_user
       expect(page).to have_css('.toolbar-thumbnail')
     end
   end

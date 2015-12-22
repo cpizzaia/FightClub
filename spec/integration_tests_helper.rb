@@ -39,12 +39,12 @@ module IntegrationTestsHelper
   end
 
   def sign_in_as_random_user
-    @user = create(:create)
+    @user = create(:user)
     sign_in_as(@user)
   end
 
   def sign_up_as_random_user
-    @user = build(:create)
+    @user = build(:user)
     sign_up_as(@user)
   end
 
