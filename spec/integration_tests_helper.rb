@@ -38,6 +38,15 @@ module IntegrationTestsHelper
     click_button("Submit")
   end
 
+  def create_response(response)
+    find(".comment-reply").click
+    find(".reply-create-input").set(response.body)
+    within(".comment-item") do
+      click_button("Submit")
+    end
+  end
+
+
   def sign_in_as_random_user
     @user = create(:user)
     sign_in_as(@user)
@@ -65,6 +74,11 @@ module IntegrationTestsHelper
   def create_random_comment
     @comment = build(:comment)
     create_comment(@comment)
+  end
+
+  def create_random_response
+    @response = build(:comment)
+    create_response(@response)
   end
 
 end
