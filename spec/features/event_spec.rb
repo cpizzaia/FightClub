@@ -29,6 +29,7 @@ RSpec.feature "Create Event", js: true, type: :feature do
     end
 
     it "allows users leave events" do
+      expect(page).to have_css("img[src$='#{"ko.gif"}']")
       find(".join-event").click
       expect(page).to have_css("img[src$='#{"fight.gif"}']")
     end
