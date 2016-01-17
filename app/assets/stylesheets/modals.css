@@ -133,3 +133,24 @@
 .modal-preview-members {
   font-weight: normal;
 }
+
+@media screen and (max-width: 580px) {
+  .modal-form {
+    width: 83%;
+    padding: 3%;
+  }
+
+  .modal-input {
+    width: 89%;
+  }
+
+  .modal-label {
+    padding: 1%;
+    font-size: 80%;
+  }
+
+  .modal-group-image-preview {
+    height: 0px;
+    margin: 0px;
+  }
+}

@@ -86,10 +86,6 @@ var HeaderToolbar = React.createClass({
 
           <a href="#/" className="logo"> <img src={FightClub.logoUrl}/> </a>
 
-          <a className="header-toolbar-button-left" href="#/">
-            <img className="header-toolbar-button-image center-image" src={FightClub.groups}/>
-          </a>
-
           <button onClick={this._createGroup} className="header-toolbar-button-left" id="create-group">
             <img className="header-toolbar-button-image center-image" src={FightClub.create_group}/>
           </button>
@@ -113,9 +109,6 @@ var HeaderToolbar = React.createClass({
           {modal}
 
           <h1 className="logo"> <img src={FightClub.logoUrl}/> </h1>
-          <a className="header-toolbar-button-left" href="#/">
-            <img className="header-toolbar-button-image center-image" src={FightClub.groups}/>
-          </a>
 
           <button className="header-toolbar-button-right" id="sign-up" onClick={this._signUp}>
             <img className="header-toolbar-button-image center-image" src={FightClub.sign_up}/>

@@ -69,16 +69,28 @@
 }
 
 @media screen and (max-width: 580px) {
+  .toolbar-thumbnail-link {
+    height: 30px;
+    width: 30px;
+    margin-right: 1%;
+    margin-left: 1%;
+  }
   .logo > img {
-    height: 20px;
+    height: inherit;
+    width: 20%;
+    padding: 4% 1%;
   }
   .header-toolbar-button-left, .header-toolbar-button-right {
-    width: 60px;
+    width: 32%;
     height: 22px;
-    box-sizing: border-box;
+    margin-right: 0;
+    margin-left: 1%;
   }
   .background-header-toolbar {
     height: 0px;
   }
 
+  .header-toolbar {
+    min-height: 50px;
+  }
 }
