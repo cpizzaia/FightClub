@@ -35,3 +35,13 @@
 .search-bar-icon > img {
   width: inherit;
 }
+
+@media screen and (max-width: 580px) {
+  .search-bar {
+    width: 100%;
+  }
+
+  .search-bar-input {
+    width: 95%;
+  }
+}

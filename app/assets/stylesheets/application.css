@@ -72,10 +72,7 @@
     background: black;
     width: 100%;
     z-index: -999;
-  }
-
-  .homepage-banner-container {
-    background: black;
+    overflow: hidden;
   }
 
   .description {
@@ -87,7 +84,6 @@
   .welcome-banner{
     height: 476px;
   }
-
 
   .group:after {
     content: "";
@@ -102,4 +98,19 @@
     left: -9999px;
     right: -9999px;
     margin: auto;
+  }
+
+  @media screen and (max-width: 580px) {
+    .container {
+      width: 100%;
+    }
+    .description {
+      width: 73%;
+    }
+    .homepage-banner {
+      height: 62%;
+    }
+    .welcome-banner {
+      height: 400px;
+    }
   }

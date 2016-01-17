@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>FightClub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    'application', media: 'all'%>
   <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
@@ -25,8 +26,9 @@
   window.FightClub.magnifying_glass = "<%= image_path('magnifying_glass.png') %>"
 
 </script>
-<div class="homepage-banner-container"></div>
+<div class="homepage-banner-container">
   <img class="homepage-banner" src="<%=image_path("homepage_banner2.jpg")%>"/>
+</div>
 <div class="background-header-toolbar"></div>
 <section class="container">
 

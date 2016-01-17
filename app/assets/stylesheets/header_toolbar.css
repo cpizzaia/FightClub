@@ -67,3 +67,18 @@
 .header-toolbar-button-right:hover, .header-toolbar-button-left:hover {
   background: white;
 }
+
+@media screen and (max-width: 580px) {
+  .logo > img {
+    height: 20px;
+  }
+  .header-toolbar-button-left, .header-toolbar-button-right {
+    width: 60px;
+    height: 22px;
+    box-sizing: border-box;
+  }
+  .background-header-toolbar {
+    height: 0px;
+  }
+
+}

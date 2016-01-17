@@ -44,3 +44,14 @@
 .group-index-item:nth-child(3n+2) {
   margin: 0 38px;
 }
+
+@media screen and (max-width: 580px) {
+  .group-index-item {
+    margin: 7% auto;
+    float: none;
+  }
+
+  .group-index-item:nth-child(3n+2) {
+    margin: auto;
+  }
+}
