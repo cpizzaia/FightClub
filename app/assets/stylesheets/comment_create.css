@@ -47,3 +47,25 @@
 .comment-create-button:hover {
   background: red;
 }
+
+@media screen and (max-width: 580px) {
+  .comment-create-input {
+    width: 90%;
+    font-size: 11px;
+  }
+
+  .comment-create-form {
+    width: 81%;
+  }
+
+  .comment-create-container {
+    padding: 15px 10px 0 0;
+  }
+
+  .reply-create-input {
+    width: 90%;
+    font-size: 11px;
+  }
+
+
+}

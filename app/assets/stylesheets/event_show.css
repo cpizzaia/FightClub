@@ -56,3 +56,21 @@
   border-right: 1px solid lightgrey;
   background: lightgrey;
 }
+
+@media screen and (max-width: 580px) {
+  .event-show-members {
+    width: 100%;
+  }
+
+  .event-show-container {
+    width: 100%;
+  }
+
+  .event-show-container:before {
+    display: none;
+  }
+
+  .event-show-content {
+    width: 100%;
+  }
+}

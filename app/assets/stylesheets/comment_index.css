@@ -29,3 +29,9 @@
   color: darkred;
   cursor: pointer;
 }
+
+@media screen and (max-width: 580px) {
+  .comment-details {
+    width: 100%;
+  }
+}

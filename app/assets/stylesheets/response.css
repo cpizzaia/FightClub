@@ -12,3 +12,15 @@
   float: right;
   width: 438px;
 }
+
+
+@media screen and (max-width: 580px) {
+  .response-container {
+    width: 85%;
+    float: right;
+  }
+
+  .response-details {
+    width: 100%;
+  }
+}
