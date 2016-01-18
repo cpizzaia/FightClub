@@ -175,3 +175,40 @@
   background: white;
   border-bottom: 1px solid white;
 }
+
+@media screen and (max-width: 580px) {
+  .group-show-nav {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .group-show-title {
+    margin-top: 5%;
+  }
+
+  .group-show-description-container {
+    width: 100%;
+  }
+
+  .group-show-sidebar {
+    width: 100%;
+  }
+
+  .group-show-image-container {
+    width: 250px;
+  }
+
+  .group-event-index-container {
+    width: 100%;
+  }
+
+  .group-description-noun {
+    float: left;
+    margin-top: 10px;
+  }
+
+  .group-join {
+    margin-bottom: 20px;
+  }
+}

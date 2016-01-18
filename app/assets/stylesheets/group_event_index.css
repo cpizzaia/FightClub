@@ -87,3 +87,12 @@
 .join-event-container:hover {
   box-shadow:0 0 10px black, inset 0 0 20px red;
 }
+
+@media screen and (max-width: 580px) {
+  .group-event-index-container {
+    width: 100%;
+  }
+  .group-event-index-content {
+    width: 62%;
+  }
+}
