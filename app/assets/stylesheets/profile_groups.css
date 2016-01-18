@@ -51,3 +51,17 @@
 .profile-group-members {
   padding-top: 10px;
 }
+
+@media screen and (max-width: 580px) {
+  .profile-group-item {
+    float: none;
+    width: 87%;
+  }
+  .profile-group-title-container {
+    width: 63%;
+  }
+
+  .profile-group-container {
+    width: 100%;
+  }
+}

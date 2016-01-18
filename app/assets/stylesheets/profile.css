@@ -29,6 +29,7 @@
 .profile-name-input {
   float: left;
   border: inset;
+  background: white;
 }
 
 .profile-name-header {
@@ -41,11 +42,7 @@
 }
 
 .profile-name-edit-button {
-    float: right;
-}
-
-.profile-name-input {
-  background: white;
+  float: right;
 }
 
 .profile-form-upload {
@@ -89,4 +86,39 @@
   padding-bottom: 10px;
   margin-bottom: 10px;
   border-bottom: 2px solid black;
+}
+
+@media screen and (max-width: 580px) {
+  .profile-name {
+    width: 85%;
+  }
+
+  .profile-image-container {
+    float: none;
+    margin: auto;
+  }
+
+  .profile-update-button {
+    float: none;
+  }
+
+  .profile-form-upload {
+    margin: 0;
+  }
+
+
+  .profile-name-input {
+    width: 85%;
+  }
+
+  .profile-group-amount {
+    margin: 10px 0;
+    font-size: 120%;
+    text-align: center;
+  }
+
+  .profile-button-container {
+    width: 240px;
+    margin: auto;
+  }
 }

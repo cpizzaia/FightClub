@@ -112,12 +112,13 @@ var Profile = React.createClass({
       );
       html2 = (
         <div>
+          <div className="profile-button-container group">
+            <label className="profile-form-upload">Choose Picture
+              <input onChange={this._changeFile} type="file"/>
+            </label>
 
-          <label className="profile-form-upload">Choose Picture
-            <input onChange={this._changeFile} type="file"/>
-          </label>
-
-          <button className="profile-update-button" onClick={this._handleSubmit}>Update Profile</button>
+            <button className="profile-update-button" onClick={this._handleSubmit}>Update Profile</button>
+          </div>
 
           <h2 className="profile-group-amount">{"Organizer of " + this.state.user.groups_led.length + " groups"}</h2>
           <ProfileGroups groups={this.state.user.groups_led} />
