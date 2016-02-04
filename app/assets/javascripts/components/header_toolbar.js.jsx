@@ -108,7 +108,7 @@ var HeaderToolbar = React.createClass({
 
           {modal}
 
-          <h1 className="logo"> <img src={FightClub.logoUrl}/> </h1>
+          <a href="/#" className="logo"> <img src={FightClub.logoUrl}/> </a>
 
           <button className="header-toolbar-button-right" id="sign-up" onClick={this._signUp}>
             <img className="header-toolbar-button-image center-image" src={FightClub.sign_up}/>
